@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //setup references
         floorMask = LayerMask.GetMask("Floor");
-        anim = GetComponent<Animation>();
+        anim = GetComponentInChildren<Animation>();
 
         playerRigidbody = GetComponent<Rigidbody>();
     }
