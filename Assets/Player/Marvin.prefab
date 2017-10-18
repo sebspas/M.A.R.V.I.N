@@ -380,10 +380,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4606258966487318}
-  - component: {fileID: 111181094672405308}
+  - component: {fileID: 54188274561778002}
+  - component: {fileID: 136523597052865344}
+  - component: {fileID: 114775324696814214}
+  - component: {fileID: 111569747280721302}
   m_Layer: 0
   m_Name: Marvin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9129,7 +9132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1062504948020386}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4247871153408514}
@@ -11169,7 +11172,22 @@ Transform:
   m_Father: {fileID: 4911113894646598}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &111181094672405308
+--- !u!54 &54188274561778002
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1062504948020386}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
+--- !u!111 &111569747280721302
 Animation:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -11177,27 +11195,39 @@ Animation:
   m_GameObject: {fileID: 1062504948020386}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a417a10898b833045bd35e39c639fc23, type: 3}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400002, guid: 26fbef4464a5b7246a4f2fce9b365957, type: 3}
-  - {fileID: 7400002, guid: 47374042bade3df4ab247811f73f2be4, type: 3}
-  - {fileID: 7400002, guid: 9957423002adfaa4dafa355bad6bda31, type: 3}
-  - {fileID: 7400002, guid: 7ed83d0896f663c428aa677e5075ff98, type: 3}
-  - {fileID: 7400002, guid: 97d3eafe3c03200459ec4f4d07ef568a, type: 3}
-  - {fileID: 7400002, guid: add8abbc9ad73734f9724dc141935e38, type: 3}
-  - {fileID: 7400002, guid: 6105e1a1bb6db5d40ac38effecb56f71, type: 3}
-  - {fileID: 7400002, guid: 29528c42d3e3e2f4aab66bacc0f9945e, type: 3}
-  - {fileID: 7400002, guid: 8f4f919e472cf7d4e85b330091053f5b, type: 3}
-  - {fileID: 7400002, guid: b31c491adf7b4fa4ebe4093798063245, type: 3}
-  - {fileID: 7400002, guid: 2caad6116b132f24b897eef2d5b754e5, type: 3}
-  - {fileID: 7400002, guid: b9c44d4b475f1f34da568e3f84ab90e4, type: 3}
-  - {fileID: 7400002, guid: b9c44d4b475f1f34da568e3f84ab90e4, type: 3}
-  - {fileID: 7400002, guid: a417a10898b833045bd35e39c639fc23, type: 3}
   - {fileID: 7400000, guid: a417a10898b833045bd35e39c639fc23, type: 3}
+  - {fileID: 7400000, guid: 6105e1a1bb6db5d40ac38effecb56f71, type: 3}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 1
+  m_CullingType: 0
+--- !u!114 &114775324696814214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1062504948020386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec45203ae7a1a54c9d02c355f983833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+--- !u!136 &136523597052865344
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1062504948020386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.57, z: 0}
 --- !u!137 &137024234484551868
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
