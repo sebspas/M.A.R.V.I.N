@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 6f;
 
     Vector3 movement;
-    Animation anim;
+    Animator anim;
 
     Rigidbody playerRigidbody;
     int floorMask; // A layer mask so that a ray can be cast just at gameobjects on the floor
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //setup references
         floorMask = LayerMask.GetMask("Floor");
-        anim = GetComponentInChildren<Animation>();
+        anim = GetComponent<Animator>();
 
         playerRigidbody = GetComponent<Rigidbody>();
     }
@@ -74,12 +74,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (walking)
         {
-            print("walking");
-            anim.Play("loop_run_funny");
+            anim.SetFloat("Forward", 1.0f);
+        } else
+        {
+            anim.SetFloat("Forward", 0.0f);
         }
-
-        anim.CrossFade("loop_idle");
-        //anim.CrossFade(anim["loop_wal_funny"]);
-        //anim.SetBool("IsWalking", walking);
+        
     }
 }
