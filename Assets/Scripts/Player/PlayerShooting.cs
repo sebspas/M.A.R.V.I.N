@@ -15,6 +15,9 @@ public class PlayerShooting : MonoBehaviour {
 
     public GameObject gunRightArm;
 
+    // audio sound for the laser
+    AudioSource laserAudio;
+
     // general timer to know the time between two update
     float timer;
 
@@ -26,6 +29,7 @@ public class PlayerShooting : MonoBehaviour {
 
     void Start () {
         anim = GetComponent<Animator>();
+        laserAudio = GetComponent<AudioSource>();
 	}
 	
 	void Update () {
@@ -46,6 +50,8 @@ public class PlayerShooting : MonoBehaviour {
     {
         // we reset the timer
         timer = 0f;
+
+        laserAudio.Play();
 
         // we put up his arm and play the shoot anim
         anim.SetBool("Right Aim", true);

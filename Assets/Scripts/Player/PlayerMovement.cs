@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movement;
     Animator anim;
 
+
+
     Rigidbody playerRigidbody;
     int floorMask; // A layer mask so that a ray can be cast just at gameobjects on the floor
     float camRayLength = 100f;
@@ -27,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");
 
         // move the player on the scene
-        Move(h, v);
+        Move();
 
         // to align the weapon to the move cursor
         Turning();
@@ -36,15 +38,24 @@ public class PlayerMovement : MonoBehaviour
         Animating(h, v);
     }
 
-    void Move(float h, float v)
+    void Move()
     {
-        movement.Set(h, 0f, v);
-
-        // normalize the movement, to avoid the problem of diagonali advantage
-        movement = movement.normalized * speed * Time.deltaTime;
-
-        // finaly move the player
-        playerRigidbody.MovePosition(transform.position + movement);
+        if (Input.GetKey(KeyCode.Z))
+        {
+            transform.position += transform.forward * Time.deltaTime * speed;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            transform.position -= transform.forward * Time.deltaTime * speed;
+        }
+        else if (Input.GetKey(KeyCode.Q))
+        {
+            transform.position -= transform.right * Time.deltaTime * speed;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += transform.right * Time.deltaTime * speed;
+        }
     }
 
     void Turning()
