@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movement;
     Animator anim;
 
+    public bool movementRelative = false;
+
 
 
     Rigidbody playerRigidbody;
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");
 
         // move the player on the scene
-        Move();
+        Move(h, v);
 
         // to align the weapon to the move cursor
         Turning();
@@ -38,24 +40,38 @@ public class PlayerMovement : MonoBehaviour
         Animating(h, v);
     }
 
-    void Move()
-    {
-        if (Input.GetKey(KeyCode.Z))
+    void Move(float h, float v)
+    {   
+        if (!movementRelative)
         {
-            transform.position += transform.forward * Time.deltaTime * speed;
-        }
-        else if (Input.GetKey(KeyCode.S))
+            // Movement in teh camera referentiel
+            movement.Set(h, 0f, v);
+
+            // normalize the movement, to avoid the problem of diagonali advantage
+            movement = movement.normalized * speed * Time.deltaTime;
+
+            // finaly move the player
+            playerRigidbody.MovePosition(transform.position + movement);
+        } else
         {
-            transform.position -= transform.forward * Time.deltaTime * speed;
-        }
-        else if (Input.GetKey(KeyCode.Q))
-        {
-            transform.position -= transform.right * Time.deltaTime * speed;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += transform.right * Time.deltaTime * speed;
-        }
+            // movement in the player referentiel
+            if (Input.GetKey(KeyCode.Z))
+            {
+                transform.position += transform.forward * Time.deltaTime * speed;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                transform.position -= transform.forward * Time.deltaTime * speed;
+            }
+            else if (Input.GetKey(KeyCode.Q))
+            {
+                transform.position -= transform.right * Time.deltaTime * speed;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += transform.right * Time.deltaTime * speed;
+            }
+        }       
     }
 
     void Turning()

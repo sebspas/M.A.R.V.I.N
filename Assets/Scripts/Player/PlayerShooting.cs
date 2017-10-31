@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour {
 
     // timer to shoot
-    public float timeBetweenBullet = 0.15f;
+    public float timeBetweenBullet = 0.33f;
 
     // timer before to rest his arms
     public float timeToGoBackToIdle = 0.90f;
@@ -38,28 +38,34 @@ public class PlayerShooting : MonoBehaviour {
 
         if (Input.GetButton("Fire1") && timer > timeBetweenBullet)
         {
+            // we put up his arm and play the shoot anim
+            //anim.SetBool("Right Aim", true);
+            ///anim.SetBool("Right Rapid Attack", true);
+
             Shoot();
-        } else if (timer > timeToGoBackToIdle)
+
+            //anim.SetBool("Right Rapid Attack", false);
+        }
+        else if (timer > timeToGoBackToIdle)
         {          
             // we put back is right arm in the normal position
-            anim.SetBool("Right Aim", false);
+            anim.SetBool("Right Aim", false);           
         }
 	}
 
     public void Shoot()
     {
         // we reset the timer
-        timer = 0f;
+        timer = 0f;       
 
-        laserAudio.Play();
-
-        // we put up his arm and play the shoot anim
         anim.SetBool("Right Aim", true);
-
         anim.SetTrigger("Right Blast Attack");
+
+        laserAudio.Play();     
 
         GameObject bullet = (GameObject)Instantiate(proj, gunRightArm.transform.position, Quaternion.identity);
         bullet.gameObject.name = "Bullet";
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+              
     }
 }
