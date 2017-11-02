@@ -12,7 +12,7 @@ public class EnemyAttack : MonoBehaviour
 
     Animator anim;
     GameObject player;
-    //PlayerHealth playerHealth;
+    PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
     bool playerInRange;
     float timer;
@@ -21,7 +21,7 @@ public class EnemyAttack : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        //playerHealth = player.GetComponent<PlayerHealth>();
+        playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();
     }
@@ -56,12 +56,10 @@ public class EnemyAttack : MonoBehaviour
             Attack();
         }
 
-        /*
         if (playerHealth.currentHealth <= 0)
         {
             anim.SetTrigger("PlayerDead");
         }
-        */
     }
 
 
@@ -71,11 +69,9 @@ public class EnemyAttack : MonoBehaviour
         anim.SetInteger("NumAttack", chooseAttack);
         chooseAttack = (++chooseAttack) % numberOfAttacks;
 
-        /*
         if (playerHealth.currentHealth > 0)
         {
             playerHealth.TakeDamage(attackDamage);
         }
-        */
     }
 }
