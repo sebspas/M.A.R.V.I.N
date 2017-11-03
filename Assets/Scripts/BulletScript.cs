@@ -26,7 +26,6 @@ public class BulletScript : MonoBehaviour {
                 // ... the enemy should take damage.
                 enemyHealth.TakeDamage(damagePerShot);
             }
-           
         }
         else
         {

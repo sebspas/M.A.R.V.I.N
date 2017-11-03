@@ -65,7 +65,6 @@ public class PlayerShooting : MonoBehaviour {
 
         GameObject bullet = (GameObject)Instantiate(proj, gunRightArm.transform.position, Quaternion.identity);
         bullet.gameObject.name = "Bullet";
-        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
-              
+        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);              
     }
 }

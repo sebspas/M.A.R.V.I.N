@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startingHealth = 100;
-    public int currentHealth;
-    //public Slider healthSlider;
+    public float startingHealth = 100;
+    public float currentHealth;
+
+    public Image healthSlider;
     public AudioClip deathClip;
 
 
@@ -45,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
         damaged = true;
         currentHealth -= amount;
 
+        healthSlider.transform.localScale = new Vector3((currentHealth/startingHealth), 1, 1);
         //healthSlider.value = currentHealth;
 
         //playerAudio.Play();
