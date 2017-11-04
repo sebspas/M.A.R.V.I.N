@@ -523,7 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224231027218572830}
   - component: {fileID: 222053352630563426}
-  - component: {fileID: 114789416850999102}
+  - component: {fileID: 114383636485821526}
   m_Layer: 5
   m_Name: BonusUI
   m_TagString: Untagged
@@ -1046,7 +1046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104e47a42aea6a54d947931f4fccff95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenWeaponChange: 0.2
+  timeBetweenWeaponChange: 0.05
   weaponArrow: {fileID: 1478615816883844}
   weaponHighlight: {fileID: 1774886958967774}
 --- !u!114 &114878580556444058
