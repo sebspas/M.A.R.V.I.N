@@ -6,7 +6,7 @@ public class PlayerShooting : MonoBehaviour {
 
     // timer to shoot
     public float timeBetweenBullet = 0.33f;
-
+    
     // timer before to rest his arms
     public float timeToGoBackToIdle = 0.90f;
 
@@ -14,6 +14,7 @@ public class PlayerShooting : MonoBehaviour {
     public GameObject proj;
 
     public GameObject gunRightArm;
+
 
     // audio sound for the laser
     AudioSource laserAudio;
@@ -35,6 +36,7 @@ public class PlayerShooting : MonoBehaviour {
 	void Update () {
 
         timer += Time.deltaTime;
+
 
         if (Input.GetButton("Fire1") && timer > timeBetweenBullet)
         {
@@ -67,4 +69,5 @@ public class PlayerShooting : MonoBehaviour {
         bullet.gameObject.name = "Bullet";
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);              
     }
+
 }
