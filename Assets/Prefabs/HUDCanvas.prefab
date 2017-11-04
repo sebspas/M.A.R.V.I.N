@@ -523,7 +523,11 @@ GameObject:
   m_Component:
   - component: {fileID: 224231027218572830}
   - component: {fileID: 222053352630563426}
+<<<<<<< HEAD
   - component: {fileID: 114789416850999102}
+=======
+  - component: {fileID: 114383636485821526}
+>>>>>>> bc78aed75ce7121b59428aef4d03be5c86479f60
   m_Layer: 5
   m_Name: BonusUI
   m_TagString: Untagged
@@ -893,6 +897,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114383636485821526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978632858683840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229a2a65a85d20e4bbe5aa45cae5c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenWeaponChange: 0.05
+  bonusHighlight: {fileID: 224347408005621592}
 --- !u!114 &114401903502573560
 MonoBehaviour:
   m_ObjectHideFlags: 1
