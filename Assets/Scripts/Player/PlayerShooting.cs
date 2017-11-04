@@ -37,7 +37,6 @@ public class PlayerShooting : MonoBehaviour {
 
         timer += Time.deltaTime;
 
-
         if (Input.GetButton("Fire1") && timer > timeBetweenBullet)
         {
             // we put up his arm and play the shoot anim
@@ -69,5 +68,5 @@ public class PlayerShooting : MonoBehaviour {
         bullet.gameObject.name = "Bullet";
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);              
     }
-
+    
 }
