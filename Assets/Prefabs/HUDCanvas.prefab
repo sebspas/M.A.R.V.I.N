@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 222928382917524710}
   - component: {fileID: 114498820445501920}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -523,7 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224231027218572830}
   - component: {fileID: 222053352630563426}
-  - component: {fileID: 114383636485821526}
+  - component: {fileID: 114789416850999102}
   m_Layer: 5
   m_Name: BonusUI
   m_TagString: Untagged
@@ -1046,9 +1046,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104e47a42aea6a54d947931f4fccff95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenWeaponChange: 0.1
+  timeBetweenWeaponChange: 0.2
   weaponArrow: {fileID: 1478615816883844}
-  weaponHighlight: {fileID: 224561381099121910}
+  weaponHighlight: {fileID: 1774886958967774}
 --- !u!114 &114878580556444058
 MonoBehaviour:
   m_ObjectHideFlags: 1
