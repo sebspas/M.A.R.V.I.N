@@ -12,6 +12,8 @@ public class PlayerWeapon : MonoBehaviour {
     public GameObject weaponArrow;
     public RectTransform weaponHighlight;
 
+    PlayerShooting playerShooting;
+
     // general timer to know the time between two update
     float timer;
 
@@ -20,6 +22,9 @@ public class PlayerWeapon : MonoBehaviour {
 
     void Start()
     {
+        // get the player to change his weapon
+        playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
+
         weaponID = 0;
     }
 
@@ -53,6 +58,9 @@ public class PlayerWeapon : MonoBehaviour {
         {
             SelectWeapon(3);
         }
+
+        // update the player weapon
+        playerShooting.currentWeapon = weaponID;
     }
 
 

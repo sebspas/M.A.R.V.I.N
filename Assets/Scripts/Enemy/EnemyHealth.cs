@@ -8,10 +8,12 @@ public class EnemyHealth : MonoBehaviour
     public int scoreValue = 10;
     public AudioClip deathClip;
 
+    Effect currentEffect;
 
-    Animator anim;
+
+    public Animator anim;
+
     AudioSource enemyAudio;
-    //ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
     bool isDead;
     bool isSinking;
@@ -21,15 +23,19 @@ public class EnemyHealth : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         enemyAudio = GetComponent<AudioSource>();
-        //hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-
         currentHealth = startingHealth;
+
+        EnemyMovement enemyMovement = GetComponentInParent<EnemyMovement>();
+        currentEffect = new Effect(this, enemyMovement);
     }
 
 
     void Update()
     {
+        // calculate the effect to apply to the entity
+        currentEffect.applyEffects();
+
         if (isSinking)
         {
             // Move the enemy down by the sinkSpeed per second.
@@ -38,18 +44,14 @@ public class EnemyHealth : MonoBehaviour
     }
 
 
-    public void TakeDamage(int amount /*, Vector3 hitPoint*/)
+    public void TakeDamage(BulletScript bullet)
     {
         if (isDead)
             return;
 
         //enemyAudio.Play();
+        currentEffect.getHurt(bullet);
 
-        currentHealth -= amount;
-
-        // Set the position of the particle system to where the hit was sustained.
-        //hitParticles.transform.position = hitPoint;
-        //hitParticles.Play();
 
         if (currentHealth <= 0)
         {

@@ -4,12 +4,39 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour {
 
+    // damage per bullet
     public int damagePerShot = 5;
 
+    // burning config
+    public int burningDamage = 2;
+    public float burningTotalTime = 2.0f;
+    public float burningInterval = 0.9f;
+
+    // frozen config
+    public int frozenSlow = 3;
+    public float frozenTotalTime = 1.5f;
+
+    // earth config
+    public int lifeSteal = 10;
+
+    // animation on the bullet impact
     public GameObject bulletImpact;
 
-    // Use this for initialization
+    // different kind of bullet
+    public enum BulletType
+    {
+        Normal,
+        Fire,
+        Ice,
+        Earth
+    }
+
+    // kind of this bullet
+    public BulletType typeOfBullet;
+
+
     void Start () {
+        // destory the bullet 4 sec after the shoot 
         Destroy(this.gameObject, 4);
     }
 
@@ -24,7 +51,7 @@ public class BulletScript : MonoBehaviour {
             if (enemyHealth != null)
             {
                 // ... the enemy should take damage.
-                enemyHealth.TakeDamage(damagePerShot);
+                enemyHealth.TakeDamage(this);
             }
         }
         else

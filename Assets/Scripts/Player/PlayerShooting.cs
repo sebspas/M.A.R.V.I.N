@@ -11,7 +11,10 @@ public class PlayerShooting : MonoBehaviour {
     public float timeToGoBackToIdle = 0.90f;
 
     // bullet shoot by MARVIN
-    public GameObject proj;
+    public GameObject[] proj = new GameObject[4];
+
+    // player current weapon
+    public int currentWeapon = 0;
 
     public GameObject gunRightArm;
 
@@ -64,7 +67,7 @@ public class PlayerShooting : MonoBehaviour {
 
         laserAudio.Play();     
 
-        GameObject bullet = (GameObject)Instantiate(proj, gunRightArm.transform.position, Quaternion.identity);
+        GameObject bullet = (GameObject)Instantiate(proj[currentWeapon], gunRightArm.transform.position, Quaternion.identity);
         bullet.gameObject.name = "Bullet";
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);              
     }
