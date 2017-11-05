@@ -7,6 +7,9 @@ public class BulletScript : MonoBehaviour {
     // damage per bullet
     public int damagePerShot = 5;
 
+    // energyCost (to change depending the bullet in the unity editor)
+    public int energyCost = 1;
+
     // burning config
     public int burningDamage = 2;
     public float burningTotalTime = 2.0f;

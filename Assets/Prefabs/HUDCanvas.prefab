@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenWeaponChange: 0.05
   weaponArrow: {fileID: 1478615816883844}
-  weaponHighlight: {fileID: 1774886958967774}
+  weaponHighlight: {fileID: 224561381099121910}
 --- !u!114 &114878580556444058
 MonoBehaviour:
   m_ObjectHideFlags: 1

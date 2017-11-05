@@ -199,6 +199,11 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1844333902}
+    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: energySlider
+      value: 
+      objectReference: {fileID: 1020542605}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
   m_IsPrefabParent: 0
@@ -631,6 +636,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.439344, z: 0}
+--- !u!114 &1020542605 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114903895049248576, guid: ca5e23ca8c38c414289367285ce98cd5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1795686859}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1036808878
 Prefab:
   m_ObjectHideFlags: 0
@@ -1037,6 +1048,11 @@ Prefab:
       propertyPath: weaponHighlight
       value: 
       objectReference: {fileID: 1290347124}
+    - target: {fileID: 224685688550639602, guid: ca5e23ca8c38c414289367285ce98cd5,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca5e23ca8c38c414289367285ce98cd5, type: 2}
   m_IsPrefabParent: 0

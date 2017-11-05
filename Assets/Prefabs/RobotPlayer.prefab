@@ -1052,6 +1052,11 @@ MonoBehaviour:
   - {fileID: 1349997331834966, guid: 020bb9a12510f6640aee851cc7bd9672, type: 2}
   - {fileID: 1939240370481064, guid: 01fbc6d3cc27b4b4ea5f614fcbc72274, type: 2}
   currentWeapon: 0
+  energyRegenTime: 0.5
+  energyRegen: 1
+  energyMax: 20
+  currentEnergy: 20
+  energySlider: {fileID: 0}
   gunRightArm: {fileID: 1099828321575250}
   bulletSpeed: 500
 --- !u!114 &114883833820761946

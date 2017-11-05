@@ -119,7 +119,7 @@ public class Effect {
             case BulletScript.BulletType.Earth:
                 enemyHealth.currentHealth -= bullet.damagePerShot;
                 // we make sure that the given life doesn't make the player life go over the maximum
-                if ( (playerHealth.currentHealth+bullet.lifeSteal) < playerHealth.startingHealth)
+                if ( (playerHealth.currentHealth+bullet.lifeSteal) <= playerHealth.startingHealth)
                 {
                     playerHealth.currentHealth += bullet.lifeSteal;
                 } else
