@@ -853,11 +853,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4008779229084274, guid: 3df6e7cd1e7288047992160b074c1115,
     type: 2}
   m_PrefabInternal: {fileID: 1329880211}
---- !u!224 &1290347124 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224561381099121910, guid: ca5e23ca8c38c414289367285ce98cd5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1795686859}
 --- !u!1001 &1329880211
 Prefab:
   m_ObjectHideFlags: 0
@@ -1042,16 +1037,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114877441570398946, guid: ca5e23ca8c38c414289367285ce98cd5,
-        type: 2}
-      propertyPath: weaponHighlight
-      value: 
-      objectReference: {fileID: 1290347124}
-    - target: {fileID: 224685688550639602, guid: ca5e23ca8c38c414289367285ce98cd5,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca5e23ca8c38c414289367285ce98cd5, type: 2}
