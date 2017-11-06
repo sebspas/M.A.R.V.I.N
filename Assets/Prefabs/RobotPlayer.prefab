@@ -1032,7 +1032,8 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   healthSlider: {fileID: 0}
-  deathClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: b24ae5c93276c4616856c1f0fb47e615, type: 3}
+  hurtClip: {fileID: 8300000, guid: 0426027984d734e7fba2fe886ef21380, type: 3}
 --- !u!114 &114134772355612730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1052,12 +1053,13 @@ MonoBehaviour:
   - {fileID: 1349997331834966, guid: 020bb9a12510f6640aee851cc7bd9672, type: 2}
   - {fileID: 1939240370481064, guid: 01fbc6d3cc27b4b4ea5f614fcbc72274, type: 2}
   currentWeapon: 0
-  energyRegenTime: 0.5
-  energyRegen: 1
+  energyRegenTime: 0.1
+  energyRegen: 0.2
   energyMax: 20
   currentEnergy: 20
   energySlider: {fileID: 0}
   gunRightArm: {fileID: 1099828321575250}
+  laser: {fileID: 8300000, guid: b7aa833824d785a4bbaa982dbbc0f45b, type: 3}
   bulletSpeed: 500
 --- !u!114 &114883833820761946
 MonoBehaviour:

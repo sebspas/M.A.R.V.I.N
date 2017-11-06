@@ -21,7 +21,7 @@ public class PlayerShooting : MonoBehaviour {
     public float energyRegenTime = 2.0f;
 
     // energy regenValue
-    public int energyRegen = 1;
+    public float energyRegen = 1;
 
     // startingEnergy (1 basic shoot cost 1, ice 2, fire 3, and earth 3)
     public float energyMax = 20;
@@ -35,8 +35,10 @@ public class PlayerShooting : MonoBehaviour {
     // point where the bullet come from
     public GameObject gunRightArm;
 
+    // audio laser sound
+    public AudioClip laser;
 
-    // audio sound for the laser
+    // audio source for the laser
     AudioSource laserAudio;
 
     // general timer to know the time between two update
@@ -108,6 +110,7 @@ public class PlayerShooting : MonoBehaviour {
         anim.SetTrigger("Right Blast Attack");
 
         // the sound corresponding to the nergy
+        laserAudio.clip = laser;
         laserAudio.Play();     
 
         // we launch the bullet

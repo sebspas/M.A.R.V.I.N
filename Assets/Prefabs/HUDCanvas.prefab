@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 222963422177128210}
   - component: {fileID: 114085865260855998}
   m_Layer: 5
-  m_Name: Slider_bg
+  m_Name: XpSlider_bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 222396451577012256}
   - component: {fileID: 114890986013497130}
   m_Layer: 5
-  m_Name: Slider_bg
+  m_Name: HealthSlider_bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 222007549379426680}
   - component: {fileID: 114312595133101484}
   m_Layer: 5
-  m_Name: Slider_fill
+  m_Name: HealthSlider_fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 222475126645788890}
   - component: {fileID: 114903895049248576}
   m_Layer: 5
-  m_Name: Slider_fill
+  m_Name: XpSlider_fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1674,7 +1674,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 91}
+  m_SizeDelta: {x: 600, y: 91}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224301461144371710
 RectTransform:
@@ -2015,7 +2015,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 18, y: -5}
-  m_SizeDelta: {x: 460, y: 41}
+  m_SizeDelta: {x: 556, y: 41}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224919401941092050
 RectTransform:

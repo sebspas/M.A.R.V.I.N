@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     public Image healthSlider;
     public AudioClip deathClip;
+    public AudioClip hurtClip;
 
 
     Animator anim;
@@ -24,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
-        //playerAudio = GetComponent<AudioSource>();
+        playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
         playerShooting = GetComponentInChildren<PlayerShooting>();
         currentHealth = startingHealth;
@@ -49,7 +50,8 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.transform.localScale = new Vector3((currentHealth/startingHealth), 1, 1);
         //healthSlider.value = currentHealth;
 
-        //playerAudio.Play();
+        playerAudio.clip = hurtClip;
+        playerAudio.Play();
 
         if (currentHealth <= 0 && !isDead)
         {
@@ -67,8 +69,8 @@ public class PlayerHealth : MonoBehaviour
         print("dead");
         anim.SetTrigger("Die");
 
-        //playerAudio.clip = deathClip;
-        //playerAudio.Play();
+        playerAudio.clip = deathClip;
+        playerAudio.Play();
 
         playerMovement.enabled = false;
         playerShooting.enabled = false;
