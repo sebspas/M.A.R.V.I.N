@@ -18,10 +18,10 @@ public class PlayerShooting : MonoBehaviour {
     public int currentWeapon = 0;
 
     // energy regenerationRate
-    public float energyRegenTime = 2.0f;
+    public float energyRegenTime = 0.1f;
 
     // energy regenValue
-    public float energyRegen = 1;
+    public float energyRegen = 0.2f;
 
     // startingEnergy (1 basic shoot cost 1, ice 2, fire 3, and earth 3)
     public float energyMax = 20;
@@ -41,6 +41,9 @@ public class PlayerShooting : MonoBehaviour {
     // audio source for the laser
     AudioSource laserAudio;
 
+    // To detect if a bonus is in use
+    PlayerBonus playerBonus;
+
     // general timer to know the time between two update
     float timer;
 
@@ -56,7 +59,8 @@ public class PlayerShooting : MonoBehaviour {
     void Start () {
         anim = GetComponent<Animator>();
         laserAudio = GetComponent<AudioSource>();
-	}
+        playerBonus = GetComponentInChildren<PlayerBonus>();
+    }
 	
 	void Update () {
         // we update the two timer
@@ -75,28 +79,37 @@ public class PlayerShooting : MonoBehaviour {
             anim.SetBool("Right Aim", false);           
         }
 
-        // we increase the nergy if neeeded
+        // disable bonus 3 if it is set and we run out of energy
+        if (playerBonus.bonus3InUse && currentEnergy <= proj[currentWeapon].GetComponent<BulletScript>().energyCost)
+        {
+            playerBonus.bonus3InUse = false;
+        }
+
+        // we increase the energy if neeeded
         if (timerEnergy > energyRegenTime)
         {
             // we reset the timer
             timerEnergy = 0;
 
-            // we regen the energy
-            if (currentEnergy+energyRegen <= energyMax)
+            // if we are not using bonus 3
+            if (!playerBonus.bonus3InUse) 
             {
-                currentEnergy += energyRegen;
-            } else
-            {
-                currentEnergy = energyMax;
+                // we regen the energy
+                if (currentEnergy + energyRegen <= energyMax)
+                {
+                    currentEnergy += energyRegen;
+                }
+                else
+                {
+                    currentEnergy = energyMax;
+                }
             }
 
             // we update the energy slider
             energySlider.transform.localScale = new Vector3((currentEnergy / energyMax), 1, 1);
-
+        
             Debug.Log(currentEnergy + "/" + energyMax);
         }
-
-        
     }
 
     public void Shoot()

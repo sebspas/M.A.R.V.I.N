@@ -208,12 +208,35 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca5e23ca8c38c414289367285ce98cd5, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &599337753 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114136652441803516, guid: ca5e23ca8c38c414289367285ce98cd5,
+    type: 2}
+  m_PrefabInternal: {fileID: 599337752}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &599337754 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114094805544577982, guid: ca5e23ca8c38c414289367285ce98cd5,
+    type: 2}
+  m_PrefabInternal: {fileID: 599337752}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &599337755 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114312595133101484, guid: ca5e23ca8c38c414289367285ce98cd5,
     type: 2}
   m_PrefabInternal: {fileID: 599337752}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &599337756 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114278591376419890, guid: ca5e23ca8c38c414289367285ce98cd5,
+    type: 2}
+  m_PrefabInternal: {fileID: 599337752}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!224 &599337757 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224347408005621592, guid: ca5e23ca8c38c414289367285ce98cd5,
+    type: 2}
+  m_PrefabInternal: {fileID: 599337752}
 --- !u!1001 &603235427
 Prefab:
   m_ObjectHideFlags: 0
@@ -253,16 +276,36 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114072487637605324, guid: 993ed14a14ed13b4ab9a07968091351e,
+    - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
-      propertyPath: healthSlider
+      propertyPath: bonusHighlight
       value: 
-      objectReference: {fileID: 599337755}
+      objectReference: {fileID: 599337757}
+    - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: chargeBonus1
+      value: 
+      objectReference: {fileID: 599337753}
+    - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: chargeBonus2
+      value: 
+      objectReference: {fileID: 599337754}
+    - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: chargeBonus3
+      value: 
+      objectReference: {fileID: 599337756}
     - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
       propertyPath: energySlider
       value: 
       objectReference: {fileID: 1565747348}
+    - target: {fileID: 114072487637605324, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 599337755}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
   m_IsPrefabParent: 0

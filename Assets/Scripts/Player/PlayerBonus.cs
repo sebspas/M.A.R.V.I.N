@@ -13,6 +13,10 @@ public class PlayerBonus : MonoBehaviour {
     const float timeChargeBonus2 = 6f;
     const float timeChargeBonus3 = 8f;
 
+    // Energy costs for each bonus (starting max energy level : 20)
+    const float energyCostBonus1 = 4f;
+    const float energyCostBonus2 = 6f;
+
     // Highlight square
     public RectTransform bonusHighlight;
 
@@ -20,7 +24,10 @@ public class PlayerBonus : MonoBehaviour {
     public Image chargeBonus1;
     public Image chargeBonus2;
     public Image chargeBonus3;
-    
+
+    // slider for the bullet energy/xp
+    public Image energySlider;
+
     // Max size for the bonus gauge square : when reached, the bonus is fully reloaded
     public float maxGaugeSize = 40;
 
@@ -30,6 +37,12 @@ public class PlayerBonus : MonoBehaviour {
     float timerBonus1;
     float timerBonus2;
     float timerBonus3;
+
+    // boolean to know if enhanced weapon bonus is in use
+    public bool bonus3InUse;
+
+    // To interact with the currentEnergy, so only one script updates the energySlider
+    PlayerShooting playerShooting;
 
     int bonusID;
 
@@ -42,6 +55,8 @@ public class PlayerBonus : MonoBehaviour {
         timerBonus2 = 0;
         timerBonus3 = 0;
 
+        playerShooting = GetComponentInChildren<PlayerShooting>();
+
         // Bonus gauges start empty
         chargeBonus1.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0f);
         chargeBonus2.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0f);
@@ -50,6 +65,8 @@ public class PlayerBonus : MonoBehaviour {
         chargeBonus1.color = new Color32(255, 255, 0, 100);
         chargeBonus2.color = new Color32(255, 255, 0, 100);
         chargeBonus3.color = new Color32(255, 255, 0, 100);
+        
+        bonus3InUse = false;
     }
 
 
@@ -61,13 +78,17 @@ public class PlayerBonus : MonoBehaviour {
         timer += t;
         timerBonus1 += t;
         timerBonus2 += t;
-        timerBonus3 += t;
+
+        if (!bonus3InUse)
+        {
+            timerBonus3 += t;
+        } 
 
         if (Input.GetKeyDown("a") && timer > timeBetweenWeaponChange) //  Next bonus
         {
             NextBonus();
         }
-        if (Input.GetKeyDown("f")) //  Use selected bonus
+        if (Input.GetButtonDown("Fire2")) //  Use selected bonus
         {
             UseBonus(bonusID);
         }
@@ -134,13 +155,21 @@ public class PlayerBonus : MonoBehaviour {
         }
 
         // Bonus 3 = Enhanced gun
+        
         if (timerBonus3 >= timeChargeBonus3)
         {
             chargeBonus3.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, maxGaugeSize);
             chargeBonus3.color = new Color32(0, 200, 255, 115);
-        } else
+        } 
+        else
         {
-            heightBonus3 = maxGaugeSize * timerBonus3 / timeChargeBonus3;
+            if (!bonus3InUse) // doesn't reload if the player is using it
+            {
+                heightBonus3 = maxGaugeSize * timerBonus3 / timeChargeBonus3;
+            } else
+            {
+                heightBonus3 = 0;
+            }
             chargeBonus3.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, heightBonus3);
             chargeBonus3.color = new Color32(255, 255, 0, 100);
         }
@@ -151,26 +180,46 @@ public class PlayerBonus : MonoBehaviour {
         switch (selectedBonus)
         {
             case 0: // Shield
-                // Add code or function to generate a shield
+                    // Add code or function to generate a shield
                 if (timerBonus1 > timeChargeBonus1)
                 {
-                    timerBonus1 = 0f;
+                    if (playerShooting.currentEnergy > energyCostBonus1)
+                    {
+                        timerBonus1 = 0f;
+                        playerShooting.currentEnergy -= energyCostBonus1;
+                        // add bonus effect
+                    } else
+                    {
+                        // add error feedback, so the player knows he lacks energy
+                    }
                 }
                 break;
 
-            case 1: // Shield
-                // Add code or function to generate a shield
+            case 1: // Electric impulse
+                    // Add code or function to generate an electric impulse
                 if (timerBonus2 > timeChargeBonus2)
                 {
-                    timerBonus2 = 0f;
+                    if (playerShooting.currentEnergy > energyCostBonus2)
+                    {
+                        timerBonus2 = 0f;
+                        playerShooting.currentEnergy -= energyCostBonus2;
+                        // add bonus effect
+                    }
+                    else
+                    {
+                        // add error feedback, so the player knows he lacks energy
+                    }
                 }
                 break;
 
-            case 2: // Shield
-                // Add code or function to generate a shield
+            case 2: // Enhanced weapon
+                    // Add code or function to enhance fire rate and fire power
+
+                bonus3InUse = false;
                 if (timerBonus3 > timeChargeBonus3)
                 {
                     timerBonus3 = 0f;
+                    bonus3InUse = true;
                 }
                 break;
 

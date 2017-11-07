@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 136731426154317618}
   - component: {fileID: 82078299069604368}
   - component: {fileID: 114072487637605324}
+  - component: {fileID: 114934600025428208}
   m_Layer: 0
   m_Name: RobotPlayer
   m_TagString: Player
@@ -1074,6 +1075,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   movementRelative: 0
+--- !u!114 &114934600025428208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1610488002436274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229a2a65a85d20e4bbe5aa45cae5c696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenWeaponChange: 0.05
+  bonusHighlight: {fileID: 0}
+  chargeBonus1: {fileID: 0}
+  chargeBonus2: {fileID: 0}
+  chargeBonus3: {fileID: 0}
+  energySlider: {fileID: 0}
+  maxGaugeSize: 40
+  bonus3InUse: 0
 --- !u!136 &136731426154317618
 CapsuleCollider:
   m_ObjectHideFlags: 1
