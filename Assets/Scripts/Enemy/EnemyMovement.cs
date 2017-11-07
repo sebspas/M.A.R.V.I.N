@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
     Transform player;
     //PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
-    UnityEngine.AI.NavMeshAgent nav;
+    public UnityEngine.AI.NavMeshAgent nav;
 
 
     void Awake()

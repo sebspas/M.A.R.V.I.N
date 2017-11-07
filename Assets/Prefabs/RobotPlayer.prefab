@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 114134772355612730}
   - component: {fileID: 136731426154317618}
   - component: {fileID: 82078299069604368}
+  - component: {fileID: 114072487637605324}
   m_Layer: 0
   m_Name: RobotPlayer
   m_TagString: Player
@@ -1017,6 +1018,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114072487637605324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1610488002436274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd012b227302a5a42a30bc7f5d95118c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  healthSlider: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: b24ae5c93276c4616856c1f0fb47e615, type: 3}
+  hurtClip: {fileID: 8300000, guid: 0426027984d734e7fba2fe886ef21380, type: 3}
 --- !u!114 &114134772355612730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1030,8 +1047,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenBullet: 0.15
   timeToGoBackToIdle: 0.9
-  proj: {fileID: 1329667688424972, guid: 91919c7927ea44d4c98459c270808c55, type: 2}
+  proj:
+  - {fileID: 1811228827102288, guid: 92e4914b1a155f943a2f79f24f47466f, type: 2}
+  - {fileID: 1553782932227686, guid: 98c853c8ac0dba34386d57fcfecb6c37, type: 2}
+  - {fileID: 1349997331834966, guid: 020bb9a12510f6640aee851cc7bd9672, type: 2}
+  - {fileID: 1939240370481064, guid: 01fbc6d3cc27b4b4ea5f614fcbc72274, type: 2}
+  currentWeapon: 0
+  energyRegenTime: 0.1
+  energyRegen: 0.2
+  energyMax: 20
+  currentEnergy: 20
+  energySlider: {fileID: 0}
   gunRightArm: {fileID: 1099828321575250}
+  laser: {fileID: 8300000, guid: b7aa833824d785a4bbaa982dbbc0f45b, type: 3}
   bulletSpeed: 500
 --- !u!114 &114883833820761946
 MonoBehaviour:
