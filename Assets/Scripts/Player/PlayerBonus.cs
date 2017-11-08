@@ -9,9 +9,9 @@ public class PlayerBonus : MonoBehaviour {
     public float timeBetweenWeaponChange = 0.05f;
 
     // Time to reload each bonus
-    const float timeChargeBonus1 = 4f;
-    const float timeChargeBonus2 = 6f;
-    const float timeChargeBonus3 = 8f;
+    const float timeChargeBonusShield = 6f;
+    const float timeChargeBonusAura = 6f;
+    const float timeChargeBonusBoost = 8f;
 
     // Energy costs for each bonus (starting max energy level : 20)
     const float energyCostBonus1 = 4f;
@@ -34,26 +34,46 @@ public class PlayerBonus : MonoBehaviour {
     // general timer to know the time between two update
     float timer;
     // Timer to know if a bonus can be used or not
-    float timerBonus1;
-    float timerBonus2;
-    float timerBonus3;
+    float timerBonusShield;
+    float timerBonusAura;
+    float timerBonusBoost;
+
+    // Timer to know when to stop the bonus
+    float timerEllapsedTimeShield;
+    float timerEllapsedTimeBoost;
+    float timerEllapsedTimeAura;
+
+    // Duration of each bonus
+    public float timeMaxShield = 4.0f;
+    public float timeMaxEnergyBoost = 3.0f;
+    public float timeMaxAura = 2.5f;
 
     // boolean to know if enhanced weapon bonus is in use
-    public bool bonus3InUse;
+    public bool bonusBoostInUse;
+    public bool bonusShieldInUse;
+    public bool bonusAuraInUse;
 
     // To interact with the currentEnergy, so only one script updates the energySlider
     PlayerShooting playerShooting;
 
-    int bonusID;
+    // Shield power
+    public GameObject shieldPower;
 
+    // Aura power
+    public GameObject auraPower;
+
+    // Boost AttackSpeed
+    public GameObject boostAttackSpeed;
+
+    int bonusID;
 
     void Start()
     {
         timer = 0;
         bonusID = 0;
-        timerBonus1 = 0;
-        timerBonus2 = 0;
-        timerBonus3 = 0;
+        timerBonusShield = 0;
+        timerBonusAura = 0;
+        timerBonusBoost = 0;
 
         playerShooting = GetComponentInChildren<PlayerShooting>();
 
@@ -66,7 +86,8 @@ public class PlayerBonus : MonoBehaviour {
         chargeBonus2.color = new Color32(255, 255, 0, 100);
         chargeBonus3.color = new Color32(255, 255, 0, 100);
         
-        bonus3InUse = false;
+        bonusBoostInUse = false;
+        bonusShieldInUse = false;
     }
 
 
@@ -75,14 +96,60 @@ public class PlayerBonus : MonoBehaviour {
     void Update () {
 
         float t = Time.deltaTime;
-        timer += t;
-        timerBonus1 += t;
-        timerBonus2 += t;
+        timer += t;       
+        timerBonusAura += t;
 
-        if (!bonus3InUse)
+        if (bonusShieldInUse)
         {
-            timerBonus3 += t;
-        } 
+            timerEllapsedTimeShield += t;
+
+            if (timerEllapsedTimeShield > timeMaxShield)
+            {
+                // we cut the anim
+                shieldPower.SetActive(false);
+
+                // we also cut the invulnerability on the player
+                bonusShieldInUse = false;              
+            }
+        } else
+        {
+            timerBonusShield += t;
+        }
+
+        if (bonusAuraInUse)
+        {
+            timerEllapsedTimeAura += t;
+
+            if (timerEllapsedTimeAura > timeMaxAura)
+            {
+                // we cut the anim
+                auraPower.SetActive(false);
+
+                // we also cut the invulnerability on the player
+                bonusAuraInUse = false;
+            }
+        }
+        else
+        {
+            timerBonusAura += t;
+        }
+
+        if (bonusBoostInUse)
+        {            
+            timerEllapsedTimeBoost += t;
+
+            if (timerEllapsedTimeBoost > timeMaxEnergyBoost)
+            {
+                // we cut the anim
+                boostAttackSpeed.SetActive(false);
+
+                // we also cut the invulnerability on the player
+                bonusBoostInUse = false;
+            }
+        }  else
+        {
+            timerBonusBoost += t;
+        }
 
         if (Input.GetKeyDown("a") && timer > timeBetweenWeaponChange) //  Next bonus
         {
@@ -131,41 +198,55 @@ public class PlayerBonus : MonoBehaviour {
         float heightBonus3;
 
         // Bonus 1 = shield
-        if (timerBonus1 >= timeChargeBonus1) 
+        if (timerBonusShield >= timeChargeBonusShield) 
         {
             chargeBonus1.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, maxGaugeSize);
             chargeBonus1.color = new Color32(0, 200, 255, 115);
         } else
         {
-            heightBonus1 = maxGaugeSize * timerBonus1 / timeChargeBonus1;
+            if (!bonusShieldInUse) // doesn't reload if the player is using it
+            {
+                heightBonus1 = maxGaugeSize * timerBonusShield / timeChargeBonusShield;
+            }
+            else
+            {
+                heightBonus1 = 0;
+            }           
             chargeBonus1.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, heightBonus1);
             chargeBonus1.color = new Color32(255, 255, 0, 100);
         }
 
-        // Bonus 2 = Electric impulse
-        if (timerBonus2 >= timeChargeBonus2)
+        // Bonus 2 = Aura
+        if (timerBonusAura >= timeChargeBonusAura)
         {
             chargeBonus2.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, maxGaugeSize);
             chargeBonus2.color = new Color32(0, 200, 255, 115);
         } else
         {
-            heightBonus2 = maxGaugeSize * timerBonus2 / timeChargeBonus2;
+            if (!bonusAuraInUse) // doesn't reload if the player is using it
+            {
+                heightBonus2 = maxGaugeSize * timerBonusAura / timeChargeBonusAura;
+            }
+            else
+            {
+                heightBonus2 = 0;
+            }           
             chargeBonus2.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, heightBonus2);
             chargeBonus2.color = new Color32(255, 255, 0, 100);
         }
 
         // Bonus 3 = Enhanced gun
         
-        if (timerBonus3 >= timeChargeBonus3)
+        if (timerBonusBoost >= timeChargeBonusBoost)
         {
             chargeBonus3.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, maxGaugeSize);
             chargeBonus3.color = new Color32(0, 200, 255, 115);
         } 
         else
         {
-            if (!bonus3InUse) // doesn't reload if the player is using it
+            if (!bonusBoostInUse) // doesn't reload if the player is using it
             {
-                heightBonus3 = maxGaugeSize * timerBonus3 / timeChargeBonus3;
+                heightBonus3 = maxGaugeSize * timerBonusBoost / timeChargeBonusBoost;
             } else
             {
                 heightBonus3 = 0;
@@ -181,13 +262,21 @@ public class PlayerBonus : MonoBehaviour {
         {
             case 0: // Shield
                     // Add code or function to generate a shield
-                if (timerBonus1 > timeChargeBonus1)
+                if (timerBonusShield > timeChargeBonusShield)
                 {
                     if (playerShooting.currentEnergy > energyCostBonus1)
                     {
-                        timerBonus1 = 0f;
+                        timerBonusShield = 0f;
                         playerShooting.currentEnergy -= energyCostBonus1;
+
                         // add bonus effect
+                        bonusShieldInUse = true;
+
+                        // apply the animation
+                        shieldPower.SetActive(true);
+
+                        // we set to 0 the time of use of the shield
+                        timerEllapsedTimeShield = 0;
                     } else
                     {
                         // add error feedback, so the player knows he lacks energy
@@ -195,15 +284,22 @@ public class PlayerBonus : MonoBehaviour {
                 }
                 break;
 
-            case 1: // Electric impulse
-                    // Add code or function to generate an electric impulse
-                if (timerBonus2 > timeChargeBonus2)
+            case 1: // Electric aura
+                    // Add code or function to generate an aura
+                if (timerBonusAura > timeChargeBonusAura)
                 {
                     if (playerShooting.currentEnergy > energyCostBonus2)
                     {
-                        timerBonus2 = 0f;
+                        timerBonusAura = 0f;
                         playerShooting.currentEnergy -= energyCostBonus2;
                         // add bonus effect
+                        bonusAuraInUse = true;
+
+                        // apply the animation
+                        auraPower.SetActive(true);
+
+                        // we set to 0 the time of use of the shield
+                        timerEllapsedTimeAura = 0;
                     }
                     else
                     {
@@ -215,11 +311,14 @@ public class PlayerBonus : MonoBehaviour {
             case 2: // Enhanced weapon
                     // Add code or function to enhance fire rate and fire power
 
-                bonus3InUse = false;
-                if (timerBonus3 > timeChargeBonus3)
+                bonusBoostInUse = false;
+                if (timerBonusBoost > timeChargeBonusBoost)
                 {
-                    timerBonus3 = 0f;
-                    bonus3InUse = true;
+                    timerBonusBoost = 0f;
+                    bonusBoostInUse = true;
+
+                    // apply the effect                    
+                    boostAttackSpeed.SetActive(true);
                 }
                 break;
 

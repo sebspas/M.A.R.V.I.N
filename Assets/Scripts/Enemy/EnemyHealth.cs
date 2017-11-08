@@ -76,6 +76,24 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        if (isDead)
+            return;
+
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
+        else
+        {
+            anim.SetTrigger("EnemyHurt");
+        }
+
+    }
+
 
     void Death()
     {
