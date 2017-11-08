@@ -80,12 +80,6 @@ public class PlayerShooting : MonoBehaviour {
             anim.SetBool("Right Aim", false);           
         }
 
-        // disable bonus 3 if it is set and we run out of energy
-        if (playerBonus.bonusBoostInUse && currentEnergy <= proj[currentWeapon].GetComponent<BulletScript>().energyCost)
-        {
-            playerBonus.bonusBoostInUse = false;
-        }
-
         // we increase the energy if neeeded
         if (timerEnergy > energyRegenTime)
         {

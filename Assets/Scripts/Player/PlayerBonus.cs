@@ -45,7 +45,7 @@ public class PlayerBonus : MonoBehaviour {
 
     // Duration of each bonus
     public float timeMaxShield = 4.0f;
-    public float timeMaxEnergyBoost = 3.0f;
+    public float timeMaxEnergyBoost = 5.0f;
     public float timeMaxAura = 2.5f;
 
     // boolean to know if enhanced weapon bonus is in use
@@ -312,8 +312,12 @@ public class PlayerBonus : MonoBehaviour {
                     // Add code or function to enhance fire rate and fire power
 
                 bonusBoostInUse = false;
+                // we cut the anim
+                boostAttackSpeed.SetActive(false);
+
                 if (timerBonusBoost > timeChargeBonusBoost)
                 {
+                    timerEllapsedTimeBoost = 0f;
                     timerBonusBoost = 0f;
                     bonusBoostInUse = true;
 
