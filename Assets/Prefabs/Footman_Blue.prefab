@@ -345,8 +345,8 @@ GameObject:
   - component: {fileID: 195506041713535528}
   - component: {fileID: 114844649502139614}
   - component: {fileID: 114808229992555942}
-  - component: {fileID: 82895071002093078}
   - component: {fileID: 114450445041368038}
+  - component: {fileID: 82895071002093078}
   m_Layer: 0
   m_Name: Footman_Blue
   m_TagString: Enemy
@@ -958,6 +958,7 @@ MonoBehaviour:
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &114808229992555942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -983,6 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2112114bbaaec594f9d13802ed42fca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nav: {fileID: 0}
 --- !u!135 &135871144758092716
 SphereCollider:
   m_ObjectHideFlags: 1
