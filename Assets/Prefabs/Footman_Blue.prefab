@@ -474,7 +474,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1890859303995602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9554596, y: 0, z: 2.4528198}
+  m_LocalPosition: {x: 2.9554596, y: 0, z: 10}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4071582150380856}
@@ -958,7 +958,9 @@ MonoBehaviour:
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 0}
+  xpGiven: 5
   anim: {fileID: 0}
+  fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114808229992555942
 MonoBehaviour:
   m_ObjectHideFlags: 1

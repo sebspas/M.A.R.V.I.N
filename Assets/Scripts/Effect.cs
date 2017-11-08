@@ -12,6 +12,8 @@ public class Effect {
     // the player health for the life still Earth
     PlayerHealth playerHealth;
 
+    GameObject effectAnim;
+
     // general timer to know the time between two update
     float timer;
     // timer to know when an effect is over
@@ -79,6 +81,9 @@ public class Effect {
                     enemyMovement.nav.speed += effectValue;
                 }
 
+                // we destroy the fire or ice anim
+                GameObject.Destroy(effectAnim);
+
                 // reset all the variable
                 effectValue = 0;
                 effectTime = 0;
@@ -108,6 +113,9 @@ public class Effect {
                 effectValue = bullet.burningDamage;
                 effectTime = bullet.burningTotalTime;
                 effectInterval = bullet.burningInterval;
+                // we add the fire animation to the enemy
+                effectAnim = GameObject.Instantiate(enemyHealth.fireEffect, enemyHealth.transform.position, Quaternion.identity) as GameObject;
+                effectAnim.transform.parent = enemyHealth.gameObject.transform;
                 break;
             case BulletScript.BulletType.Ice:
                 enemyHealth.currentHealth -= bullet.damagePerShot;

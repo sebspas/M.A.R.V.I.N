@@ -22,6 +22,9 @@ public class EnemyHealth : MonoBehaviour
     // animator to control animation
     public Animator anim;
 
+    // fire effect for this monster (to define in the editor)
+    public GameObject fireEffect;
+
     AudioSource enemyAudio;
     CapsuleCollider capsuleCollider;
     bool isDead;
