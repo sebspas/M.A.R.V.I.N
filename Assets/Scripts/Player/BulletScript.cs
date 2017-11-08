@@ -57,6 +57,16 @@ public class BulletScript : MonoBehaviour {
                 enemyHealth.TakeDamage(this);
             }
         }
+        else if (other.tag == "Firewall" && typeOfBullet==BulletType.Ice)
+        {
+            ZoneWall zoneWall = other.GetComponent<ZoneWall>();
+            zoneWall.DesactivateWall();
+        }
+        else if (other.tag == "Plantwall" && typeOfBullet == BulletType.Fire)
+        {
+            ZoneWall zoneWall = other.GetComponent<ZoneWall>();
+            zoneWall.DesactivateWall();
+        }
         else
         {
             // for other objects
