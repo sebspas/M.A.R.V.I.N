@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114008286100817262}
   m_Layer: 0
   m_Name: Grunt
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -489,7 +489,7 @@ Transform:
   m_GameObject: {fileID: 1039270861408032}
   m_LocalRotation: {x: -0, y: -0.99805135, z: -0, w: -0.06239819}
   m_LocalPosition: {x: 10.314114, y: 0, z: 7.8621154}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 4914381166523852}
   - {fileID: 4994081836128686}
@@ -872,12 +872,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 40
+  startingHealth: 80
   currentHealth: 0
   sinkSpeed: 2.5
   scoreValue: 15
   deathClip: {fileID: 0}
+  xpGiven: 2
   anim: {fileID: 0}
+  fireEffect: {fileID: 0}
 --- !u!114 &114612719112300008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -889,7 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d602b99da6049e4d80eb14df28ce715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 0.5
   attackDamage: 30
   numberOfAttacks: 2
 --- !u!114 &114722129106124436
@@ -911,7 +913,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1039270861408032}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2.3
@@ -925,8 +927,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.5
-  m_Height: 1.2
+  m_Radius: 1.8
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!137 &137299584477948870
