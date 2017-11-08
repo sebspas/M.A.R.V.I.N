@@ -135,6 +135,7 @@ public class Effect {
                     playerHealth.currentHealth = playerHealth.startingHealth;
                 }
                 playerHealth.healthSlider.transform.localScale = new Vector3((playerHealth.currentHealth / playerHealth.startingHealth), 1, 1);
+                // play the health aura on the player for one second
                 break;
 
             default:

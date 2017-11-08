@@ -68,7 +68,8 @@ public class PlayerShooting : MonoBehaviour {
         timerEnergy += Time.deltaTime;
 
         // if we clicck and we have enough energy for the selected bullet
-        if (Input.GetButton("Fire1") && timer > timeBetweenBullet && currentEnergy > proj[currentWeapon].GetComponent<BulletScript>().energyCost)
+        bool isFirerateOk = (timer > timeBetweenBullet && !playerBonus.bonusBoostInUse) || (timer > timeBetweenBullet / 2 && playerBonus.bonusBoostInUse); 
+        if (Input.GetButton("Fire1") && isFirerateOk && currentEnergy > proj[currentWeapon].GetComponent<BulletScript>().energyCost)
         {
             // then we shoot
             Shoot();
@@ -80,9 +81,9 @@ public class PlayerShooting : MonoBehaviour {
         }
 
         // disable bonus 3 if it is set and we run out of energy
-        if (playerBonus.bonus3InUse && currentEnergy <= proj[currentWeapon].GetComponent<BulletScript>().energyCost)
+        if (playerBonus.bonusBoostInUse && currentEnergy <= proj[currentWeapon].GetComponent<BulletScript>().energyCost)
         {
-            playerBonus.bonus3InUse = false;
+            playerBonus.bonusBoostInUse = false;
         }
 
         // we increase the energy if neeeded
@@ -92,7 +93,7 @@ public class PlayerShooting : MonoBehaviour {
             timerEnergy = 0;
 
             // if we are not using bonus 3
-            if (!playerBonus.bonus3InUse) 
+            if (!playerBonus.bonusBoostInUse) 
             {
                 // we regen the energy
                 if (currentEnergy + energyRegen <= energyMax)
