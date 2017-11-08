@@ -108,7 +108,7 @@ public class PlayerShooting : MonoBehaviour {
             // we update the energy slider
             energySlider.transform.localScale = new Vector3((currentEnergy / energyMax), 1, 1);
         
-            Debug.Log(currentEnergy + "/" + energyMax);
+            //Debug.Log(currentEnergy + "/" + energyMax);
         }
     }
 
