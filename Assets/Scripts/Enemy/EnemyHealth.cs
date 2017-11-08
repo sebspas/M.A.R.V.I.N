@@ -2,15 +2,24 @@
 
 public class EnemyHealth : MonoBehaviour
 {
+    // starting health of the monster
     public int startingHealth = 30;
     public int currentHealth;
+
     public float sinkSpeed = 2.5f;
     public int scoreValue = 10;
     public AudioClip deathClip;
 
+    // the player shooting script (to add the exp)
+    PlayerShooting playerShooting;
+
+    // amount of xp given when we kill the monster
+    public int xpGiven = 2;
+
+    // manager to apply the different effect
     Effect currentEffect;
 
-
+    // animator to control animation
     public Animator anim;
 
     AudioSource enemyAudio;
@@ -25,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
         enemyAudio = GetComponent<AudioSource>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         currentHealth = startingHealth;
+        playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
 
         EnemyMovement enemyMovement = GetComponentInParent<EnemyMovement>();
         currentEffect = new Effect(this, enemyMovement);
@@ -72,6 +82,11 @@ public class EnemyHealth : MonoBehaviour
         capsuleCollider.isTrigger = true;
 
         anim.SetBool("EnemyDead", true);
+
+        // we give the amount of xp to the player max energy
+        playerShooting.energyMax += xpGiven;
+        // we also give this energy to the current amount of energy of the player
+        playerShooting.currentEnergy += xpGiven;
 
         //enemyAudio.clip = deathClip;
         //enemyAudio.Play();
