@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     AudioSource playerAudio;
     PlayerMovement playerMovement;
     PlayerShooting playerShooting;
+    PlayerBonus playerBonus;
     bool isDead;
     bool damaged = false;
 
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
         playerShooting = GetComponentInChildren<PlayerShooting>();
+        playerBonus = GetComponentInChildren<PlayerBonus>();
         currentHealth = startingHealth;
     }
 
@@ -44,6 +46,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        if (playerBonus.bonusShieldInUse)
+        {
+            return;
+        }
+
         damaged = true;
         currentHealth -= amount;
 
