@@ -853,7 +853,7 @@ Animator:
   m_GameObject: {fileID: 1039270861408032}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 406486edf02d8d74da3b2ca225e21254, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8aba7a975cc08dd4fb1345966135537b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 74ec6e65d622b9a4c8c909057a0cf19e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -916,8 +916,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.3
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!136 &136627397412067430
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -927,8 +927,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.8
-  m_Height: 1.5
+  m_Radius: 1
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!137 &137299584477948870
