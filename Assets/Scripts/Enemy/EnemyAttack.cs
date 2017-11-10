@@ -9,7 +9,6 @@ public class EnemyAttack : MonoBehaviour
     public int numberOfAttacks = 2;
     private int chooseAttack = 0;
 
-
     Animator anim;
     GameObject player;
     PlayerHealth playerHealth;
@@ -29,7 +28,7 @@ public class EnemyAttack : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player && !enemyHealth.isEnemyDead())
         {
             playerInRange = true;
             anim.SetBool("PlayerInRange", true);
@@ -39,7 +38,7 @@ public class EnemyAttack : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player && !enemyHealth.isEnemyDead())
         {
             playerInRange = false;
             anim.SetBool("PlayerInRange", false);
@@ -58,6 +57,8 @@ public class EnemyAttack : MonoBehaviour
 
         if (playerHealth.currentHealth <= 0)
         {
+            // so it doesn't keep attacking it
+            anim.SetBool("PlayerInRange", false);
             anim.SetTrigger("PlayerDead");
         }
     }

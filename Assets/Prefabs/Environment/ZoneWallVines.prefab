@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4636484706967682}
   - component: {fileID: 65262469240596748}
-  - component: {fileID: 114547939827895380}
+  - component: {fileID: 114768044655188908}
   m_Layer: 0
   m_Name: WallEffects
   m_TagString: Plantwall
@@ -513,7 +513,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114547939827895380
+--- !u!114 &114768044655188908
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -526,7 +526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wall: {fileID: 1200873295484114}
   effect: {fileID: 1913652241206922}
-  timeToFade: 2
+  timeToFadeWall: 3
+  additionalEffectTime: 0
 --- !u!198 &198032758157872644
 ParticleSystem:
   m_ObjectHideFlags: 1

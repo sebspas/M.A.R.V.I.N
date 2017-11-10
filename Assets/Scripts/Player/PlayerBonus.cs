@@ -26,7 +26,7 @@ public class PlayerBonus : MonoBehaviour {
     public Image chargeBonus3;
 
     // slider for the bullet energy/xp
-    public Image energySlider;
+    //public Image energySlider;
 
     // Max size for the bonus gauge square : when reached, the bonus is fully reloaded
     public float maxGaugeSize = 40;

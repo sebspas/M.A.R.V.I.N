@@ -4,22 +4,22 @@ using System.Collections;
 public class EnemyMovement : MonoBehaviour
 {
     Transform player;
-    //PlayerHealth playerHealth;
+    PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
-    public UnityEngine.AI.NavMeshAgent nav;
+    UnityEngine.AI.NavMeshAgent nav;
 
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        //playerHealth = player.GetComponent<PlayerHealth>();
+        playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     void Update()
     {
-        if (enemyHealth.currentHealth > 0 /* && playerHealth.currentHealth > 0 */)
+        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
         {
             nav.SetDestination(player.position);
             this.transform.LookAt(player);
@@ -28,5 +28,10 @@ public class EnemyMovement : MonoBehaviour
         {
             nav.enabled = false;
         }
+    }
+
+    public void ChangeNavSpeed(int amount)
+    {
+        nav.speed += amount;
     }
 }

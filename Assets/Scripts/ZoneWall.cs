@@ -6,7 +6,8 @@ public class ZoneWall : MonoBehaviour {
 
     public GameObject wall;
     public GameObject effect;
-    public float timeToFade = 2f;
+    public float timeToFadeWall = 2f;
+    public float additionalEffectTime = 0f;
     BoxCollider invisibleWall;
 
 	// Use this for initialization
@@ -17,14 +18,16 @@ public class ZoneWall : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (wall == null)
+        {
+            invisibleWall.isTrigger = true;
+        }
 	}
 
     public void DesactivateWall()
     {
-        Destroy(wall, timeToFade);
+        Destroy(wall, timeToFadeWall);
         effect.SetActive(true);
-        Destroy(effect, timeToFade+1f);
-        invisibleWall.isTrigger = true;
+        Destroy(effect, timeToFadeWall + additionalEffectTime);
     }
 }

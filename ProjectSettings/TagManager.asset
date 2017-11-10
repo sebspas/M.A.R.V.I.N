@@ -10,6 +10,10 @@ TagManager:
   - EffectTrigger
   - Firewall
   - Plantwall
+  - shield
+  - Explosive
+  - IceWall
+  - Barrelwall
   layers:
   - Default
   - TransparentFX

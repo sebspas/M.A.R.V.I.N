@@ -36,29 +36,31 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (damaged)
-        {
-            anim.SetTrigger("Take Damage");
-            damaged = false;
-        }
+
     }
 
 
     public void TakeDamage(int amount)
     {
-        if (playerBonus.bonusShieldInUse)
+        if (isDead || playerBonus.bonusShieldInUse)
         {
             return;
         }
+        
+        if (currentHealth - amount < 0)
+        {
+            currentHealth = 0;
+            
+        } else
+        {
+            currentHealth -= amount;
+            anim.SetTrigger("Take Damage");            
 
-        damaged = true;
-        currentHealth -= amount;
+            playerAudio.clip = hurtClip;
+            playerAudio.Play();
+        }
 
-        healthSlider.transform.localScale = new Vector3((currentHealth/startingHealth), 1, 1);
-        //healthSlider.value = currentHealth;
-
-        playerAudio.clip = hurtClip;
-        playerAudio.Play();
+        healthSlider.transform.localScale = new Vector3((currentHealth / startingHealth), 1, 1);
 
         if (currentHealth <= 0 && !isDead)
         {

@@ -45,6 +45,9 @@ public class Effect {
         this.enemyHealth = enemy;
         this.enemyMovement = enemyMovement;
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+
+        //set the effect type as none per default at creations
+        effectType = EffectType.none;
     }
 
     // call every frame by the enemyHealth, to apply burning damage or slow, or remove them if the timer is over
@@ -54,19 +57,15 @@ public class Effect {
         timer += Time.deltaTime;
         globalTimer += Time.deltaTime;
 
-
         if (effectType == EffectType.burning)
         {
-
             // if the time between two interval is pass
             if (timer > effectInterval)
             {
-                enemyHealth.currentHealth -= effectValue;
-
                 timer = 0;
                 //TODO apply here the animation
                 // you can apply the animation on the enemy here
-                enemyHealth.anim.SetTrigger("EnemyHurt");
+                enemyHealth.TakeDamage(effectValue);
             }
         }
 
@@ -78,7 +77,7 @@ public class Effect {
                 if (effectType == EffectType.frozen)
                 {
                     // we add back the speed taken
-                    enemyMovement.nav.speed += effectValue;
+                    enemyMovement.ChangeNavSpeed(effectValue);
                 }
 
                 // we destroy the fire or ice anim
@@ -99,16 +98,22 @@ public class Effect {
         }       
     }
 
-    // cal when the enemy with this effect is hurt by a bullet
-    public void getHurt(BulletScript bullet)
+    // call when the enemy with this effect is hurt by a bullet
+    public int getHurt(BulletScript bullet)
     {
+        int damage = 0;
+
         switch (bullet.typeOfBullet)
         {
             case BulletScript.BulletType.Normal:
-                enemyHealth.currentHealth -= bullet.damagePerShot;
+                //enemyHealth.currentHealth -= bullet.damagePerShot;
+                damage = bullet.damagePerShot;
                 break;
+
             case BulletScript.BulletType.Fire:
-                enemyHealth.currentHealth -= bullet.damagePerShot;
+                //enemyHealth.currentHealth -= bullet.damagePerShot;
+                damage = bullet.damagePerShot;
+
                 effectType = EffectType.burning;
                 effectValue = bullet.burningDamage;
                 effectTime = bullet.burningTotalTime;
@@ -117,15 +122,21 @@ public class Effect {
                 effectAnim = GameObject.Instantiate(enemyHealth.fireEffect, enemyHealth.transform.position, Quaternion.identity) as GameObject;
                 effectAnim.transform.parent = enemyHealth.gameObject.transform;
                 break;
+
             case BulletScript.BulletType.Ice:
-                enemyHealth.currentHealth -= bullet.damagePerShot;
+                //enemyHealth.currentHealth -= bullet.damagePerShot;
+                damage = bullet.damagePerShot;
+
                 effectType = EffectType.frozen;
                 effectValue = bullet.frozenSlow;
                 effectTime = bullet.frozenTotalTime;
-                enemyMovement.nav.speed -= bullet.frozenSlow;
+                enemyMovement.ChangeNavSpeed(-bullet.frozenSlow);
                 break;
+
             case BulletScript.BulletType.Earth:
-                enemyHealth.currentHealth -= bullet.damagePerShot;
+                //enemyHealth.currentHealth -= bullet.damagePerShot;
+                damage = bullet.damagePerShot;
+
                 // we make sure that the given life doesn't make the player life go over the maximum
                 if ( (playerHealth.currentHealth+bullet.lifeSteal) <= playerHealth.startingHealth)
                 {
@@ -141,5 +152,7 @@ public class Effect {
             default:
                 break;
         }
+        // amount of damage to be taken
+        return damage;
     }
 }
