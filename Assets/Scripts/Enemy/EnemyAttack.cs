@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public float timeBetweenAttacks = 1f;
+    public float timeBetweenAttacks = 2f;
     public int attackDamage = 10;
 
     public int numberOfAttacks = 2;

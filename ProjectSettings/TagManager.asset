@@ -4,16 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fire
+  - FloatingCrystal
   - Enemy
-  - Interact
-  - EffectTrigger
-  - Firewall
-  - Plantwall
   - shield
-  - Explosive
-  - IceWall
-  - Barrelwall
   layers:
   - Default
   - TransparentFX
@@ -23,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - Floor
+  - 
   - 
   - 
   - 
