@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;
     bool isDead;
     bool isSinking;
+    bool wantSink;
+    float timeBeforeSink = 2.5f;
 
 
     void Awake()
@@ -48,7 +51,11 @@ public class EnemyHealth : MonoBehaviour
     {
         // calculate the effect to apply to the entity
         currentEffect.applyEffects();
-
+        
+        if (wantSink && timeBeforeSink < Time.time)
+        {
+            StartSinking();
+        }
         if (isSinking)
         {
             // Move the enemy down by the sinkSpeed per second.
@@ -84,7 +91,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
 
         if (currentHealth <= 0)
-        {            
+        {
             Death();
         }
         else
@@ -97,6 +104,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
+        print("start dead");
         isDead = true;
 
         // Turn the collider into a trigger so shots can pass through it.
@@ -111,11 +119,15 @@ public class EnemyHealth : MonoBehaviour
 
         //enemyAudio.clip = deathClip;
         //enemyAudio.Play();
-    }
 
+        // Wait Before call the SartSinking method
+        wantSink = true;
+        timeBeforeSink += Time.time;
+    }
 
     public void StartSinking()
     {
+
         print("start sinking");
         // Find and disable the Nav Mesh Agent.
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
@@ -124,7 +136,7 @@ public class EnemyHealth : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
 
         // The enemy should now sink.
-        //isSinking = true;
+        isSinking = true;
 
         // Increase the score by the enemy's score value.
         //ScoreManager.score += scoreValue;
@@ -133,3 +145,5 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject, 1f);
     }
 }
+
+
