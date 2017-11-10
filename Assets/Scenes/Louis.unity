@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -108,256 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 23800000, guid: 91cc76e1f3b15f84b90a1cafe53ec43a, type: 2}
---- !u!1001 &4736298
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (19)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &8123625
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (26)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &133034629
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (22)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &230398388
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &292402005
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (14)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &293423851
 Prefab:
   m_ObjectHideFlags: 0
@@ -395,7 +145,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_Name
@@ -458,136 +208,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &422477336
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 38
-      objectReference: {fileID: 0}
-    - target: {fileID: 114808229992555942, guid: 26c6a31393a43064d8395b92b70f812a,
-        type: 2}
-      propertyPath: timeBetweenAttacks
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114844649502139614, guid: 26c6a31393a43064d8395b92b70f812a,
-        type: 2}
-      propertyPath: nav
-      value: 
-      objectReference: {fileID: 422477337}
-    - target: {fileID: 114450445041368038, guid: 26c6a31393a43064d8395b92b70f812a,
-        type: 2}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 422477338}
-    - target: {fileID: 114450445041368038, guid: 26c6a31393a43064d8395b92b70f812a,
-        type: 2}
-      propertyPath: deathClip
-      value: 
-      objectReference: {fileID: 8300000, guid: bf6b1843abfcd0e4f861d66cc4b0ff62, type: 3}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (16)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!195 &422477337 stripped
-NavMeshAgent:
-  m_PrefabParentObject: {fileID: 195506041713535528, guid: 26c6a31393a43064d8395b92b70f812a,
-    type: 2}
-  m_PrefabInternal: {fileID: 422477336}
---- !u!95 &422477338 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95424269820541558, guid: 26c6a31393a43064d8395b92b70f812a,
-    type: 2}
-  m_PrefabInternal: {fileID: 422477336}
---- !u!1001 &537172586
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (24)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &599337752
 Prefab:
   m_ObjectHideFlags: 0
@@ -633,7 +253,7 @@ Prefab:
     - target: {fileID: 224446562559860600, guid: ca5e23ca8c38c414289367285ce98cd5,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224446562559860600, guid: ca5e23ca8c38c414289367285ce98cd5,
         type: 2}
@@ -754,7 +374,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4190189227242416, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
@@ -789,7 +409,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &764159575
+--- !u!1001 &716903506
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -798,7 +418,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 17
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -806,7 +426,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 16
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -826,11 +446,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_Name
-      value: Footman_Blue (12)
+      value: Footman_Blue (8)
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -849,106 +469,6 @@ Animator:
   m_PrefabParentObject: {fileID: 95424269820541558, guid: 26c6a31393a43064d8395b92b70f812a,
     type: 2}
   m_PrefabInternal: {fileID: 1349262610}
---- !u!1001 &849365513
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (30)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &896216164
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (23)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &917512279
 Prefab:
   m_ObjectHideFlags: 0
@@ -986,7 +506,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_Name
@@ -1036,111 +556,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_Name
       value: Footman_Blue (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1028779168
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1233653340
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (31)
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1186,7 +606,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4945847287195660, guid: 3e08411e010b874459717770aa283882, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 218918574724121646, guid: 3e08411e010b874459717770aa283882,
         type: 2}
@@ -1298,7 +718,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114808229992555942, guid: 26c6a31393a43064d8395b92b70f812a,
         type: 2}
@@ -1364,161 +784,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_Name
       value: Footman_Blue (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1364512465
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (29)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1367851049
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (25)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1387849814
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (10)
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1564,111 +834,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_Name
       value: Footman_Blue (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1486109947
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (15)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1487388745
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (28)
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1725,385 +895,47 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 599337752}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1001 &1714996719
+--- !u!1001 &1833837667
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
+    - target: {fileID: 4880944688548802, guid: 092bb2161a9a6d942b73509abf5acf9a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: -5
       objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
+    - target: {fileID: 4880944688548802, guid: 092bb2161a9a6d942b73509abf5acf9a, type: 2}
       propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880944688548802, guid: 092bb2161a9a6d942b73509abf5acf9a, type: 2}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
+    - target: {fileID: 4880944688548802, guid: 092bb2161a9a6d942b73509abf5acf9a, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
+    - target: {fileID: 4880944688548802, guid: 092bb2161a9a6d942b73509abf5acf9a, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
+    - target: {fileID: 4880944688548802, guid: 092bb2161a9a6d942b73509abf5acf9a, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
+    - target: {fileID: 4880944688548802, guid: 092bb2161a9a6d942b73509abf5acf9a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 114808229992555942, guid: 26c6a31393a43064d8395b92b70f812a,
-        type: 2}
-      propertyPath: timeBetweenAttacks
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114844649502139614, guid: 26c6a31393a43064d8395b92b70f812a,
-        type: 2}
-      propertyPath: nav
-      value: 
-      objectReference: {fileID: 1714996720}
-    - target: {fileID: 114450445041368038, guid: 26c6a31393a43064d8395b92b70f812a,
-        type: 2}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 1714996721}
-    - target: {fileID: 114450445041368038, guid: 26c6a31393a43064d8395b92b70f812a,
-        type: 2}
-      propertyPath: deathClip
-      value: 
-      objectReference: {fileID: 8300000, guid: bf6b1843abfcd0e4f861d66cc4b0ff62, type: 3}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!195 &1714996720 stripped
-NavMeshAgent:
-  m_PrefabParentObject: {fileID: 195506041713535528, guid: 26c6a31393a43064d8395b92b70f812a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1714996719}
---- !u!95 &1714996721 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95424269820541558, guid: 26c6a31393a43064d8395b92b70f812a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1714996719}
---- !u!1001 &1724772488
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
+    - target: {fileID: 4880944688548802, guid: 092bb2161a9a6d942b73509abf5acf9a, type: 2}
       propertyPath: m_RootOrder
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (32)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1753173096
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (21)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1759114876
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (18)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1759979862
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (27)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1814846663
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (20)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1898171331
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 092bb2161a9a6d942b73509abf5acf9a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1947425514
 Prefab:
@@ -2142,61 +974,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_Name
       value: Footman_Blue (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &2052582147
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890859303995602, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
-      propertyPath: m_Name
-      value: Footman_Blue (17)
       objectReference: {fileID: 0}
     - target: {fileID: 4188833172369990, guid: 26c6a31393a43064d8395b92b70f812a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y

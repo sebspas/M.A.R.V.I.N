@@ -73,7 +73,7 @@ public class BulletScript : MonoBehaviour {
         }
 
         //print(other.tag);
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "FloatingCrystal")
         {
             // don't destroy it when it's the player shooting (or the bullet will never go out of the player collider...)
         } else
