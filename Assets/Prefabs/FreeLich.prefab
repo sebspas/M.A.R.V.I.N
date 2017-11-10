@@ -811,7 +811,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2112114bbaaec594f9d13802ed42fca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nav: {fileID: 0}
+  nav: {fileID: 195528249471535248}
 --- !u!114 &114946615757682302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -875,8 +875,8 @@ MonoBehaviour:
   scoreValue: 10
   deathClip: {fileID: 0}
   xpGiven: 2
-  anim: {fileID: 0}
-  fireEffect: {fileID: 0}
+  anim: {fileID: 95880418097428460}
+  fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!135 &135572930360047516
 SphereCollider:
   m_ObjectHideFlags: 1
