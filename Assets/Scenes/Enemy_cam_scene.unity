@@ -156,10 +156,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1065242708617612, guid: fb3e29c65682add41857f21203e815e7, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb3e29c65682add41857f21203e815e7, type: 2}
   m_IsPrefabParent: 0
@@ -202,21 +198,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114072487637605324, guid: 993ed14a14ed13b4ab9a07968091351e,
-        type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 325192482}
-    - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
-        type: 2}
-      propertyPath: bonusHighlight
-      value: 
-      objectReference: {fileID: 169195089}
-    - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
+    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
       propertyPath: energySlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1483211935}
     - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
       propertyPath: chargeBonus1
@@ -232,20 +218,16 @@ Prefab:
       propertyPath: chargeBonus3
       value: 
       objectReference: {fileID: 2097020319}
-    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
+    - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
-      propertyPath: energySlider
+      propertyPath: bonusHighlight
       value: 
-      objectReference: {fileID: 1483211935}
-    - target: {fileID: 1028481881081840, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 135181363519354512, guid: 993ed14a14ed13b4ab9a07968091351e,
+      objectReference: {fileID: 169195089}
+    - target: {fileID: 114072487637605324, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 325192482}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
   m_IsPrefabParent: 0
@@ -760,10 +742,6 @@ Prefab:
     - target: {fileID: 4175107143565796, guid: a18985677c1fac744bd65c1268c3f247, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4175107143565796, guid: a18985677c1fac744bd65c1268c3f247, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -159.729
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a18985677c1fac744bd65c1268c3f247, type: 2}
