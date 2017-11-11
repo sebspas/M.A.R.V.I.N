@@ -25,7 +25,7 @@ public class CrystalMining : MonoBehaviour {
     SphereCollider sc;
 
     // the amont of crystal still to mine
-    public float remainingCrystal = 10f;
+    public float remainingCrystal = 100f;
 
     // timer to mine
     float miningSpeed;
