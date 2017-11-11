@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CrystalMining : MonoBehaviour {
 
@@ -21,17 +22,41 @@ public class CrystalMining : MonoBehaviour {
     public GameObject[] allEnemies;
     public GameObject fire;
 
+    // all the position to spawn ennemies on
+    public GameObject[] spawnPoints;
+    public GameObject[] listSpawnableEnnemies;
+
     // the crystal sphere collider
     SphereCollider sc;
 
     // the amont of crystal still to mine
     public float remainingCrystal = 100f;
+    private float totalToMine;
+    private float minnedCrystal = 0f;
+
+    // spawning speed by wave
+    public float spawningSpeed = 10f;
+
+    // number of basic ennemie to spawn by wace
+    int numberOfBasicEnnemies = 2;
+
+    // number of distance ennemies to spawn by wave
+    int numberOfDistanceEnnemies = 1;
+
+    // timer for the spawning
+    float timerSpawning = 0f;
 
     // timer to mine
     float miningSpeed;
     // The amont of cristal per timeBetweenCristal the player is mining
     float miningAmont;
     bool isEmpty;
+
+    // progress bar for the crystal mining
+    public Image crystalProgress;
+
+    // public UI group to activate when we start mining 
+    public GameObject uiCrystal;
 
 
     // Use this for initialization
@@ -42,6 +67,7 @@ public class CrystalMining : MonoBehaviour {
 
         miningAmont = playerMining.miningAmont;
         miningSpeed = playerMining.miningSpeed;
+        totalToMine = remainingCrystal;
 
         // Create the sphere collider, radius = 2, isTrigger = true (we can go through it)
         sc = gameObject.GetComponent<SphereCollider>() as SphereCollider;
@@ -49,20 +75,25 @@ public class CrystalMining : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-
-        // we update the timer
-        timer += Time.deltaTime;
-
+	void Update () {    
         if (!isEmpty)
         {
+            // we update the timer
+            timer += Time.deltaTime;
+           
             if (playerInRange)
             {
+                timerSpawning += Time.deltaTime;
+                if (timerSpawning > spawningSpeed)
+                {
+                    SpawnEnnemies();
+                }          
+
                 playerMining.isMining = true;
                 if (timer > miningSpeed)
                 {
                     Mine();
-                }
+                }                
             }
             else
             {
@@ -81,7 +112,7 @@ public class CrystalMining : MonoBehaviour {
     {
         if (sc.gameObject == player)
         {
-            playerInRange = true;
+            playerInRange = true;          
         }
     }
 
@@ -93,24 +124,55 @@ public class CrystalMining : MonoBehaviour {
         }
     }
 
+    void SpawnEnnemies()
+    {
+        Debug.Log("Spawn Ennemie");
+        // reset the timer
+        timerSpawning = 0f;
+
+        for (int i = 0; i < numberOfBasicEnnemies; i++)
+        {
+            int spawnPointPos = Random.Range(0, spawnPoints.Length-1);
+
+            GameObject ennemie = (GameObject)Instantiate(listSpawnableEnnemies[0], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
+            ennemie.gameObject.name = "Ennemie_Basic_" + i;
+        }
+
+        for (int i = 0; i < numberOfDistanceEnnemies; i++)
+        {
+            int spawnPointPos = Random.Range(0, spawnPoints.Length);
+
+            GameObject ennemie = (GameObject)Instantiate(listSpawnableEnnemies[1], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
+            ennemie.gameObject.name = "Ennemie_Distance_" + i;
+        }
+
+    }
+
     void Mine ()
     {
+        uiCrystal.SetActive(true);
 
         if (timer > miningSpeed)
         {
             remainingCrystal -= miningAmont;
+            minnedCrystal += miningAmont;
             timer = 0f;
+
+            // make the progress bar move
+            crystalProgress.transform.localScale = new Vector3((minnedCrystal / totalToMine), 1, 1);
         }
 
         // we launch the floating crystal
         GameObject floatingCrystal = (GameObject)Instantiate(flyingCrystal, transform.position, new Quaternion(0,0,0,0));
         floatingCrystal.gameObject.name = "FloatingCrystal";
-
     }
 
     void endOfCrystal()
     {
+
         isEmpty = true;
+
+        uiCrystal.SetActive(false);
 
         allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in allEnemies)
