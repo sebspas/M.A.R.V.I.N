@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerWeapon : MonoBehaviour {
 
@@ -12,12 +13,32 @@ public class PlayerWeapon : MonoBehaviour {
     public GameObject weaponArrow;
     public RectTransform weaponHighlight;
 
+    // The 4 weapon images and the 'unknown weapon' image
+    public Sprite electricWeapon;
+    public Sprite iceWeapon;
+    public Sprite fireWeapon;
+    public Sprite plantWeapon;
+    public Sprite unknown;
+    
+    public Sprite weaponUnlockAnim;
+
+    Image electric;
+    Image ice;
+    Image fire;
+    Image plant;
+
+    Image[] allWeapon;
+
     PlayerShooting playerShooting;
+
+    // number of unlocked weapon
+    int maxWeapon;
 
     // general timer to know the time between two update
     float timer;
 
     int weaponID;
+
 
 
     void Start()
@@ -26,6 +47,33 @@ public class PlayerWeapon : MonoBehaviour {
         playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
 
         weaponID = 0;
+        maxWeapon = 1;
+
+        allWeapon = GetComponentsInChildren<Image>();
+        foreach (Image weapon in allWeapon)
+        {
+            switch (weapon.name)
+            {
+                case "Electric":
+                    electric = weapon;
+                    electric.sprite = electricWeapon;
+                    break;
+                case "Ice":
+                    ice = weapon;
+                    ice.sprite = unknown;
+                    break;
+                case "Fire":
+                    fire = weapon;
+                    fire.sprite = unknown;
+                    break;
+                case "Plant":
+                    plant = weapon;
+                    plant.sprite = unknown;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -42,19 +90,19 @@ public class PlayerWeapon : MonoBehaviour {
             ChangeWeapon(false);
         }
 
-        if (Input.GetKey("1") && timer > timeBetweenWeaponChange) //  weapon 1
+        else if (Input.GetKey("1") && timer > timeBetweenWeaponChange) //  weapon 1
         {
             SelectWeapon(0);
         }
-        else if (Input.GetKey("2") && timer > timeBetweenWeaponChange) //  weapon 2
+        else if (Input.GetKey("2") && timer > timeBetweenWeaponChange && maxWeapon >= 2) //  weapon 2
         {
             SelectWeapon(1);
         }
-        else if (Input.GetKey("3") && timer > timeBetweenWeaponChange) //  weapon 3
+        else if (Input.GetKey("3") && timer > timeBetweenWeaponChange && maxWeapon >= 3) //  weapon 3
         {
             SelectWeapon(2);
         }
-        else if (Input.GetKey("4") && timer > timeBetweenWeaponChange) //  weapon 4
+        else if (Input.GetKey("4") && timer > timeBetweenWeaponChange && maxWeapon >= 4) //  weapon 4
         {
             SelectWeapon(3);
         }
@@ -68,44 +116,41 @@ public class PlayerWeapon : MonoBehaviour {
     {
         timer = 0f;
 
-        Vector3 rot;
+        Quaternion rot;
         if (next)
         {
             weaponID++;
-            rot = new Vector3(0, 0, -90);
         } else
         {
             weaponID--;
-            rot = new Vector3(0, 0, 90);
         }
-        if (weaponID == 4)
+        if (weaponID == maxWeapon)
         {
             weaponID = 0;
-            rot = new Vector3(0, 0, 270);
         }
         if (weaponID == -1)
         {
-            weaponID = 3;
-            rot = new Vector3(0, 0, -270);
+            weaponID = maxWeapon-1;
         }
 
-        weaponArrow.transform.Rotate(rot);
+        float rz = (-90) * weaponID;
+        rot = Quaternion.Euler(0, 0, rz);
+        weaponArrow.transform.rotation = rot;
         UpdateHighlight();
-
     }
 
     public void SelectWeapon(int id)
     {
         timer = 0f;
 
-        Vector3 rot;
+        Quaternion rot;
         if (id < 4 && id >= 0) 
         {
-            float rz = (-90) * (id - weaponID);
-
             weaponID = id;
-            rot = new Vector3(0, 0, rz);
-            weaponArrow.transform.Rotate(rot);
+            float rz = (-90) * weaponID;
+
+            rot = Quaternion.Euler(0, 0, rz);
+            weaponArrow.transform.rotation = rot;
             UpdateHighlight();
         }
     }
@@ -136,6 +181,59 @@ public class PlayerWeapon : MonoBehaviour {
                 weaponHighlight.anchorMin = new Vector2(0.5f, 1f);
                 weaponHighlight.anchorMax = new Vector2(0.5f, 1f);
                 weaponHighlight.pivot = new Vector2(0.5f, 1f);
+                break;
+        }
+    }
+
+    public void addWeapon()
+    {
+        maxWeapon++;
+
+        switch(maxWeapon)
+        {
+            case 2:
+                ice.sprite = weaponUnlockAnim;
+                for (int i = 0; i <= 15; i++)
+                {
+                    ice.transform.localScale = new Vector3(0.1f * i, 0.1f * i, 0.1f * i);
+                    //wait(0.2f);
+                }
+                ice.sprite = iceWeapon;
+                for (int i = 15; i >= 10; i--)
+                {
+                    ice.transform.localScale = new Vector3(0.1f * i, 0.1f * i, 0.1f * i);
+                    //wait(0.2f);
+                }
+                break;
+            case 3:
+                fire.sprite = weaponUnlockAnim;
+                for (int i = 0; i <= 15; i++)
+                {
+                    fire.transform.localScale = new Vector3(0.1f * i, 0.1f * i, 0.1f * i);
+                    //wait(0.2f);
+                }
+                fire.sprite = fireWeapon;
+                for (int i = 15; i >= 10; i--)
+                {
+                    fire.transform.localScale = new Vector3(0.1f * i, 0.1f * i, 0.1f * i);
+                    //wait(0.2f);
+                }
+                break;
+            case 4:
+                fire.sprite = weaponUnlockAnim;
+                for (int i = 0; i <= 15; i++)
+                {
+                    fire.transform.localScale = new Vector3(0.1f * i, 0.1f * i, 0.1f * i);
+                    //wait(0.2f);
+                }
+                fire.sprite = fireWeapon;
+                for (int i = 15; i >= 10; i--)
+                {
+                    fire.transform.localScale = new Vector3(0.1f * i, 0.1f * i, 0.1f * i);
+                    //wait(0.2f);
+                }
+                break;
+            default:
                 break;
         }
     }
