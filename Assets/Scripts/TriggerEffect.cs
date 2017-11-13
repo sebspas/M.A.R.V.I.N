@@ -18,7 +18,6 @@ public class TriggerEffect : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        print("enter trigger");
         isActive = !isActive;
         effectToTrigger.SetActive(isActive);
     }
