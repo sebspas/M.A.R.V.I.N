@@ -9,6 +9,8 @@ public class EnemyAttack : MonoBehaviour
     public int numberOfAttacks = 2;
     private int chooseAttack = 0;
 
+    public float attackRange = 3.2f;
+
     Animator anim;
     GameObject player;
     PlayerHealth playerHealth;
@@ -30,8 +32,8 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.gameObject == player && !enemyHealth.isEnemyDead())
         {
-            playerInRange = true;
-            anim.SetBool("PlayerInRange", true);
+            
+            playerInRange = true;            
         }
     }
 
@@ -41,7 +43,7 @@ public class EnemyAttack : MonoBehaviour
         if (other.gameObject == player && !enemyHealth.isEnemyDead())
         {
             playerInRange = false;
-            anim.SetBool("PlayerInRange", false);
+            
         }
     }
 
@@ -49,11 +51,15 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
-        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
+        
+        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0 && IsInAttackRange())
         {
+            anim.SetBool("PlayerInRange", true);
             Attack();
-        }
+        } else
+        {
+            anim.SetBool("PlayerInRange", false);
+        }       
 
         if (playerHealth.currentHealth <= 0)
         {
@@ -66,6 +72,7 @@ public class EnemyAttack : MonoBehaviour
 
     protected void Attack()
     {
+       
         timer = 0f;
         anim.SetInteger("NumAttack", chooseAttack);
         chooseAttack = (++chooseAttack) % numberOfAttacks;
@@ -74,5 +81,12 @@ public class EnemyAttack : MonoBehaviour
         {
             playerHealth.TakeDamage(attackDamage);
         }
+        
+    }
+
+    bool IsInAttackRange()
+    {
+        Debug.Log(this.transform.position.x- player.transform.position.x);
+        return (this.transform.position.x - player.transform.position.x <= attackRange);
     }
 }
