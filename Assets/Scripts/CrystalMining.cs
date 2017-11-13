@@ -23,7 +23,8 @@ public class CrystalMining : MonoBehaviour {
     public GameObject fire;
 
     // all the position to spawn ennemies on
-    public GameObject[] spawnPoints;
+    public GameObject spawnPointContainer;
+    private GameObject[] spawnPoints;
     public GameObject[] listSpawnableEnnemies;
 
     // the crystal sphere collider
@@ -68,6 +69,12 @@ public class CrystalMining : MonoBehaviour {
         miningAmont = playerMining.miningAmont;
         miningSpeed = playerMining.miningSpeed;
         totalToMine = remainingCrystal;
+
+        // we add all the spawnpoints
+        int children = spawnPointContainer.transform.childCount;
+        spawnPoints = new GameObject[children]; // we init the tab of all the spawnPoints at the right size
+        for (int i = 0; i < children; ++i)
+            spawnPoints[i] = spawnPointContainer.transform.GetChild(i).gameObject;
 
         // Create the sphere collider, radius = 2, isTrigger = true (we can go through it)
         sc = gameObject.GetComponent<SphereCollider>() as SphereCollider;
@@ -190,6 +197,5 @@ public class CrystalMining : MonoBehaviour {
         Destroy(aura, 5f);
 
         playerMining.getNextWeapon();
-
     }
 }

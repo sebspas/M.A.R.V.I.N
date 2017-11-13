@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
 
     public Image healthSlider;
+    public Text healthText;
     public AudioClip deathClip;
     public AudioClip hurtClip;
 
@@ -31,6 +32,10 @@ public class PlayerHealth : MonoBehaviour
         playerShooting = GetComponentInChildren<PlayerShooting>();
         playerBonus = GetComponentInChildren<PlayerBonus>();
         currentHealth = startingHealth;
+
+        // just be sure the slider and the text of health are ok
+        healthSlider.transform.localScale = new Vector3((currentHealth / startingHealth), 1, 1);
+        healthText.text = currentHealth + "/" + startingHealth;
     }
 
 
@@ -61,6 +66,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         healthSlider.transform.localScale = new Vector3((currentHealth / startingHealth), 1, 1);
+        healthText.text = currentHealth + "/" + startingHealth;
 
         if (currentHealth <= 0 && !isDead)
         {
