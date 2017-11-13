@@ -41,6 +41,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1106577982006914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4925629159106464}
+  - component: {fileID: 135564048843444376}
+  - component: {fileID: 114105297787123340}
+  m_Layer: 0
+  m_Name: Sight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1168125410549472
 GameObject:
   m_ObjectHideFlags: 1
@@ -354,7 +371,6 @@ GameObject:
   - component: {fileID: 4175107143565796}
   - component: {fileID: 95176951607759094}
   - component: {fileID: 54884934016295876}
-  - component: {fileID: 135257467935227250}
   - component: {fileID: 136290098068132892}
   - component: {fileID: 195848374567083862}
   - component: {fileID: 114748293349654466}
@@ -508,6 +524,7 @@ Transform:
   - {fileID: 4875140197039684}
   - {fileID: 4441949861958600}
   - {fileID: 4754680033761890}
+  - {fileID: 4925629159106464}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -777,6 +794,19 @@ Transform:
   m_Father: {fileID: 4175107143565796}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4925629159106464
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1106577982006914}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4175107143565796}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23056158105098992
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -786,7 +816,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
@@ -802,7 +831,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -944,6 +972,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114105297787123340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1106577982006914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d753378e4b4a945b0581ad6dd8e2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldOfViewAngle: 120
+  playerInSight: 0
 --- !u!114 &114493687907824000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -958,6 +999,7 @@ MonoBehaviour:
   timeBetweenAttacks: 0.5
   attackDamage: 10
   numberOfAttacks: 2
+  attackRange: 2.5
 --- !u!114 &114748293349654466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -987,17 +1029,17 @@ MonoBehaviour:
   deathClip: {fileID: 0}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
---- !u!135 &135257467935227250
+--- !u!135 &135564048843444376
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882657647333344}
+  m_GameObject: {fileID: 1106577982006914}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136290098068132892
 CapsuleCollider:
@@ -1021,7 +1063,6 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
@@ -1037,7 +1078,6 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
