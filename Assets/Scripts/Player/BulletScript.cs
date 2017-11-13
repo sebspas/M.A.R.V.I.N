@@ -1,4 +1,4 @@
-﻿    using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -57,6 +57,16 @@ public class BulletScript : MonoBehaviour {
                 enemyHealth.TakeDamage(this);
             }
         }
+        else if (other.tag == "Explosive" && !other.isTrigger)
+        {
+            ExplosiveBarrel barrel = other.GetComponent<ExplosiveBarrel>();
+            barrel.Explode();
+        }
+        else if (other.tag == "Barrelwall")
+        {
+            PassWallTrigger passWall = other.GetComponentInParent<PassWallTrigger>();
+            passWall.PassOnEffect();
+        }
         else if (other.tag == "Firewall" && typeOfBullet==BulletType.Ice)
         {
             ZoneWall zoneWall = other.GetComponent<ZoneWall>();
@@ -76,7 +86,12 @@ public class BulletScript : MonoBehaviour {
         if (other.tag == "Player" || other.tag == "FloatingCrystal")
         {
             // don't destroy it when it's the player shooting (or the bullet will never go out of the player collider...)
-        } else
+        }
+        else if (other.tag == "Explosive" && other.isTrigger)
+        {
+            // don't destroy if it impacts the trigger collider of an explosive barrel
+        }
+        else
         {
             // in all other case destroy it
             GameObject impactAnim = (GameObject)Instantiate(bulletImpact, this.transform.position, Quaternion.identity);

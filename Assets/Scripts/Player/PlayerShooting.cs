@@ -17,11 +17,11 @@ public class PlayerShooting : MonoBehaviour {
     // player current weapon
     public int currentWeapon = 0;
 
-    // energy regenerationRate
-    public float energyRegenTime = 0.1f;
+    // energy regenerationRate 
+    private float energyRegenTime = 0.5f;
 
-    // energy regenValue
-    public float energyRegen = 0.2f;
+    // energy regenValue (in percent of the max energy)
+    private float energyRegen = 0.05f;
 
     // startingEnergy (1 basic shoot cost 1, ice 2, fire 3, and earth 3)
     public float energyMax = 20;
@@ -31,6 +31,7 @@ public class PlayerShooting : MonoBehaviour {
 
     // slider for the bullet energy/xp
     public Image energySlider;
+    public Text energyText;
 
     // point where the bullet come from
     public GameObject gunRightArm;
@@ -90,9 +91,9 @@ public class PlayerShooting : MonoBehaviour {
             if (!playerBonus.bonusBoostInUse) 
             {
                 // we regen the energy
-                if (currentEnergy + energyRegen <= energyMax)
+                if (currentEnergy + (energyMax*energyRegen) <= energyMax)
                 {
-                    currentEnergy += energyRegen;
+                    currentEnergy += (energyMax * energyRegen);
                 }
                 else
                 {
@@ -102,6 +103,7 @@ public class PlayerShooting : MonoBehaviour {
 
             // we update the energy slider
             energySlider.transform.localScale = new Vector3((currentEnergy / energyMax), 1, 1);
+            energyText.text = currentEnergy.ToString("#.0") + "/" + energyMax;
         
             //Debug.Log(currentEnergy + "/" + energyMax);
         }

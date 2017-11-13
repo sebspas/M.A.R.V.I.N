@@ -20,6 +20,8 @@ public class PlayerMining : MonoBehaviour {
     public bool isMining; 
     public bool isCharging;
 
+    GameObject weaponUI;
+    PlayerWeapon playerWeapon;
 
 
 	// Use this for initialization
@@ -28,6 +30,10 @@ public class PlayerMining : MonoBehaviour {
         isCharging = false;
         timer = 0f;
         totalMined = 0f;
+
+        weaponUI = GameObject.FindGameObjectWithTag("WeaponUI");
+        playerWeapon = weaponUI.GetComponent<PlayerWeapon>();
+
     }
 	
 	// Update is called once per frame
@@ -50,5 +56,8 @@ public class PlayerMining : MonoBehaviour {
 
     }
 
-
+    public void getNextWeapon()
+    {
+        playerWeapon.addWeapon();
+    }
 }

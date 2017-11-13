@@ -96,6 +96,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flyingCrystal: {fileID: 1389730001745540, guid: 54c295819cbc940479f443cf807656ea,
     type: 2}
+  crystalAura: {fileID: 100010, guid: 729c77445b617084e969190942fb898b, type: 2}
+  allEnemies: []
+  fire: {fileID: 100010, guid: ef20b219f31a7c94c98a1fb42c491ea6, type: 2}
   remainingCrystal: 10
 --- !u!135 &135441458677766016
 SphereCollider:

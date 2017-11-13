@@ -1,4 +1,3 @@
-﻿using System.Collections;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -21,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
     Effect currentEffect;
 
     // animator to control animation
-    public Animator anim;
+    Animator anim;
 
     // fire effect for this monster (to define in the editor)
     public GameObject fireEffect;
@@ -30,9 +29,9 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;
     bool isDead;
     bool isSinking;
-    bool wantSink;
-    float timeBeforeSink = 2.5f;
 
+    // for effect and take damage
+    EnemyMovement enemyMovement;
 
     void Awake()
     {
@@ -41,45 +40,17 @@ public class EnemyHealth : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider>();
         currentHealth = startingHealth;
         playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
-
-        EnemyMovement enemyMovement = GetComponentInParent<EnemyMovement>();
+        enemyMovement = GetComponentInParent<EnemyMovement>();
         currentEffect = new Effect(this, enemyMovement);
     }
 
 
     void Update()
     {
-        // calculate the effect to apply to the entity
-        currentEffect.applyEffects();
-        
-        if (wantSink && timeBeforeSink < Time.time)
+        if (!isDead)
         {
-            StartSinking();
-        }
-        if (isSinking)
-        {
-            // Move the enemy down by the sinkSpeed per second.
-            transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
-        }
-    }
-
-
-    public void TakeDamage(BulletScript bullet)
-    {
-        if (isDead)
-            return;
-
-        //enemyAudio.Play();
-        currentEffect.getHurt(bullet);
-
-
-        if (currentHealth <= 0)
-        {
-            Death();
-        }
-        else
-        {
-            anim.SetTrigger("EnemyHurt");
+            // calculate the effect to apply to the entity
+            currentEffect.applyEffects();
         }
     }
 
@@ -88,29 +59,60 @@ public class EnemyHealth : MonoBehaviour
         if (isDead)
             return;
 
-        currentHealth -= damage;
+        if (currentHealth - damage <= 0)
+        {
+            currentHealth = 0;
+        }
+        else
+        {
+            currentHealth -= damage;
+            //enemyAudio.Play();
+            anim.SetTrigger("EnemyHurt");
+        }
 
         if (currentHealth <= 0)
         {
             Death();
         }
+    }
+
+    public void TakeDamage(BulletScript bullet)
+    {
+        if (isDead)
+            return;
+
+        int amount = currentEffect.getHurt(bullet);
+
+        if (currentHealth - amount <= 0)
+        {
+            currentHealth = 0;
+        }
         else
         {
+            currentHealth -= amount;
+            //enemyAudio.Play();
             anim.SetTrigger("EnemyHurt");
         }
 
+        if (currentHealth <= 0 && !isDead)
+        {
+            Death();
+        }
     }
 
+    public bool isEnemyDead()
+    {
+        return isDead;
+    }
 
     void Death()
     {
-        print("start dead");
+        anim.SetBool("EnemyDead", true);
+        anim.SetBool("PlayerInRange", false);
         isDead = true;
 
-        // Turn the collider into a trigger so shots can pass through it.
+        // Turn the capsule collider into a trigger so shots can pass through it.
         capsuleCollider.isTrigger = true;
-
-        anim.SetBool("EnemyDead", true);
 
         // we give the amount of xp to the player max energy
         playerShooting.energyMax += xpGiven;
@@ -120,30 +122,16 @@ public class EnemyHealth : MonoBehaviour
         //enemyAudio.clip = deathClip;
         //enemyAudio.Play();
 
-        // Wait Before call the SartSinking method
-        wantSink = true;
-        timeBeforeSink += Time.time;
-    }
-
-    public void StartSinking()
-    {
-
-        print("start sinking");
         // Find and disable the Nav Mesh Agent.
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 
         // Find the rigidbody component and make it kinematic (since we use Translate to sink the enemy).
-        GetComponent<Rigidbody>().isKinematic = true;
-
-        // The enemy should now sink.
-        isSinking = true;
+        //GetComponent<Rigidbody>().isKinematic = true;
 
         // Increase the score by the enemy's score value.
         //ScoreManager.score += scoreValue;
 
-        // After 1 second destory the enemy.
-        Destroy(gameObject, 1f);
+        // After 2 second destory the enemy.
+        Destroy(gameObject, 2f);
     }
 }
-
-

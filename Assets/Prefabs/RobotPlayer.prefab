@@ -824,7 +824,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610488002436274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4819610395095316}
@@ -1639,9 +1639,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd012b227302a5a42a30bc7f5d95118c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth: 1000
   currentHealth: 0
   healthSlider: {fileID: 0}
+  healthText: {fileID: 0}
   deathClip: {fileID: 8300000, guid: b24ae5c93276c4616856c1f0fb47e615, type: 3}
   hurtClip: {fileID: 8300000, guid: 0426027984d734e7fba2fe886ef21380, type: 3}
 --- !u!114 &114134772355612730
@@ -1663,14 +1664,13 @@ MonoBehaviour:
   - {fileID: 1349997331834966, guid: 020bb9a12510f6640aee851cc7bd9672, type: 2}
   - {fileID: 1939240370481064, guid: 01fbc6d3cc27b4b4ea5f614fcbc72274, type: 2}
   currentWeapon: 0
-  energyRegenTime: 0.1
-  energyRegen: 0.2
   energyMax: 20
   currentEnergy: 20
   energySlider: {fileID: 0}
+  energyText: {fileID: 0}
   gunRightArm: {fileID: 1099828321575250}
   laser: {fileID: 8300000, guid: b7aa833824d785a4bbaa982dbbc0f45b, type: 3}
-  bulletSpeed: 500
+  bulletSpeed: 1000
 --- !u!114 &114208884519423014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1737,7 +1737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec45203ae7a1a54c9d02c355f983833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 12
   movementRelative: 0
 --- !u!114 &114934600025428208
 MonoBehaviour:
@@ -1755,7 +1755,6 @@ MonoBehaviour:
   chargeBonus1: {fileID: 0}
   chargeBonus2: {fileID: 0}
   chargeBonus3: {fileID: 0}
-  energySlider: {fileID: 0}
   maxGaugeSize: 40
   timeMaxShield: 4
   timeMaxEnergyBoost: 3
@@ -2548,23 +2547,23 @@ ParticleSystem:
     m_BurstCount: 4
     m_Bursts:
     - time: 0
-      minCount: 3
-      maxCount: 3
+      minCount: 30
+      maxCount: 30
       cycleCount: 1
       repeatInterval: 0.01
     - time: 0.1
-      minCount: 3
-      maxCount: 3
+      minCount: 30
+      maxCount: 30
       cycleCount: 1
       repeatInterval: 0.01
     - time: 0.2
-      minCount: 2
-      maxCount: 2
+      minCount: 30
+      maxCount: 30
       cycleCount: 1
       repeatInterval: 0.01
     - time: 0.3
-      minCount: 2
-      maxCount: 2
+      minCount: 30
+      maxCount: 30
       cycleCount: 1
       repeatInterval: 0.01
   SizeModule:
@@ -8978,8 +8977,8 @@ ParticleSystem:
     m_BurstCount: 1
     m_Bursts:
     - time: 0
-      minCount: 8
-      maxCount: 12
+      minCount: 30
+      maxCount: 30
       cycleCount: 1
       repeatInterval: 0.01
   SizeModule:
@@ -15357,8 +15356,8 @@ ParticleSystem:
     m_BurstCount: 1
     m_Bursts:
     - time: 0
-      minCount: 1
-      maxCount: 2
+      minCount: 30
+      maxCount: 30
       cycleCount: 1
       repeatInterval: 0.01
   SizeModule:
@@ -21857,7 +21856,7 @@ ParticleSystem:
     m_Bursts:
     - time: 0
       minCount: 30
-      maxCount: 50
+      maxCount: 30
       cycleCount: 1
       repeatInterval: 0.01
   SizeModule:
@@ -34843,13 +34842,13 @@ ParticleSystem:
     m_BurstCount: 2
     m_Bursts:
     - time: 0
-      minCount: 1
-      maxCount: 1
+      minCount: 30
+      maxCount: 30
       cycleCount: 1
       repeatInterval: 0.01
     - time: 0.1
-      minCount: 1
-      maxCount: 1
+      minCount: 30
+      maxCount: 30
       cycleCount: 1
       repeatInterval: 0.01
   SizeModule:

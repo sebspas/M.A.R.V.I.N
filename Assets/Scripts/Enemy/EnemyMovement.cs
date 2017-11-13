@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
@@ -6,8 +6,7 @@ public class EnemyMovement : MonoBehaviour
     Transform player;
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
-    public UnityEngine.AI.NavMeshAgent nav;
-    Animator anim;
+    UnityEngine.AI.NavMeshAgent nav;
 
 
     void Awake()
@@ -16,13 +15,11 @@ public class EnemyMovement : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        anim = GetComponent<Animator>();
-
     }
 
     void Update()
     {
-        if (enemyHealth.currentHealth > 0  && playerHealth.currentHealth > 0 )
+        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
         {
             nav.SetDestination(player.position);
             this.transform.LookAt(player);
@@ -30,7 +27,11 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             nav.enabled = false;
-            anim.SetTrigger("PlayerDead");
         }
+    }
+
+    public void ChangeNavSpeed(int amount)
+    {
+        nav.speed += amount;
     }
 }
