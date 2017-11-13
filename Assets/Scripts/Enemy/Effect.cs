@@ -46,7 +46,7 @@ public class Effect {
         this.enemyMovement = enemyMovement;
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 
-        //set the effect type as none per default at creations
+        //set the effect type as none per default at creation
         effectType = EffectType.none;
     }
 

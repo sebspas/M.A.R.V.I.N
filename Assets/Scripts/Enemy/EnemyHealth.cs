@@ -30,6 +30,8 @@ public class EnemyHealth : MonoBehaviour
     bool isDead;
     bool isSinking;
 
+    // for effect and take damage
+    EnemyMovement enemyMovement;
 
     void Awake()
     {
@@ -38,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider>();
         currentHealth = startingHealth;
         playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
-        EnemyMovement enemyMovement = GetComponentInParent<EnemyMovement>();
+        enemyMovement = GetComponentInParent<EnemyMovement>();
         currentEffect = new Effect(this, enemyMovement);
     }
 
