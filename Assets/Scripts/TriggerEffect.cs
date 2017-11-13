@@ -5,13 +5,13 @@ using UnityEngine;
 public class TriggerEffect : MonoBehaviour {
 
     public GameObject effectToTrigger;
-    BoxCollider boxCollider;
+    //BoxCollider boxCollider;
 
     bool isActive;
 
     private void Awake()
     {
-        boxCollider = GetComponent<BoxCollider>();
+        //boxCollider = GetComponent<BoxCollider>();
         isActive = false;
         effectToTrigger.SetActive(isActive);
     }

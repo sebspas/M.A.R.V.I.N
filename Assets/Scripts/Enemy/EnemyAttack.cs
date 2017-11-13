@@ -64,7 +64,7 @@ public class EnemyAttack : MonoBehaviour
     }
 
 
-    void Attack()
+    protected void Attack()
     {
         timer = 0f;
         anim.SetInteger("NumAttack", chooseAttack);
