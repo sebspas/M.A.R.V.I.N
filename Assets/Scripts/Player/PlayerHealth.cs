@@ -14,15 +14,12 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip deathClip;
     public AudioClip hurtClip;
 
-
     Animator anim;
     AudioSource playerAudio;
     PlayerMovement playerMovement;
     PlayerShooting playerShooting;
     PlayerBonus playerBonus;
-    bool isDead;
-    bool damaged = false;
-
+    bool isDead = false;
 
     void Awake()
     {
@@ -52,12 +49,15 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
         
-        if (currentHealth - amount < 0)
+        if (currentHealth - amount <= 0 && !isDead)
         {
+            // if life is under or equal to 0
             currentHealth = 0;
-            
+            Death();
+
         } else
         {
+            // he takes some damage
             currentHealth -= amount;
             anim.SetTrigger("Take Damage");            
 
@@ -67,26 +67,22 @@ public class PlayerHealth : MonoBehaviour
 
         healthSlider.transform.localScale = new Vector3((currentHealth / startingHealth), 1, 1);
         healthText.text = currentHealth + "/" + startingHealth;
-
-        if (currentHealth <= 0 && !isDead)
-        {
-            Death();
-        }
     }
 
 
     void Death()
     {
+        // we say the player is dead
         isDead = true;
 
-        //playerShooting.DisableEffects();
-
-        print("dead");
+        // play the anim
         anim.SetTrigger("Die");
 
+        // play the corresponding sound to the death
         playerAudio.clip = deathClip;
         playerAudio.Play();
 
+        // we stop the ability to shoot or to move
         playerMovement.enabled = false;
         playerShooting.enabled = false;
     }
