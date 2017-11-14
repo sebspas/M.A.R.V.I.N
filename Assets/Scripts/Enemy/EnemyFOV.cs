@@ -6,6 +6,7 @@ public class EnemyFOV : MonoBehaviour {
 
     public float fieldOfViewAngle = 120f;
     public bool playerInSight;
+    public bool disabled = false;
 
     private SphereCollider col;
     private GameObject player;
@@ -19,6 +20,12 @@ public class EnemyFOV : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
+        if (disabled)
+        {
+            playerInSight = true;
+            return;
+        }
+
         if (other.gameObject == player)
         {
             playerInSight = false;

@@ -143,6 +143,8 @@ public class CrystalMining : MonoBehaviour {
 
             GameObject ennemie = (GameObject)Instantiate(listSpawnableEnnemies[0], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
             ennemie.gameObject.name = "Ennemie_Basic_" + i;
+            ennemie.GetComponentInChildren<EnemyFOV>().disabled = true;
+            ennemie.GetComponentInChildren<EnemyFOV>().playerInSight = true;
         }
 
         for (int i = 0; i < numberOfDistanceEnnemies; i++)
@@ -151,6 +153,9 @@ public class CrystalMining : MonoBehaviour {
 
             GameObject ennemie = (GameObject)Instantiate(listSpawnableEnnemies[1], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
             ennemie.gameObject.name = "Ennemie_Distance_" + i;
+            ennemie.GetComponentInChildren<EnemyFOV>().disabled = true;
+            ennemie.GetComponentInChildren<EnemyFOV>().playerInSight = true;
+
         }
 
     }
