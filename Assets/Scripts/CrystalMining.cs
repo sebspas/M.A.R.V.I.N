@@ -23,8 +23,8 @@ public class CrystalMining : MonoBehaviour {
     public GameObject fire;
 
     // all the position to spawn ennemies on
-    public GameObject spawnPointContainer;
-    private GameObject[] spawnPoints;
+    //public GameObject spawnPointContainer;
+    public GameObject[] spawnPoints;
     public GameObject[] listSpawnableEnnemies;
 
     // the crystal sphere collider
@@ -71,10 +71,10 @@ public class CrystalMining : MonoBehaviour {
         totalToMine = remainingCrystal;
 
         // we add all the spawnpoints
-        int children = spawnPointContainer.transform.childCount;
+        /*int children = spawnPointContainer.transform.childCount;
         spawnPoints = new GameObject[children]; // we init the tab of all the spawnPoints at the right size
         for (int i = 0; i < children; ++i)
-            spawnPoints[i] = spawnPointContainer.transform.GetChild(i).gameObject;
+            spawnPoints[i] = spawnPointContainer.transform.GetChild(i).gameObject;*/
 
         // Create the sphere collider, radius = 2, isTrigger = true (we can go through it)
         sc = gameObject.GetComponent<SphereCollider>() as SphereCollider;
@@ -140,7 +140,7 @@ public class CrystalMining : MonoBehaviour {
         for (int i = 0; i < numberOfBasicEnnemies; i++)
         {
             int spawnPointPos = Random.Range(0, spawnPoints.Length-1);
-
+            Debug.Log(spawnPoints[spawnPointPos].transform.position);
             GameObject ennemie = (GameObject)Instantiate(listSpawnableEnnemies[0], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
             ennemie.gameObject.name = "Ennemie_Basic_" + i;
             ennemie.GetComponentInChildren<EnemyFOV>().disabled = true;
