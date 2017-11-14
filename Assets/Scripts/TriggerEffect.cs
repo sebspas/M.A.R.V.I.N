@@ -8,18 +8,46 @@ public class TriggerEffect : MonoBehaviour {
     BoxCollider boxCollider;
 
     bool isActive;
+    bool isWaiting;
+
+    float time = 0f;
 
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider>();
         isActive = false;
+        isWaiting = false;
         effectToTrigger.SetActive(isActive);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        isActive = !isActive;
-        effectToTrigger.SetActive(isActive);
+        if (isWaiting)
+        {
+            print(Time.time);
+            print(time);
+            if (time < Time.time)
+            {
+                print(Time.time);
+                print(time);
+                effectToTrigger.SetActive(isActive);
+                isWaiting = false;
+            }
+            
+        }
+
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        isActive = true;
+        effectToTrigger.SetActive(isActive);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        isActive = false;
+        //effectToTrigger.SetActive(isActive);
+        isWaiting = true;
+        time = Time.time + 5f;
+    }
 }

@@ -1,0 +1,232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1680085791875808}
+  m_IsPrefabParent: 1
+--- !u!1 &1668777164826124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4165259878335678}
+  - component: {fileID: 114576432840386370}
+  - component: {fileID: 65594078585223392}
+  m_Layer: 0
+  m_Name: TriggerActivatorForest
+  m_TagString: Climat
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1680085791875808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4753134823990942}
+  m_Layer: 0
+  m_Name: Climat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1731982592287700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4155164873157166}
+  - component: {fileID: 114546737115171816}
+  - component: {fileID: 65251870177816266}
+  m_Layer: 0
+  m_Name: TriggerActivatorIce
+  m_TagString: Climat
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1760379463551236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4118646170012718}
+  - component: {fileID: 114095793628814320}
+  - component: {fileID: 65390974013500208}
+  - component: {fileID: 65513862255042192}
+  - component: {fileID: 65364625438130750}
+  m_Layer: 0
+  m_Name: TriggerActivatorFire
+  m_TagString: Climat
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4118646170012718
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760379463551236}
+  m_LocalRotation: {x: 0, y: 0.67042655, z: 0, w: 0.7419759}
+  m_LocalPosition: {x: -95.9, y: 11.050865, z: 0.8}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 4753134823990942}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 84.2, z: 0}
+--- !u!4 &4155164873157166
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1731982592287700}
+  m_LocalRotation: {x: -0, y: 0.71079946, z: -0, w: 0.7033948}
+  m_LocalPosition: {x: 65.98698, y: 11.050865, z: 21.028622}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4753134823990942}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 90.6, z: 0}
+--- !u!4 &4165259878335678
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668777164826124}
+  m_LocalRotation: {x: 0, y: 0.6604605, z: 0, w: 0.7508608}
+  m_LocalPosition: {x: -9.3, y: 11.050865, z: -101.5}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 4753134823990942}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 82.67, z: 0}
+--- !u!4 &4753134823990942
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680085791875808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.413025, y: -11.050865, z: 14.071377}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4155164873157166}
+  - {fileID: 4118646170012718}
+  - {fileID: 4165259878335678}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65251870177816266
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1731982592287700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 89.32, y: 5, z: 124.6}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65364625438130750
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760379463551236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 86.2, y: 1, z: 88.93}
+  m_Center: {x: -59.2, y: 0, z: 45.2}
+--- !u!65 &65390974013500208
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760379463551236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 80.4, y: 5, z: 92.1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65513862255042192
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760379463551236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.3, y: 1, z: 22.7}
+  m_Center: {x: -10.99, y: 0, z: 47.46}
+--- !u!65 &65594078585223392
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668777164826124}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 130.6, y: 5, z: 281.7}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114095793628814320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760379463551236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19723c7e15d03d7458bb5c01f73728f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectToTrigger: {fileID: 0}
+--- !u!114 &114546737115171816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1731982592287700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19723c7e15d03d7458bb5c01f73728f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectToTrigger: {fileID: 0}
+--- !u!114 &114576432840386370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668777164826124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19723c7e15d03d7458bb5c01f73728f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectToTrigger: {fileID: 0}

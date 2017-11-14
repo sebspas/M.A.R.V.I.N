@@ -91,6 +91,10 @@ public class BulletScript : MonoBehaviour {
         {
             // don't destroy if it impacts the trigger collider of an explosive barrel
         }
+        // Not destroy the bullet if in a climat's box collider
+        else if (other.tag == "Climat")
+        {
+        }
         else
         {
             // in all other case destroy it

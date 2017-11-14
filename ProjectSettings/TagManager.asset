@@ -12,6 +12,10 @@ TagManager:
   - IceWall
   - Barrelwall
   - Fire
+  - WeaponUI
+  - Weapon
+  - Explosive
+  - Climat
   layers:
   - Default
   - TransparentFX
