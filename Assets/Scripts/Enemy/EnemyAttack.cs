@@ -15,6 +15,7 @@ public class EnemyAttack : MonoBehaviour
     GameObject player;
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
+    EnemyFOV sight;
     bool playerInRange;
     float timer;
 
@@ -24,27 +25,8 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
+        sight = GetComponentInChildren<EnemyFOV>();
         anim = GetComponent<Animator>();
-    }
-
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == player && !enemyHealth.isEnemyDead())
-        {
-            
-            playerInRange = true;            
-        }
-    }
-
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == player && !enemyHealth.isEnemyDead())
-        {
-            playerInRange = false;
-            
-        }
     }
 
 
@@ -52,7 +34,7 @@ public class EnemyAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
         
-        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0 && IsInAttackRange())
+        if (timer >= timeBetweenAttacks && !enemyHealth.isEnemyDead() && IsInAttackRange() && sight.playerInSight)
         {
             anim.SetBool("PlayerInRange", true);
             Attack();
@@ -86,7 +68,10 @@ public class EnemyAttack : MonoBehaviour
 
     bool IsInAttackRange()
     {
-        Debug.Log(this.transform.position.x- player.transform.position.x);
-        return (this.transform.position.x - player.transform.position.x <= attackRange);
+        double distToPlayer = Mathf.Sqrt(Mathf.Pow((this.transform.position.x - player.transform.position.x),2) 
+            + Mathf.Pow((this.transform.position.z - player.transform.position.z),2));
+
+        //Debug.Log(distToPlayer);
+        return (distToPlayer <= attackRange);
     }
 }

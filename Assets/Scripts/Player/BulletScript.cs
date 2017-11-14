@@ -91,6 +91,10 @@ public class BulletScript : MonoBehaviour {
         {
             // don't destroy if it impacts the trigger collider of an explosive barrel
         }
+        else if (other.tag == "Enemy" && other.isTrigger)
+        {
+            // don't destroy if it impacts the trigger collider of an enemy (EnemyFOV)
+        }
         else
         {
             // in all other case destroy it
