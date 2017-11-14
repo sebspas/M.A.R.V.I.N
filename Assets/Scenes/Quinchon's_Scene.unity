@@ -938,29 +938,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114576432840386370, guid: 9051f4b3f6b4e234a8e1f25870619fb1,
-        type: 2}
-      propertyPath: effectToTrigger
-      value: 
-      objectReference: {fileID: 1795090512}
-    - target: {fileID: 114546737115171816, guid: 9051f4b3f6b4e234a8e1f25870619fb1,
-        type: 2}
-      propertyPath: effectToTrigger
-      value: 
-      objectReference: {fileID: 1250766559}
     - target: {fileID: 114095793628814320, guid: 9051f4b3f6b4e234a8e1f25870619fb1,
         type: 2}
       propertyPath: effectToTrigger
       value: 
       objectReference: {fileID: 1817141035}
-    - target: {fileID: 1731982592287700, guid: 9051f4b3f6b4e234a8e1f25870619fb1, type: 2}
-      propertyPath: m_TagString
-      value: Climat
-      objectReference: {fileID: 0}
-    - target: {fileID: 1680085791875808, guid: 9051f4b3f6b4e234a8e1f25870619fb1, type: 2}
-      propertyPath: m_TagString
-      value: Climat
-      objectReference: {fileID: 0}
+    - target: {fileID: 114546737115171816, guid: 9051f4b3f6b4e234a8e1f25870619fb1,
+        type: 2}
+      propertyPath: effectToTrigger
+      value: 
+      objectReference: {fileID: 1250766559}
+    - target: {fileID: 114576432840386370, guid: 9051f4b3f6b4e234a8e1f25870619fb1,
+        type: 2}
+      propertyPath: effectToTrigger
+      value: 
+      objectReference: {fileID: 1795090512}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9051f4b3f6b4e234a8e1f25870619fb1, type: 2}
   m_IsPrefabParent: 0
