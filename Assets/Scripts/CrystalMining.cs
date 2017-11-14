@@ -23,8 +23,8 @@ public class CrystalMining : MonoBehaviour {
     public GameObject fire;
 
     // all the position to spawn ennemies on
-    public GameObject spawnPointContainer;
-    private GameObject[] spawnPoints;
+    //public GameObject spawnPointContainer;
+    public GameObject[] spawnPoints;
     public GameObject[] listSpawnableEnnemies;
 
     // the crystal sphere collider
@@ -71,10 +71,10 @@ public class CrystalMining : MonoBehaviour {
         totalToMine = remainingCrystal;
 
         // we add all the spawnpoints
-        int children = spawnPointContainer.transform.childCount;
+        /*int children = spawnPointContainer.transform.childCount;
         spawnPoints = new GameObject[children]; // we init the tab of all the spawnPoints at the right size
         for (int i = 0; i < children; ++i)
-            spawnPoints[i] = spawnPointContainer.transform.GetChild(i).gameObject;
+            spawnPoints[i] = spawnPointContainer.transform.GetChild(i).gameObject;*/
 
         // Create the sphere collider, radius = 2, isTrigger = true (we can go through it)
         sc = gameObject.GetComponent<SphereCollider>() as SphereCollider;
@@ -133,24 +133,29 @@ public class CrystalMining : MonoBehaviour {
 
     void SpawnEnnemies()
     {
-        Debug.Log("Spawn Ennemie");
+        Debug.Log("Spawn Ennemy");
         // reset the timer
         timerSpawning = 0f;
 
         for (int i = 0; i < numberOfBasicEnnemies; i++)
         {
             int spawnPointPos = Random.Range(0, spawnPoints.Length-1);
-
-            GameObject ennemie = (GameObject)Instantiate(listSpawnableEnnemies[0], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
-            ennemie.gameObject.name = "Ennemie_Basic_" + i;
+            Debug.Log(spawnPoints[spawnPointPos].transform.position);
+            GameObject ennemy = (GameObject)Instantiate(listSpawnableEnnemies[0], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
+            ennemy.gameObject.name = "Ennemy_Basic_" + i;
+            ennemy.GetComponentInChildren<EnemyFOV>().disabled = true;
+            ennemy.GetComponentInChildren<EnemyFOV>().playerInSight = true;
         }
 
         for (int i = 0; i < numberOfDistanceEnnemies; i++)
         {
             int spawnPointPos = Random.Range(0, spawnPoints.Length);
 
-            GameObject ennemie = (GameObject)Instantiate(listSpawnableEnnemies[1], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
-            ennemie.gameObject.name = "Ennemie_Distance_" + i;
+            GameObject ennemy = (GameObject)Instantiate(listSpawnableEnnemies[1], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
+            ennemy.gameObject.name = "Ennemy_Distance_" + i;
+            ennemy.GetComponentInChildren<EnemyFOV>().disabled = true;
+            ennemy.GetComponentInChildren<EnemyFOV>().playerInSight = true;
+
         }
 
     }

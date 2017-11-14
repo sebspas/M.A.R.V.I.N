@@ -7,7 +7,8 @@ public class EnemyMovement : MonoBehaviour
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
     UnityEngine.AI.NavMeshAgent nav;
-
+    EnemyFOV sight;
+    Animator anim;
 
     void Awake()
     {
@@ -15,19 +16,25 @@ public class EnemyMovement : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        sight = GetComponentInChildren<EnemyFOV>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+        if (sight.playerInSight)
         {
-            nav.SetDestination(player.position);
-            this.transform.LookAt(player);
-        }
-        else
-        {
-            nav.enabled = false;
-        }
+            if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+            {
+                anim.SetFloat("EnemyMove", 1.0f);
+                nav.SetDestination(player.position);
+                this.transform.LookAt(player);               
+            }
+            else
+            {
+                nav.enabled = false;
+            }
+        } 
     }
 
     public void ChangeNavSpeed(int amount)

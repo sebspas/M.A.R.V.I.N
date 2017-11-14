@@ -31,7 +31,7 @@ public class BulletScript : MonoBehaviour {
         Normal,
         Fire,
         Ice,
-        Earth
+        Earth,
     }
 
     // kind of this bullet
@@ -83,7 +83,7 @@ public class BulletScript : MonoBehaviour {
         }
 
         //print(other.tag);
-        if (other.tag == "Player" || other.tag == "FloatingCrystal")
+        if (other.tag == "Player" || other.tag == "FloatingCrystal" || other.tag == "TriggerEffect")
         {
             // don't destroy it when it's the player shooting (or the bullet will never go out of the player collider...)
         }
@@ -91,9 +91,13 @@ public class BulletScript : MonoBehaviour {
         {
             // don't destroy if it impacts the trigger collider of an explosive barrel
         }
-        // Not destroy the bullet if in a climat's box collider
         else if (other.tag == "Climat")
         {
+            // Don't destroy the bullet if it's in a climat's box collider
+        }
+        else if (other.tag == "Enemy" && other.isTrigger)
+        {
+            // don't destroy if it impacts the trigger collider of an enemy (EnemyFOV)
         }
         else
         {

@@ -4,18 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - FloatingCrystal
   - Enemy
-  - shield
+  - TriggerEffect
+  - FloatingCrystal
+  - Undefined
+  - Climat
+  - WeaponUI
+  - Weapon
   - Firewall
-  - Plantwall
   - IceWall
   - Barrelwall
   - Fire
-  - WeaponUI
-  - Weapon
-  - Explosive
-  - Climat
+  - shield
+  - Plantwall
   layers:
   - Default
   - TransparentFX

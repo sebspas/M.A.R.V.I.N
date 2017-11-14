@@ -7,53 +7,41 @@ public class EnemyAttack : MonoBehaviour
     public int attackDamage = 10;
 
     public int numberOfAttacks = 2;
-    private int chooseAttack = 0;
+    protected int chooseAttack = 0;
 
-    Animator anim;
+    public float attackRange = 3.2f;
+
+    protected Animator anim;
     GameObject player;
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
+    EnemyFOV sight;
     bool playerInRange;
-    float timer;
+    protected float timer;
 
 
-    void Awake()
+    protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
+        sight = GetComponentInChildren<EnemyFOV>();
         anim = GetComponent<Animator>();
     }
 
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == player && !enemyHealth.isEnemyDead())
-        {
-            playerInRange = true;
-            anim.SetBool("PlayerInRange", true);
-        }
-    }
-
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == player && !enemyHealth.isEnemyDead())
-        {
-            playerInRange = false;
-            anim.SetBool("PlayerInRange", false);
-        }
-    }
-
-
-    void Update()
+    protected void Update()
     {
         timer += Time.deltaTime;
-
-        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
+        
+        if (IsReadyToAttack())
         {
+            anim.SetBool("PlayerInRange", true);
             Attack();
-        }
+        } else
+        {
+            anim.SetBool("PlayerInRange", false);
+        }       
 
         if (playerHealth.currentHealth <= 0)
         {
@@ -63,9 +51,9 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-
-    void Attack()
+    protected virtual void Attack()
     {
+       
         timer = 0f;
         anim.SetInteger("NumAttack", chooseAttack);
         chooseAttack = (++chooseAttack) % numberOfAttacks;
@@ -74,5 +62,25 @@ public class EnemyAttack : MonoBehaviour
         {
             playerHealth.TakeDamage(attackDamage);
         }
+        
+    }
+
+    protected bool IsReadyToAttack()
+    {
+        return (timer >= timeBetweenAttacks && !enemyHealth.isEnemyDead() && IsInAttackRange());
+    }
+
+    protected bool IsInAttackRange()
+    {
+        if (!sight.playerInSight)
+        {
+            return false;
+        }
+
+        double distToPlayer = Mathf.Sqrt(Mathf.Pow((this.transform.position.x - player.transform.position.x),2) 
+            + Mathf.Pow((this.transform.position.z - player.transform.position.z),2));
+
+        //Debug.Log(distToPlayer);
+        return (distToPlayer <= attackRange);
     }
 }
