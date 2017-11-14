@@ -107,7 +107,6 @@ public class PlayerBonus : MonoBehaviour {
             {
                 // we cut the anim
                 shieldPower.SetActive(false);
-
                 // we also cut the invulnerability on the player
                 bonusShieldInUse = false;              
             }
