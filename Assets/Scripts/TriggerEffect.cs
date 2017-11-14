@@ -18,8 +18,11 @@ public class TriggerEffect : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        isActive = !isActive;
-        effectToTrigger.SetActive(isActive);
+        if (other.tag == "Player")
+        {
+            isActive = !isActive;
+            effectToTrigger.SetActive(isActive);
+        }
     }
 
 }

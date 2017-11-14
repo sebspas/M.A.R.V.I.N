@@ -9,7 +9,6 @@ public class EnemyMovement : MonoBehaviour
     UnityEngine.AI.NavMeshAgent nav;
     EnemyFOV sight;
     Animator anim;
-    Vector3 pos;
 
     void Awake()
     {
@@ -19,7 +18,6 @@ public class EnemyMovement : MonoBehaviour
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         sight = GetComponentInChildren<EnemyFOV>();
         anim = GetComponent<Animator>();
-        pos = transform.position;
     }
 
     void Update()
