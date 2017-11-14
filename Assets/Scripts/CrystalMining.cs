@@ -133,7 +133,7 @@ public class CrystalMining : MonoBehaviour {
 
     void SpawnEnnemies()
     {
-        Debug.Log("Spawn Ennemie");
+        Debug.Log("Spawn Ennemy");
         // reset the timer
         timerSpawning = 0f;
 
@@ -141,20 +141,20 @@ public class CrystalMining : MonoBehaviour {
         {
             int spawnPointPos = Random.Range(0, spawnPoints.Length-1);
             Debug.Log(spawnPoints[spawnPointPos].transform.position);
-            GameObject ennemie = (GameObject)Instantiate(listSpawnableEnnemies[0], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
-            ennemie.gameObject.name = "Ennemie_Basic_" + i;
-            ennemie.GetComponentInChildren<EnemyFOV>().disabled = true;
-            ennemie.GetComponentInChildren<EnemyFOV>().playerInSight = true;
+            GameObject ennemy = (GameObject)Instantiate(listSpawnableEnnemies[0], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
+            ennemy.gameObject.name = "Ennemy_Basic_" + i;
+            ennemy.GetComponentInChildren<EnemyFOV>().disabled = true;
+            ennemy.GetComponentInChildren<EnemyFOV>().playerInSight = true;
         }
 
         for (int i = 0; i < numberOfDistanceEnnemies; i++)
         {
             int spawnPointPos = Random.Range(0, spawnPoints.Length);
 
-            GameObject ennemie = (GameObject)Instantiate(listSpawnableEnnemies[1], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
-            ennemie.gameObject.name = "Ennemie_Distance_" + i;
-            ennemie.GetComponentInChildren<EnemyFOV>().disabled = true;
-            ennemie.GetComponentInChildren<EnemyFOV>().playerInSight = true;
+            GameObject ennemy = (GameObject)Instantiate(listSpawnableEnnemies[1], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
+            ennemy.gameObject.name = "Ennemy_Distance_" + i;
+            ennemy.GetComponentInChildren<EnemyFOV>().disabled = true;
+            ennemy.GetComponentInChildren<EnemyFOV>().playerInSight = true;
 
         }
 
