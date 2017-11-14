@@ -142,10 +142,10 @@ GameObject:
   - component: {fileID: 95848375497571236}
   - component: {fileID: 54358228468268414}
   - component: {fileID: 136373837419365816}
-  - component: {fileID: 114794781927958396}
   - component: {fileID: 114775310630535808}
   - component: {fileID: 114759528253764702}
   - component: {fileID: 195334823775872966}
+  - component: {fileID: 114991375799849746}
   m_Layer: 0
   m_Name: e_Magician
   m_TagString: Enemy
@@ -906,7 +906,7 @@ MonoBehaviour:
   deathClip: {fileID: 0}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
---- !u!114 &114794781927958396
+--- !u!114 &114991375799849746
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -914,13 +914,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1205518982058006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d602b99da6049e4d80eb14df28ce715, type: 3}
+  m_Script: {fileID: 11500000, guid: e84a9dbd5488d0d449b5d232fb7a7c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 0.2
   attackDamage: 10
-  numberOfAttacks: 2
-  attackRange: 12
+  numberOfAttacks: 1
+  attackRange: 15
+  enemyProj: {fileID: 1381256164799712, guid: 94c499b21dd58914d84ad75b130b62e2, type: 2}
+  staff: {fileID: 1048689263059284}
+  enemyBulletSpeed: 800
 --- !u!135 &135273968561404856
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1027,7 +1030,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 10
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

@@ -12,6 +12,9 @@ TagManager:
   - IceWall
   - Barrelwall
   - Fire
+  - WeaponUI
+  - Weapon
+  - TriggerEffect
   layers:
   - Default
   - TransparentFX

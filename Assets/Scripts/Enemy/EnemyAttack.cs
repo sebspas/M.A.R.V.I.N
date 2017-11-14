@@ -7,20 +7,20 @@ public class EnemyAttack : MonoBehaviour
     public int attackDamage = 10;
 
     public int numberOfAttacks = 2;
-    private int chooseAttack = 0;
+    protected int chooseAttack = 0;
 
     public float attackRange = 3.2f;
 
-    Animator anim;
+    protected Animator anim;
     GameObject player;
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
     EnemyFOV sight;
     bool playerInRange;
-    float timer;
+    protected float timer;
 
 
-    void Awake()
+    protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
@@ -30,11 +30,11 @@ public class EnemyAttack : MonoBehaviour
     }
 
 
-    void Update()
+    protected void Update()
     {
         timer += Time.deltaTime;
         
-        if (timer >= timeBetweenAttacks && !enemyHealth.isEnemyDead() && IsInAttackRange() && sight.playerInSight)
+        if (IsReadyToAttack())
         {
             anim.SetBool("PlayerInRange", true);
             Attack();
@@ -51,8 +51,7 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-
-    protected void Attack()
+    protected virtual void Attack()
     {
        
         timer = 0f;
@@ -66,8 +65,18 @@ public class EnemyAttack : MonoBehaviour
         
     }
 
-    bool IsInAttackRange()
+    protected bool IsReadyToAttack()
     {
+        return (timer >= timeBetweenAttacks && !enemyHealth.isEnemyDead() && IsInAttackRange());
+    }
+
+    protected bool IsInAttackRange()
+    {
+        if (!sight.playerInSight)
+        {
+            return false;
+        }
+
         double distToPlayer = Mathf.Sqrt(Mathf.Pow((this.transform.position.x - player.transform.position.x),2) 
             + Mathf.Pow((this.transform.position.z - player.transform.position.z),2));
 
