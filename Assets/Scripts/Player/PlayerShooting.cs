@@ -18,10 +18,10 @@ public class PlayerShooting : MonoBehaviour {
     public int currentWeapon = 0;
 
     // energy regenerationRate 
-    private float energyRegenTime = 0.5f;
+    private float energyRegenTime = 0.2f;
 
     // energy regenValue (in percent of the max energy)
-    private float energyRegen = 0.05f;
+    private float energyRegen = 0.01f;
 
     // startingEnergy (1 basic shoot cost 1, ice 2, fire 3, and earth 3)
     public float energyMax = 20;

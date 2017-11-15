@@ -54,10 +54,10 @@ public class CrystalMining : MonoBehaviour {
     bool isEmpty;
 
     // progress bar for the crystal mining
-    public Image crystalProgress;
+    GameObject crystalProgress;
 
     // public UI group to activate when we start mining 
-    public GameObject uiCrystal;
+    GameObject uiCrystal;
 
 
     // Use this for initialization
@@ -65,6 +65,17 @@ public class CrystalMining : MonoBehaviour {
         playerInRange = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerMining = player.GetComponent<PlayerMining>();
+
+        uiCrystal = gameObject.transform.GetChild(0).gameObject;
+        uiCrystal.SetActive(false);
+        
+        for (int i=0; i<uiCrystal.transform.childCount; i++)
+        {
+            if (uiCrystal.transform.GetChild(i).name == "FillCrystal")
+            { 
+                crystalProgress = uiCrystal.transform.GetChild(i).gameObject;
+            }
+        }
 
         miningAmont = playerMining.miningAmont;
         miningSpeed = playerMining.miningSpeed;
@@ -171,7 +182,8 @@ public class CrystalMining : MonoBehaviour {
             timer = 0f;
 
             // make the progress bar move
-            crystalProgress.transform.localScale = new Vector3((minnedCrystal / totalToMine), 1, 1);
+            float newScale = remainingCrystal / totalToMine;
+            crystalProgress.transform.localScale = new Vector3(newScale, 1, 1);
         }
 
         // we launch the floating crystal

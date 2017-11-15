@@ -34,7 +34,10 @@ public class EnemyMovement : MonoBehaviour
             {
                 nav.enabled = false;
             }
-        } 
+        } else
+        {
+            anim.SetFloat("EnemyMove", 0.0f);
+        }
     }
 
     public void ChangeNavSpeed(int amount)

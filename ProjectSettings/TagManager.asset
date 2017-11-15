@@ -17,6 +17,7 @@ TagManager:
   - Fire
   - shield
   - Plantwall
+  - CrystalUI
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - 
   - 
   - Floor
-  - 
+  - CrystalHealthBar
   - 
   - 
   - 
