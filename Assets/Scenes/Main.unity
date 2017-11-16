@@ -1312,6 +1312,20 @@ Prefab:
       propertyPath: ColorModule.gradient.maxGradient.key1.r
       value: 0.84778905
       objectReference: {fileID: 0}
+    - target: {fileID: 135181363519354512, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028481881081840, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 135181363519354512, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: m_Radius
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
   m_IsPrefabParent: 0

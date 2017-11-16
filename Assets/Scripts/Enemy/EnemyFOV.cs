@@ -47,6 +47,7 @@ public class EnemyFOV : MonoBehaviour {
                     if (hit.collider.gameObject == player)
                     {
                         playerInSight = true;
+                        disabled = true;
                     }
                 }
             }
