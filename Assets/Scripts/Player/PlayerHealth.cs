@@ -40,7 +40,6 @@ public class PlayerHealth : Health
 
     private void SliderUpdate()
     {
-        Debug.Log(currentHealth + "/" + maxHealth);
         // just be sure the slider and the text of health are ok
         healthSlider.transform.localScale = new Vector3((currentHealth / maxHealth), 1, 1);
         healthText.text = currentHealth + "/" + maxHealth;
