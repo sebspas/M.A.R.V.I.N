@@ -944,6 +944,26 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1494953246}
+    - target: {fileID: 114356367623939042, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
+        type: 2}
+      propertyPath: maxHealth
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114042347542579048, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
+        type: 2}
+      propertyPath: maxHealth
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114408669179494990, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
+        type: 2}
+      propertyPath: maxHealth
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586448879944498, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
+        type: 2}
+      propertyPath: maxHealth
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a9bd97524d9f164db6b7b93af75c5ee, type: 2}
   m_IsPrefabParent: 0
@@ -1295,6 +1315,15 @@ Prefab:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1156036674}
+    - target: {fileID: 114072487637605324, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028481881081840, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
+      propertyPath: m_TagString
+      value: Sight
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
   m_IsPrefabParent: 0

@@ -1,11 +1,7 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : Health
 {
-    // starting health of the monster
-    public int startingHealth = 30;
-    public int currentHealth;
-
     public float sinkSpeed = 2.5f;
     public int scoreValue = 10;
     public AudioClip deathClip;
@@ -27,7 +23,6 @@ public class EnemyHealth : MonoBehaviour
 
     AudioSource enemyAudio;
     CapsuleCollider capsuleCollider;
-    bool isDead;
     bool isSinking;
 
     // for effect and take damage
@@ -37,15 +32,15 @@ public class EnemyHealth : MonoBehaviour
     EnemyFOV sight;
 
     void Awake()
-    {
+    {       
         anim = GetComponent<Animator>();
         enemyAudio = GetComponent<AudioSource>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-        currentHealth = startingHealth;
         playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
         enemyMovement = GetComponentInParent<EnemyMovement>();
         currentEffect = new Effect(this, enemyMovement);
         sight = GetComponentInChildren<EnemyFOV>();
+        InitHealth();
     }
 
 
@@ -59,26 +54,9 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void TakeDamage(int damage)
-    {
-
-        if (isDead)
-            return;  
-
-        if (currentHealth - damage <= 0)
-        {
-            currentHealth = 0;
-        }
-        else
-        {
-            currentHealth -= damage;
-            //enemyAudio.Play();
-            anim.SetTrigger("EnemyHurt");
-        }
-
-        if (currentHealth <= 0)
-        {
-            Death();
-        }
+    {       
+        // we applied the damage to the entity
+        Damaged(damage);
     }
 
     public void TakeDamage(BulletScript bullet)
@@ -86,41 +64,29 @@ public class EnemyHealth : MonoBehaviour
         if (isDead)
             return;
 
-        int amount = currentEffect.getHurt(bullet);
+        int damage = currentEffect.getHurt(bullet);
+
+        // we applied the damage to the entity
+        Damaged(damage);
 
         // if the enemy didn't saw the player yet, but he got hit 
         if (!sight.disabled)
         {
             sight.PlayerDetected(true);
         }
-
-        if (currentHealth - amount <= 0)
-        {
-            currentHealth = 0;
-        }
-        else
-        {
-            currentHealth -= amount;
-            //enemyAudio.Play();
-            anim.SetTrigger("EnemyHurt");
-        }
-
-        if (currentHealth <= 0 && !isDead)
-        {
-            Death();
-        }
     }
 
-    public bool isEnemyDead()
-    {
-        return isDead;
+    // Override the Health function to define the hurt behavior
+    public override void HurtAnim()
+    {        
+        anim.SetTrigger("EnemyHurt");
     }
 
-    void Death()
+    // Override the Death Function to define the death behavior
+    public override void Death()
     {
         anim.SetBool("EnemyDead", true);
         anim.SetBool("PlayerInRange", false);
-        isDead = true;
 
         // Turn the capsule collider into a trigger so shots can pass through it.
         capsuleCollider.isTrigger = true;
