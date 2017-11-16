@@ -150,10 +150,21 @@ public class PlayerBonus : MonoBehaviour {
             timerBonusBoost += t;
         }
 
-        if (Input.GetKeyDown("a") && timer > timeBetweenWeaponChange) //  Next bonus
+        if (Input.GetKeyDown("a") && timer > timeBetweenWeaponChange) //  Shield bonus
         {
-            NextBonus();
+            SwitchBonus(0);
         }
+        else
+        if (Input.GetKeyDown("e") && timer > timeBetweenWeaponChange) //  Electric aura bonus
+        {
+            SwitchBonus(1);
+        }
+        else
+        if (Input.GetKeyDown("r") && timer > timeBetweenWeaponChange) //  Enhanced fire rate bonus
+        {
+            SwitchBonus(2);
+        }
+        else
         if (Input.GetButtonDown("Fire2")) //  Use selected bonus
         {
             UseBonus(bonusID);
@@ -162,14 +173,18 @@ public class PlayerBonus : MonoBehaviour {
         UpdateBonusGauges();
     }
 
-    public void NextBonus()
+    public void SwitchBonus(int bonus)
     {
         timer = 0;
-        bonusID++;
-        if (bonusID == 3) bonusID = 0;
+        if (bonus < 3 && bonus >= 0) bonusID = bonus;
 
         switch (bonusID)
         {
+            case 0: // bonus 1
+                bonusHighlight.anchorMin = new Vector2(0.5f, 1f);
+                bonusHighlight.anchorMax = new Vector2(0.5f, 1f);
+                bonusHighlight.pivot = new Vector2(0.5f, 1f);
+                break;
             case 1: // bonus 2
                 bonusHighlight.anchorMin = new Vector2(0.5f, 0.5f);
                 bonusHighlight.anchorMax = new Vector2(0.5f, 0.5f);
@@ -182,10 +197,7 @@ public class PlayerBonus : MonoBehaviour {
                 bonusHighlight.pivot = new Vector2(0.5f, 0f);
                 break;
 
-            default: // bonus 1
-                bonusHighlight.anchorMin = new Vector2(0.5f, 1f);
-                bonusHighlight.anchorMax = new Vector2(0.5f, 1f);
-                bonusHighlight.pivot = new Vector2(0.5f, 1f);
+            default: // Error
                 break;
         }
     }
