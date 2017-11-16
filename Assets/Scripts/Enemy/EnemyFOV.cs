@@ -11,11 +11,13 @@ public class EnemyFOV : MonoBehaviour {
     private SphereCollider col;
     private GameObject player;
 
+    private List<GameObject> closestEnemies;
+
     // Use this for initialization
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         col = GetComponent<SphereCollider>();
+        closestEnemies = new List<GameObject>();
     }
 
     void OnTriggerStay(Collider other)
@@ -26,7 +28,7 @@ public class EnemyFOV : MonoBehaviour {
             return;
         }
 
-        if (other.gameObject == player)
+        if (other.tag == "Player")
         {
             playerInSight = false;
 
@@ -44,13 +46,46 @@ public class EnemyFOV : MonoBehaviour {
                 if (Physics.Raycast(transform.position + transform.up,
                     direction.normalized, out hit, col.radius))
                 {
-                    if (hit.collider.gameObject == player)
+                    if (hit.collider.tag == "Player")
                     {
-                        playerInSight = true;
-                        disabled = true;
+                        this.PlayerDetected(true);
                     }
                 }
             }
+        }
+    }
+
+    public void PlayerDetected(bool triggerOther)
+    {
+        disabled = true;
+        playerInSight = true;
+
+        if (triggerOther)
+        {
+            // we also warn all the closest allies
+            foreach (GameObject e in closestEnemies)
+            {
+                e.gameObject.GetComponentInChildren<EnemyFOV>().PlayerDetected(false);
+            }
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            // we add it to the list of close enemy
+            closestEnemies.Add(other.gameObject);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            // we add it to the list of close enemy
+            closestEnemies.Remove(other.gameObject);
         }
     }
 }

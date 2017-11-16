@@ -202,6 +202,8 @@ public class CrystalMining : MonoBehaviour {
         foreach (GameObject enemy in allEnemies)
         {
             GameObject burn = (GameObject)Instantiate(fire, enemy.transform.position, new Quaternion(0, 0, 0, 0));
+            // we set the enemy as parent so the fire moves with the enemy
+            burn.transform.parent = enemy.transform;
             Destroy(enemy, 2f);
             Destroy(burn, 2f);
         }

@@ -33,6 +33,9 @@ public class EnemyHealth : MonoBehaviour
     // for effect and take damage
     EnemyMovement enemyMovement;
 
+    // to detect the player when the enemy get hit
+    EnemyFOV sight;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -42,6 +45,7 @@ public class EnemyHealth : MonoBehaviour
         playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
         enemyMovement = GetComponentInParent<EnemyMovement>();
         currentEffect = new Effect(this, enemyMovement);
+        sight = GetComponentInChildren<EnemyFOV>();
     }
 
 
@@ -56,8 +60,9 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
         if (isDead)
-            return;
+            return;  
 
         if (currentHealth - damage <= 0)
         {
@@ -82,6 +87,12 @@ public class EnemyHealth : MonoBehaviour
             return;
 
         int amount = currentEffect.getHurt(bullet);
+
+        // if the enemy didn't saw the player yet, but he got hit 
+        if (!sight.disabled)
+        {
+            sight.PlayerDetected(true);
+        }
 
         if (currentHealth - amount <= 0)
         {

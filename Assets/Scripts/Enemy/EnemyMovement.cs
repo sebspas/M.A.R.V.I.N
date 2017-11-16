@@ -16,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        nav.speed = 6;
         sight = GetComponentInChildren<EnemyFOV>();
         anim = GetComponent<Animator>();
     }

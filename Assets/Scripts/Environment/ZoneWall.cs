@@ -9,6 +9,7 @@ public class ZoneWall : MonoBehaviour {
     public float timeToFadeWall = 2f;
     public float additionalEffectTime = 0f;
     BoxCollider invisibleWall;
+    public GameObject EnnemiesToActivate;
 
 	// Use this for initialization
 	void Start () {
@@ -29,5 +30,6 @@ public class ZoneWall : MonoBehaviour {
         Destroy(wall, timeToFadeWall);
         effect.SetActive(true);
         Destroy(effect, timeToFadeWall + additionalEffectTime);
+        EnnemiesToActivate.SetActive(true);
     }
 }

@@ -18,6 +18,9 @@ TagManager:
   - shield
   - Plantwall
   - CrystalUI
+  - Floor
+  - Interact
+  - Sight
   layers:
   - Default
   - TransparentFX
