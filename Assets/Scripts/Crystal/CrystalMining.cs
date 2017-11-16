@@ -121,6 +121,11 @@ public class CrystalMining : MonoBehaviour {
             {
                 playerMining.isMining = false;
                 endOfCrystal();
+
+                // Find and launch the boss script linked to the icegameplay
+                GameObject iceGameplay = GameObject.FindGameObjectWithTag("IceGameplay");
+                BossFight1 bossScript1 = iceGameplay.GetComponent<BossFight1>();
+                bossScript1.Begin();
             }
         }
 
