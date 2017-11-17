@@ -1,0 +1,13 @@
+# Blender MTL File: 'snow base.blend'
+# Material Count: 1
+
+newmtl Material
+Ns 52.941176
+Ka 1.000000 1.000000 1.000000
+Kd 0.775926 0.775926 0.775926
+Ks 0.146789 0.146789 0.146789
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd -s 20.000000 10.900003 10.000000 C:\\Users\\Оксана\\Desktop\\Books\\blender\\Textures\\snezi.jpg

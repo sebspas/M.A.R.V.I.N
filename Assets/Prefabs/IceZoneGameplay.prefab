@@ -10348,8 +10348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 30
-  currentHealth: 0
+  maxHealth: 30
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 0}
@@ -10366,7 +10365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76d9a739e796764d896502a69431ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
 --- !u!114 &114024025561036398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10393,8 +10391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 80
-  currentHealth: 0
+  maxHealth: 100
   sinkSpeed: 2.5
   scoreValue: 15
   deathClip: {fileID: 0}
@@ -10508,8 +10505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 80
-  currentHealth: 0
+  maxHealth: 100
   sinkSpeed: 2.5
   scoreValue: 15
   deathClip: {fileID: 0}
@@ -10541,8 +10537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 80
-  currentHealth: 0
+  maxHealth: 100
   sinkSpeed: 2.5
   scoreValue: 15
   deathClip: {fileID: 0}
@@ -10559,8 +10554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 30
-  currentHealth: 0
+  maxHealth: 30
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 0}
@@ -10591,8 +10585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 30
-  currentHealth: 0
+  maxHealth: 30
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 0}
@@ -10635,8 +10628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 30
-  currentHealth: 0
+  maxHealth: 30
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 0}
@@ -10734,8 +10726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 80
-  currentHealth: 0
+  maxHealth: 100
   sinkSpeed: 2.5
   scoreValue: 15
   deathClip: {fileID: 0}
@@ -10879,8 +10870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 30
-  currentHealth: 0
+  maxHealth: 30
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 0}
@@ -10897,8 +10887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 30
-  currentHealth: 0
+  maxHealth: 30
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 0}

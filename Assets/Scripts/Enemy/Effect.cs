@@ -106,14 +106,11 @@ public class Effect {
         switch (bullet.typeOfBullet)
         {
             case BulletScript.BulletType.Normal:
-                //enemyHealth.currentHealth -= bullet.damagePerShot;
                 damage = bullet.damagePerShot;
                 break;
 
             case BulletScript.BulletType.Fire:
-                //enemyHealth.currentHealth -= bullet.damagePerShot;
                 damage = bullet.damagePerShot;
-
                 effectType = EffectType.burning;
                 effectValue = bullet.burningDamage;
                 effectTime = bullet.burningTotalTime;
@@ -124,9 +121,7 @@ public class Effect {
                 break;
 
             case BulletScript.BulletType.Ice:
-                //enemyHealth.currentHealth -= bullet.damagePerShot;
                 damage = bullet.damagePerShot;
-
                 effectType = EffectType.frozen;
                 effectValue = bullet.frozenSlow;
                 effectTime = bullet.frozenTotalTime;
@@ -134,19 +129,10 @@ public class Effect {
                 break;
 
             case BulletScript.BulletType.Earth:
-                //enemyHealth.currentHealth -= bullet.damagePerShot;
                 damage = bullet.damagePerShot;
-
-                // we make sure that the given life doesn't make the player life go over the maximum
-                if ( (playerHealth.currentHealth+bullet.lifeSteal) <= playerHealth.startingHealth)
-                {
-                    playerHealth.currentHealth += bullet.lifeSteal;
-                } else
-                {
-                    playerHealth.currentHealth = playerHealth.startingHealth;
-                }
-                playerHealth.healthSlider.transform.localScale = new Vector3((playerHealth.currentHealth / playerHealth.startingHealth), 1, 1);
-                // play the health aura on the player for one second
+                // we heal the player
+                playerHealth.Healed(bullet.lifeSteal);               
+                playerHealth.healthSlider.transform.localScale = new Vector3((playerHealth.GetCurrentHealth() / playerHealth.GetMaxHealth()), 1, 1);
                 break;
 
             default:

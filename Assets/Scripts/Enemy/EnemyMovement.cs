@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (sight.playerInSight)
         {
-            if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+            if (enemyHealth.GetCurrentHealth() > 0 && playerHealth.GetCurrentHealth() > 0)
             {
                 anim.SetFloat("EnemyMove", 1.0f);
                 nav.SetDestination(player.position);
