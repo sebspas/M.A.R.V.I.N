@@ -159,11 +159,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
+    - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
-      propertyPath: energySlider
+      propertyPath: bonusHighlight
       value: 
-      objectReference: {fileID: 1605795794}
+      objectReference: {fileID: 1729418917}
     - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
       propertyPath: chargeBonus1
@@ -179,11 +179,16 @@ Prefab:
       propertyPath: chargeBonus3
       value: 
       objectReference: {fileID: 2123078464}
-    - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
+    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
-      propertyPath: bonusHighlight
+      propertyPath: energySlider
       value: 
-      objectReference: {fileID: 1729418917}
+      objectReference: {fileID: 1605795794}
+    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: energyText
+      value: 
+      objectReference: {fileID: 1870807846}
     - target: {fileID: 114072487637605324, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
       propertyPath: healthSlider
@@ -194,11 +199,6 @@ Prefab:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 277633949}
-    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
-        type: 2}
-      propertyPath: energyText
-      value: 
-      objectReference: {fileID: 1870807846}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
   m_IsPrefabParent: 0

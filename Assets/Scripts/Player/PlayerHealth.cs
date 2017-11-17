@@ -4,13 +4,11 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : Health
 {
-    public float startingHealth = 100;
-    public float currentHealth;
-
     public Image healthSlider;
     public Text healthText;
+
     public AudioClip deathClip;
     public AudioClip hurtClip;
 
@@ -19,62 +17,52 @@ public class PlayerHealth : MonoBehaviour
     PlayerMovement playerMovement;
     PlayerShooting playerShooting;
     PlayerBonus playerBonus;
-    bool isDead = false;
 
     void Awake()
-    {
+    {       
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
         playerShooting = GetComponentInChildren<PlayerShooting>();
         playerBonus = GetComponentInChildren<PlayerBonus>();
-        currentHealth = startingHealth;
-
-        // just be sure the slider and the text of health are ok
-        healthSlider.transform.localScale = new Vector3((currentHealth / startingHealth), 1, 1);
-        healthText.text = currentHealth + "/" + startingHealth;
+        InitHealth();
+        SliderUpdate();
     }
-
-
-    void Update()
-    {
-
-    }
-
 
     public void TakeDamage(int amount)
     {
-        if (isDead || playerBonus.bonusShieldInUse)
-        {
+        if (playerBonus.bonusShieldInUse)
             return;
-        }
-        
-        if (currentHealth - amount <= 0 && !isDead)
-        {
-            // if life is under or equal to 0
-            currentHealth = 0;
-            Death();
 
-        } else
-        {
-            // he takes some damage
-            currentHealth -= amount;
-            anim.SetTrigger("Take Damage");            
+        // remove the damage and launch all the needed function
+        Damaged(amount);
+    }
 
-            playerAudio.clip = hurtClip;
-            playerAudio.Play();
-        }
-
-        healthSlider.transform.localScale = new Vector3((currentHealth / startingHealth), 1, 1);
-        healthText.text = currentHealth + "/" + startingHealth;
+    private void SliderUpdate()
+    {
+        // just be sure the slider and the text of health are ok
+        healthSlider.transform.localScale = new Vector3((currentHealth / maxHealth), 1, 1);
+        healthText.text = currentHealth + "/" + maxHealth;
     }
 
 
-    void Death()
+    public override void HurtAnim()
     {
-        // we say the player is dead
-        isDead = true;
+        anim.SetTrigger("Take Damage");
 
+        playerAudio.clip = hurtClip;
+        playerAudio.Play();
+        SliderUpdate();
+    }
+
+    public override void HealingAnim()
+    {
+        SliderUpdate();
+    }
+
+    public override void Death()
+    {
+        SliderUpdate();
         // play the anim
         anim.SetTrigger("Die");
 

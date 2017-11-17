@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FollowUICrystal : MonoBehaviour {
 
-    public GameObject camera;
+    private GameObject camera;
 
 	// Use this for initialization
 	void Start () {
-		
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
 	}
 	
 	// Update is called once per frame

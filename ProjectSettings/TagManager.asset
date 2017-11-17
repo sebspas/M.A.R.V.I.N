@@ -21,6 +21,9 @@ TagManager:
   - Floor
   - Interact
   - Sight
+  - explosion
+  - Explosive
+  - IceGameplay
   layers:
   - Default
   - TransparentFX

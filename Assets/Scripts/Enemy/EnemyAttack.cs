@@ -43,7 +43,7 @@ public class EnemyAttack : MonoBehaviour
             anim.SetBool("PlayerInRange", false);
         }       
 
-        if (playerHealth.currentHealth <= 0)
+        if (playerHealth.IsDead())
         {
             // so it doesn't keep attacking it
             anim.SetBool("PlayerInRange", false);
@@ -52,22 +52,17 @@ public class EnemyAttack : MonoBehaviour
     }
 
     protected virtual void Attack()
-    {
-       
+    {       
         timer = 0f;
         anim.SetInteger("NumAttack", chooseAttack);
         chooseAttack = (++chooseAttack) % numberOfAttacks;
 
-        if (playerHealth.currentHealth > 0)
-        {
-            playerHealth.TakeDamage(attackDamage);
-        }
-        
+        playerHealth.TakeDamage(attackDamage);        
     }
 
     protected bool IsReadyToAttack()
     {
-        return (timer >= timeBetweenAttacks && !enemyHealth.isEnemyDead() && IsInAttackRange());
+        return (timer >= timeBetweenAttacks && !enemyHealth.IsDead() && IsInAttackRange());
     }
 
     protected bool IsInAttackRange()
