@@ -57,6 +57,18 @@ public class BulletScript : MonoBehaviour {
                 enemyHealth.TakeDamage(this);
             }
         }
+        else if (other.tag == "BossLegs")
+        {
+            // Try and find an EnemyHealth script on the gameobject hit.
+            BossHealth bossHealth = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHealth>();
+
+            // If the EnemyHealth component exist...
+            if (bossHealth != null)
+            {
+                // ... the enemy should take damage.
+                bossHealth.TakeDamage(this);
+            }
+        }
         else if (other.tag == "Explosive" && !other.isTrigger)
         {
             ExplosiveBarrel barrel = other.GetComponent<ExplosiveBarrel>();

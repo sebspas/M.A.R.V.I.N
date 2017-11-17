@@ -24,6 +24,8 @@ TagManager:
   - explosion
   - Explosive
   - IceGameplay
+  - Boss
+  - BossLegs
   layers:
   - Default
   - TransparentFX
