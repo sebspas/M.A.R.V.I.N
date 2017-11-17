@@ -9,6 +9,7 @@ public class CrystalMining : MonoBehaviour {
     float timer;
 
     bool playerInRange;
+    bool beginMining;
     GameObject player;
     PlayerMining playerMining;
 
@@ -63,6 +64,7 @@ public class CrystalMining : MonoBehaviour {
     // Use this for initialization
     void Start () {
         playerInRange = false;
+        beginMining = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerMining = player.GetComponent<PlayerMining>();
 
@@ -98,8 +100,16 @@ public class CrystalMining : MonoBehaviour {
         {
             // we update the timer
             timer += Time.deltaTime;
-           
-            if (playerInRange)
+
+            // The pkayer must press 'E' in order to begin mining
+            if (playerInRange && Input.GetKeyDown("e"))
+            {
+                beginMining = true;
+            }
+
+
+            // We begin the mining and the ennemies spawn
+            if (playerInRange && beginMining)
             {
                 timerSpawning += Time.deltaTime;
                 if (timerSpawning > spawningSpeed)
@@ -120,6 +130,7 @@ public class CrystalMining : MonoBehaviour {
             if (remainingCrystal <= 0 && !isEmpty)
             {
                 playerMining.isMining = false;
+                beginMining = false;
                 endOfCrystal();
 
                 // Find and launch the boss script linked to the icegameplay
