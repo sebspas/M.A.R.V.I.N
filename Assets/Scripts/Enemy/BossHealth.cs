@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class BossHealth : Health
 {
@@ -6,6 +7,10 @@ public class BossHealth : Health
     public int scoreValue = 10;
     public AudioClip deathClip;
     public GameObject disappearEffect;
+
+    public GameObject UIBoss;
+    public Image healthSlider;
+    public Text healthText;
 
     // the player shooting script (to add the exp)
     PlayerShooting playerShooting;
@@ -40,6 +45,8 @@ public class BossHealth : Health
         currentEffect = new EffectBoss(this, bossMovement);
         InitHealth();
         AppearOrDesappear();
+        SliderUpdate();
+        UIBoss.SetActive(true);
     }
 
 
@@ -60,6 +67,7 @@ public class BossHealth : Health
     {
         // we applied the damage to the entity
         Damaged(damage);
+
     }
 
     public void TakeDamage(BulletScript bullet)
@@ -76,13 +84,17 @@ public class BossHealth : Health
     //(nothing with the boss)
     public override void HurtAnim()
     {
+        SliderUpdate();
     }
 
     // Override the Death Function to define the death behavior
     public override void Death()
     {
+        SliderUpdate();
         anim.SetBool("BossDead", true);
         anim.SetBool("PlayerInRange", false);
+
+        UIBoss.SetActive(false);
 
         // we give the amount of xp to the player max energy
         playerShooting.energyMax += xpGiven;
@@ -108,6 +120,14 @@ public class BossHealth : Health
 
         BossFight1 scriptBoss1 = GameObject.FindGameObjectWithTag("IceGameplay").GetComponent<BossFight1>();
         scriptBoss1.DestroyWall();
+    }
+
+
+    private void SliderUpdate()
+    {
+        // just be sure the slider and the text of health are ok
+        healthSlider.transform.localScale = new Vector3((currentHealth / maxHealth), 1, 1);
+        healthText.text = currentHealth + "/" + maxHealth;
     }
 
     public void AppearOrDesappear()

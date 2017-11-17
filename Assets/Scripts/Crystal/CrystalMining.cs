@@ -149,14 +149,14 @@ public class CrystalMining : MonoBehaviour {
 
     void SpawnEnnemies()
     {
-        Debug.Log("Spawn Ennemy");
+        //Debug.Log("Spawn Ennemy");
         // reset the timer
         timerSpawning = 0f;
 
         for (int i = 0; i < numberOfBasicEnnemies; i++)
         {
             int spawnPointPos = Random.Range(0, spawnPoints.Length-1);
-            Debug.Log(spawnPoints[spawnPointPos].transform.position);
+            //Debug.Log(spawnPoints[spawnPointPos].transform.position);
             GameObject ennemy = (GameObject)Instantiate(listSpawnableEnnemies[0], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
             ennemy.gameObject.name = "Ennemy_Basic_" + i;
             ennemy.GetComponentInChildren<EnemyFOV>().disabled = true;

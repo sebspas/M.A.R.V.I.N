@@ -26,7 +26,7 @@ public class BossFight1 : MonoBehaviour
     {
         if (begin && timer < Time.time)
         {
-            print("instanciate boss");
+            //print("instanciate boss");
             GameObject boss = (GameObject)Instantiate(boss1, spawnPoint.transform.position, new Quaternion(0, 0, 0, 0));
             boss.SetActive(true);
 
@@ -38,7 +38,7 @@ public class BossFight1 : MonoBehaviour
     public void Begin()
     {
         begin = true;
-        print("bonjour conard");
+        //print("bonjour conard");
         iceGameplay = GameObject.FindGameObjectWithTag("IceGameplay");
         wall.SetActive(true);
         effect.SetActive(true);
