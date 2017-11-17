@@ -96,8 +96,8 @@ public class EnemyHealth : Health
         // we also give this energy to the current amount of energy of the player
         playerShooting.currentEnergy += xpGiven;
 
-        //enemyAudio.clip = deathClip;
-        //enemyAudio.Play();
+        enemyAudio.clip = deathClip;
+        enemyAudio.Play();
 
         // Find and disable the Nav Mesh Agent.
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
