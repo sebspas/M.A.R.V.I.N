@@ -16,6 +16,9 @@ public class PlayerMining : MonoBehaviour {
     // The total amount of crystal mined so far
     public float totalMined;
 
+    // The phase of game
+    public int phase;
+
     // boolean to know if the player is mining the cristal or recharging the portal
     public bool isMining; 
     public bool isCharging;
@@ -30,6 +33,7 @@ public class PlayerMining : MonoBehaviour {
         isCharging = false;
         timer = 0f;
         totalMined = 0f;
+        phase = 1;
 
         weaponUI = GameObject.FindGameObjectWithTag("WeaponUI");
         playerWeapon = weaponUI.GetComponent<PlayerWeapon>();
@@ -59,5 +63,46 @@ public class PlayerMining : MonoBehaviour {
     public void getNextWeapon()
     {
         playerWeapon.addWeapon();
+    }
+
+    public void endOfCrystal(Transform posCrystal)
+    {
+        Vector3 posBoss = posCrystal.position;
+
+        switch (phase)
+        {
+            case 1: // Ice phase
+                // Find and launch the boss script linked to the icegameplay
+                GameObject iceGameplay = GameObject.FindGameObjectWithTag("IceGameplay");
+                BossFight1 bossScript1 = iceGameplay.GetComponent<BossFight1>();
+                bossScript1.Begin();
+                break;
+
+            case 2: // fire phase
+                // Find and launch the boss script linked to the firegameplay
+                GameObject fireGameplay = GameObject.FindGameObjectWithTag("FireGameplay");
+                BossFight1 bossScript2 = fireGameplay.GetComponent<BossFight1>();
+                bossScript2.Begin();
+                break;
+
+            case 3: // Earth phase
+                // Find and launch the boss script linked to the earthgameplay
+                GameObject forestGameplay = GameObject.FindGameObjectWithTag("ForestGameplay");
+                BossFight1 bossScript3 = forestGameplay.GetComponent<BossFight1>();
+                bossScript3.Begin();
+                break;
+
+            case 4: // final portal defense
+                // Find and launch the boss script linked to the finalgameplay
+                GameObject finalGameplay = GameObject.FindGameObjectWithTag("FinalGameplay");
+                BossFight1 bossScript4 = finalGameplay.GetComponent<BossFight1>();
+                bossScript4.Begin();
+                break;
+
+            default:
+                break;
+        }
+
+        phase++;
     }
 }
