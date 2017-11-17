@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 40
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 0}
