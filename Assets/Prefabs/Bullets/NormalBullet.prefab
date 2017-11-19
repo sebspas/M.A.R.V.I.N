@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 54565749533411450}
   - component: {fileID: 114877660225417210}
   - component: {fileID: 135841770147584348}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NormalBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,8 +71,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerShot: 5
+  energyCost: 1
   burningDamage: 2
   burningTotalTime: 2
+  burningInterval: 0.9
   frozenSlow: 3
   frozenTotalTime: 1.5
   lifeSteal: 5

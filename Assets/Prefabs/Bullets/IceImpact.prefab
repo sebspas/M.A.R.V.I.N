@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4508817228447342}
   - component: {fileID: 198724078828573966}
   - component: {fileID: 199322696604425310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: IceImpact
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -28,6 +28,7 @@ TagManager:
   - BossLegs
   - PauseMenu
   - HUD
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -39,7 +40,7 @@ TagManager:
   - 
   - Floor
   - CrystalHealthBar
-  - 
+  - BossRayCast
   - 
   - 
   - 

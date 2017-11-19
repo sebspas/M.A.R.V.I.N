@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4588992823657580}
   - component: {fileID: 136955684280056344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BAcktoes
   m_TagString: BossLegs
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4183653338323772}
   - component: {fileID: 136810364274219632}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_toes
   m_TagString: BossLegs
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4674639109247896}
   - component: {fileID: 136785768492448952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_toes
   m_TagString: BossLegs
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1611374689862500
 GameObject:
   m_ObjectHideFlags: 1
@@ -1488,8 +1488,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583448380886822}
   m_LocalRotation: {x: -0, y: 0.9385612, z: -0, w: -0.34511298}
-  m_LocalPosition: {x: 139.4, y: 0, z: 30.13}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 9.185516, y: -0, z: 6.4007263}
+  m_LocalScale: {x: 0.40000015, y: 0.4, z: 0.40000015}
   m_Children:
   - {fileID: 4192826434332286}
   - {fileID: 4987300637777212}
@@ -2085,12 +2085,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2813c8f8b0731a04a9cda7d84b522b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 600
   sinkSpeed: 2.5
   scoreValue: 100
   deathClip: {fileID: 8300000, guid: 694a31ad7e3c6d441937bce770697594, type: 3}
   disappearEffect: {fileID: 1108412428568460, guid: 88e70a9ae230b434087c5eba9d0742ca,
     type: 2}
+  UIBoss: {fileID: 0}
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
   xpGiven: 50

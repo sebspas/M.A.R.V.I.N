@@ -51,7 +51,7 @@ public class BossAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(bossHealth.GetCurrentHealth() <= 100)
+        if(bossHealth.GetCurrentHealth() <= 200)
         {
             venerePattern = true;
         }
@@ -153,7 +153,7 @@ public class BossAttack : MonoBehaviour
     public void LaunchBossBullet()
     {
         // we launch the bullet
-        GameObject bullet = (GameObject)Instantiate(bossProj, staff.transform.position - new Vector3(0f,2f,0f), Quaternion.identity);
+        GameObject bullet = (GameObject)Instantiate(bossProj, staff.transform.position - new Vector3(0f,1.5f,0f), Quaternion.identity);
         bullet.gameObject.name = "Bullet";
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bossBulletSpeed);
     }
