@@ -26,6 +26,7 @@ TagManager:
   - IceGameplay
   - Boss
   - BossLegs
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - 
   - Floor
   - CrystalHealthBar
-  - 
+  - BossRayCast
   - 
   - 
   - 
