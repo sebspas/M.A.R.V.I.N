@@ -57,6 +57,9 @@ public class PlayerShooting : MonoBehaviour {
     // speed of the bullet
     public int bulletSpeed = 350;
 
+    // number of weapon taht the player actually got
+    public int maxWeapon = 1;
+
     void Start () {
         anim = GetComponent<Animator>();
         laserAudio = GetComponent<AudioSource>();
@@ -82,7 +85,7 @@ public class PlayerShooting : MonoBehaviour {
         }
 
         // we increase the energy if neeeded
-        if (timerEnergy > energyRegenTime)
+        if (timerEnergy > energyRegenTime || (playerBonus.bonusBoostInUse && timerEnergy > (energyRegenTime/2)))
         {
             // we reset the timer
             timerEnergy = 0;
@@ -134,5 +137,10 @@ public class PlayerShooting : MonoBehaviour {
         // we update the energy slider
         energySlider.transform.localScale = new Vector3((currentEnergy / energyMax), 1, 1);
     }
-    
+
+    public bool playerGotAllWeapon()
+    {
+        return maxWeapon >= 4;
+    }
+
 }

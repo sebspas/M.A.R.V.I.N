@@ -27,6 +27,7 @@ TagManager:
   - Boss
   - BossLegs
   - Bullet
+  - Wall
   layers:
   - Default
   - TransparentFX

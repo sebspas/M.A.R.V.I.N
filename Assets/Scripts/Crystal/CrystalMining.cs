@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CrystalMining : MonoBehaviour {
+public class CrystalMining : Spawner {
 
     // general timer to know the time between two update
-    float timer;
+    float timerMining = 0f;
 
     bool playerInRange;
     bool beginMining;
@@ -36,18 +36,6 @@ public class CrystalMining : MonoBehaviour {
     private float totalToMine;
     private float minnedCrystal = 0f;
 
-    // spawning speed by wave
-    public float spawningSpeed = 10f;
-
-    // number of basic ennemie to spawn by wace
-    int numberOfBasicEnnemies = 2;
-
-    // number of distance ennemies to spawn by wave
-    int numberOfDistanceEnnemies = 1;
-
-    // timer for the spawning
-    float timerSpawning = 0f;
-
     // timer to mine
     float miningSpeed;
     // The amont of cristal per timeBetweenCristal the player is mining
@@ -59,7 +47,6 @@ public class CrystalMining : MonoBehaviour {
 
     // public UI group to activate when we start mining 
     GameObject uiCrystal;
-
 
     // Use this for initialization
     void Start () {
@@ -83,23 +70,24 @@ public class CrystalMining : MonoBehaviour {
         miningSpeed = playerMining.miningSpeed;
         totalToMine = remainingCrystal;
 
-        // we add all the spawnpoints
-        /*int children = spawnPointContainer.transform.childCount;
-        spawnPoints = new GameObject[children]; // we init the tab of all the spawnPoints at the right size
-        for (int i = 0; i < children; ++i)
-            spawnPoints[i] = spawnPointContainer.transform.GetChild(i).gameObject;*/
-
         // Create the sphere collider, radius = 2, isTrigger = true (we can go through it)
         sc = gameObject.GetComponent<SphereCollider>() as SphereCollider;
         isEmpty = false;
+
+        // setup the number of ennemie
+        numberOfBasicEnnemies = 2;
+        numberOfRangeEnnemies = 2;
+        numberOfTankEnnemies = 1;
+        maxWave = 99;
     }
 	
 	// Update is called once per frame
-	void Update () {    
+	void Update () {
+
         if (!isEmpty)
         {
             // we update the timer
-            timer += Time.deltaTime;
+            timerMining += Time.deltaTime;
 
             // The pkayer must press 'E' in order to begin mining
             if (playerInRange && Input.GetKeyDown("e"))
@@ -107,41 +95,40 @@ public class CrystalMining : MonoBehaviour {
                 beginMining = true;
             }
 
-
             // We begin the mining and the ennemies spawn
             if (playerInRange && beginMining)
-            {
-                timerSpawning += Time.deltaTime;
-                if (timerSpawning > spawningSpeed)
-                {
-                    SpawnEnnemies();
-                }          
-
+            {                
                 playerMining.isMining = true;
-                if (timer > miningSpeed)
+                active = true;
+                if (timerMining > miningSpeed)
                 {
                     Mine();
-                }                
+                }            
             }
             else
             {
                 playerMining.isMining = false;
+                active = false;
             }
-            if (remainingCrystal <= 0 && !isEmpty)
+
+            // if the spawner is activate it will spawn monster, otherwise it will not do anything
+            updateSpawner(Time.deltaTime);
+
+            if (remainingCrystal <= 0)
             {
                 playerMining.isMining = false;
                 beginMining = false;
+                active = false;
                 endOfCrystal();
 
                 playerMining.endOfCrystal(transform);
             }
         }
-
 	}
 
     void OnTriggerEnter(Collider sc)
     {
-        if (sc.gameObject == player)
+        if (sc.gameObject.tag == "Player")
         {
             playerInRange = true;          
         }
@@ -149,50 +136,32 @@ public class CrystalMining : MonoBehaviour {
 
     void OnTriggerExit(Collider sc)
     {
-        if (sc.gameObject == player)
+        if (sc.gameObject.tag == "Player")
         {
             playerInRange = false;
         }
     }
 
-    void SpawnEnnemies()
+    protected override void SpawnWave()
     {
-        //Debug.Log("Spawn Ennemy");
-        // reset the timer
-        timerSpawning = 0f;
+        SpawnEnnemieAtRandom(listSpawnableEnnemies[0], spawnPoints, numberOfBasicEnnemies);          
+        SpawnEnnemieAtRandom(listSpawnableEnnemies[1], spawnPoints, numberOfRangeEnnemies);
 
-        for (int i = 0; i < numberOfBasicEnnemies; i++)
+        if(listSpawnableEnnemies.Length > 2)
         {
-            int spawnPointPos = Random.Range(0, spawnPoints.Length-1);
-            //Debug.Log(spawnPoints[spawnPointPos].transform.position);
-            GameObject ennemy = (GameObject)Instantiate(listSpawnableEnnemies[0], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
-            ennemy.gameObject.name = "Ennemy_Basic_" + i;
-            ennemy.GetComponentInChildren<EnemyFOV>().disabled = true;
-            ennemy.GetComponentInChildren<EnemyFOV>().playerInSight = true;
+            SpawnEnnemieAtRandom(listSpawnableEnnemies[2], spawnPoints, numberOfTankEnnemies);
         }
-
-        for (int i = 0; i < numberOfDistanceEnnemies; i++)
-        {
-            int spawnPointPos = Random.Range(0, spawnPoints.Length);
-
-            GameObject ennemy = (GameObject)Instantiate(listSpawnableEnnemies[1], spawnPoints[spawnPointPos].transform.position, new Quaternion(0, 0, 0, 0));
-            ennemy.gameObject.name = "Ennemy_Distance_" + i;
-            ennemy.GetComponentInChildren<EnemyFOV>().disabled = true;
-            ennemy.GetComponentInChildren<EnemyFOV>().playerInSight = true;
-
-        }
-
     }
 
     void Mine ()
     {
         uiCrystal.SetActive(true);
 
-        if (timer > miningSpeed)
+        if (timerMining > miningSpeed)
         {
             remainingCrystal -= miningAmont;
             minnedCrystal += miningAmont;
-            timer = 0f;
+            timerMining = 0f;
 
             // make the progress bar move
             float newScale = remainingCrystal / totalToMine;
@@ -206,7 +175,6 @@ public class CrystalMining : MonoBehaviour {
 
     void endOfCrystal()
     {
-
         isEmpty = true;
 
         uiCrystal.SetActive(false);

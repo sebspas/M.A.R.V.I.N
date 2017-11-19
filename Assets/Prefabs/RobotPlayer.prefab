@@ -1744,13 +1744,14 @@ MonoBehaviour:
   - {fileID: 1349997331834966, guid: 020bb9a12510f6640aee851cc7bd9672, type: 2}
   - {fileID: 1939240370481064, guid: 01fbc6d3cc27b4b4ea5f614fcbc72274, type: 2}
   currentWeapon: 0
-  energyMax: 20
-  currentEnergy: 20
+  energyMax: 100
+  currentEnergy: 100
   energySlider: {fileID: 0}
   energyText: {fileID: 0}
   gunRightArm: {fileID: 1099828321575250}
   laser: {fileID: 8300000, guid: b7aa833824d785a4bbaa982dbbc0f45b, type: 3}
   bulletSpeed: 1000
+  maxWeapon: 1
 --- !u!114 &114208884519423014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1804,6 +1805,7 @@ MonoBehaviour:
   miningSpeed: 0.5
   miningAmont: 0.5
   totalMined: 0
+  phase: 0
   isMining: 0
   isCharging: 0
 --- !u!114 &114883833820761946
@@ -1835,7 +1837,7 @@ MonoBehaviour:
   chargeBonus1: {fileID: 0}
   chargeBonus2: {fileID: 0}
   chargeBonus3: {fileID: 0}
-  maxGaugeSize: 40
+  maxGaugeSize: 50
   timeMaxShield: 4
   timeMaxEnergyBoost: 3
   timeMaxAura: 2.5

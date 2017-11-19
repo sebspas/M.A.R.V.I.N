@@ -31,15 +31,10 @@ public class PlayerWeapon : MonoBehaviour {
 
     PlayerShooting playerShooting;
 
-    // number of unlocked weapon
-    int maxWeapon;
-
     // general timer to know the time between two update
     float timer;
 
     int weaponID;
-
-
 
     void Start()
     {
@@ -47,7 +42,6 @@ public class PlayerWeapon : MonoBehaviour {
         playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
 
         weaponID = 0;
-        maxWeapon = 1;
 
         allWeapon = GetComponentsInChildren<Image>();
         foreach (Image weapon in allWeapon)
@@ -74,6 +68,11 @@ public class PlayerWeapon : MonoBehaviour {
                     break;
             }
         }
+
+        // TODO remove that ONLY FOR TEST
+        /*addWeapon();
+        addWeapon();
+        addWeapon();*/
     }
 
     // Update is called once per frame
@@ -94,15 +93,15 @@ public class PlayerWeapon : MonoBehaviour {
         {
             SelectWeapon(0);
         }
-        else if (Input.GetKey("2") && timer > timeBetweenWeaponChange && maxWeapon >= 2) //  weapon 2
+        else if (Input.GetKey("2") && timer > timeBetweenWeaponChange && playerShooting.maxWeapon >= 2) //  weapon 2
         {
             SelectWeapon(1);
         }
-        else if (Input.GetKey("3") && timer > timeBetweenWeaponChange && maxWeapon >= 3) //  weapon 3
+        else if (Input.GetKey("3") && timer > timeBetweenWeaponChange && playerShooting.maxWeapon >= 3) //  weapon 3
         {
             SelectWeapon(2);
         }
-        else if (Input.GetKey("4") && timer > timeBetweenWeaponChange && maxWeapon >= 4) //  weapon 4
+        else if (Input.GetKey("4") && timer > timeBetweenWeaponChange && playerShooting.maxWeapon >= 4) //  weapon 4
         {
             SelectWeapon(3);
         }
@@ -124,13 +123,13 @@ public class PlayerWeapon : MonoBehaviour {
         {
             weaponID--;
         }
-        if (weaponID == maxWeapon)
+        if (weaponID == playerShooting.maxWeapon)
         {
             weaponID = 0;
         }
         if (weaponID == -1)
         {
-            weaponID = maxWeapon-1;
+            weaponID = playerShooting.maxWeapon-1;
         }
 
         float rz = (-90) * weaponID;
@@ -187,9 +186,9 @@ public class PlayerWeapon : MonoBehaviour {
 
     public void addWeapon()
     {
-        maxWeapon++;
+        playerShooting.maxWeapon++;
 
-        switch(maxWeapon)
+        switch(playerShooting.maxWeapon)
         {
             case 2:
                 ice.sprite = weaponUnlockAnim;

@@ -16185,7 +16185,6 @@ MonoBehaviour:
   - {fileID: 1882657647333344, guid: a18985677c1fac744bd65c1268c3f247, type: 2}
   - {fileID: 1205518982058006, guid: a863c51db09608040a37fb2916eeda72, type: 2}
   remainingCrystal: 20
-  spawningSpeed: 5
 --- !u!114 &114644989420251468
 MonoBehaviour:
   m_ObjectHideFlags: 1

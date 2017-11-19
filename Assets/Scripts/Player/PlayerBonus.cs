@@ -29,7 +29,7 @@ public class PlayerBonus : MonoBehaviour {
     //public Image energySlider;
 
     // Max size for the bonus gauge square : when reached, the bonus is fully reloaded
-    public float maxGaugeSize = 40;
+    public float maxGaugeSize = 50;
 
     // general timer to know the time between two update
     float timer;
@@ -153,16 +153,19 @@ public class PlayerBonus : MonoBehaviour {
         if (Input.GetKeyDown("a") && timer > timeBetweenWeaponChange) //  Shield bonus
         {
             SwitchBonus(0);
+            UseBonus(bonusID);
         }
         else
         if (Input.GetKeyDown("e") && timer > timeBetweenWeaponChange) //  Electric aura bonus
         {
             SwitchBonus(1);
+            UseBonus(bonusID);
         }
         else
         if (Input.GetKeyDown("r") && timer > timeBetweenWeaponChange) //  Enhanced fire rate bonus
         {
             SwitchBonus(2);
+            UseBonus(bonusID);
         }
         else
         if (Input.GetButtonDown("Fire2")) //  Use selected bonus
