@@ -26,6 +26,8 @@ TagManager:
   - IceGameplay
   - Boss
   - BossLegs
+  - PauseMenu
+  - HUD
   layers:
   - Default
   - TransparentFX

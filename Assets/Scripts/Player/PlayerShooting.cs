@@ -57,55 +57,71 @@ public class PlayerShooting : MonoBehaviour {
     // speed of the bullet
     public int bulletSpeed = 350;
 
+    bool isPaused;
+
+
     void Start () {
         anim = GetComponent<Animator>();
         laserAudio = GetComponent<AudioSource>();
         playerBonus = GetComponentInChildren<PlayerBonus>();
+        //isPaused = GameObject.Find("UIManager").GetComponent<UIManager>().isPaused;
     }
 	
 	void Update () {
-        // we update the two timer
-        timer += Time.deltaTime;
-        timerEnergy += Time.deltaTime;
 
-        // if we clicck and we have enough energy for the selected bullet
-        bool isFirerateOk = (timer > timeBetweenBullet && !playerBonus.bonusBoostInUse) || (timer > timeBetweenBullet / 2 && playerBonus.bonusBoostInUse); 
-        if (Input.GetButton("Fire1") && isFirerateOk && currentEnergy > proj[currentWeapon].GetComponent<BulletScript>().energyCost)
+       if (!UIManager.isPaused)
         {
-            // then we shoot
-            Shoot();
-        }
-        else if (timer > timeToGoBackToIdle)
-        {          
-            // we put back is right arm in the normal position
-            anim.SetBool("Right Aim", false);           
-        }
+            // we update the two timer
+            timer += Time.deltaTime;
+            timerEnergy += Time.deltaTime;
 
-        // we increase the energy if neeeded
-        if (timerEnergy > energyRegenTime)
-        {
-            // we reset the timer
-            timerEnergy = 0;
-
-            // if we are not using bonus 3
-            if (!playerBonus.bonusBoostInUse) 
+            // if we clicck and we have enough energy for the selected bullet
+            bool isFirerateOk = (timer > timeBetweenBullet && !playerBonus.bonusBoostInUse) || (timer > timeBetweenBullet / 2 && playerBonus.bonusBoostInUse);
+            if (Input.GetButton("Fire1") && isFirerateOk && currentEnergy > proj[currentWeapon].GetComponent<BulletScript>().energyCost)
             {
-                // we regen the energy
-                if (currentEnergy + (energyMax*energyRegen) <= energyMax)
-                {
-                    currentEnergy += (energyMax * energyRegen);
-                }
-                else
-                {
-                    currentEnergy = energyMax;
-                }
+                // then we shoot
+                Shoot();
+            }
+            else if (timer > timeToGoBackToIdle)
+            {
+                // we put back is right arm in the normal position
+                anim.SetBool("Right Aim", false);
             }
 
-            // we update the energy slider
-            energySlider.transform.localScale = new Vector3((currentEnergy / energyMax), 1, 1);
-            energyText.text = currentEnergy.ToString("#") + "/" + energyMax;
-        
-            //Debug.Log(currentEnergy + "/" + energyMax);
+            // we increase the energy if neeeded
+            if (timerEnergy > energyRegenTime)
+            {
+                // we reset the timer
+                timerEnergy = 0;
+
+                // if we are not using bonus 3
+                if (!playerBonus.bonusBoostInUse)
+                {
+                    // we regen the energy
+                    if (currentEnergy + (energyMax * energyRegen) <= energyMax)
+                    {
+                        currentEnergy += (energyMax * energyRegen);
+                    }
+                    else
+                    {
+                        currentEnergy = energyMax;
+                    }
+                }
+
+                // we update the energy slider
+                energySlider.transform.localScale = new Vector3((currentEnergy / energyMax), 1, 1);
+                energyText.text = currentEnergy.ToString("#") + "/" + energyMax;
+
+                //Debug.Log(currentEnergy + "/" + energyMax);
+            }
+
+        }
+       else
+        {
+            if (Input.GetButton("Fire1"))
+            {
+                Debug.Log("click !");
+            }
         }
     }
 
