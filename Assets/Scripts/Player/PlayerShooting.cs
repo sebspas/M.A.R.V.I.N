@@ -65,16 +65,17 @@ public class PlayerShooting : MonoBehaviour {
         laserAudio = GetComponent<AudioSource>();
         playerBonus = GetComponentInChildren<PlayerBonus>();
     }
-	
-	void Update () {
 
-       if (!UIManager.isPaused)
+    void Update()
+    {
+
+        if (!UIManager.isPaused)
         {
             // we update the two timer
             timer += Time.deltaTime;
             timerEnergy += Time.deltaTime;
             // we increase the energy if neeeded
-            if (timerEnergy > energyRegenTime || (playerBonus.bonusBoostInUse && timerEnergy > (energyRegenTime/2)))
+            if (timerEnergy > energyRegenTime || (playerBonus.bonusBoostInUse && timerEnergy > (energyRegenTime / 2)))
             {
                 // we reset the timer
                 timerEnergy = 0;
@@ -90,32 +91,25 @@ public class PlayerShooting : MonoBehaviour {
                     // we put back is right arm in the normal position
                     anim.SetBool("Right Aim", false);
                 }
-                    // if we are not using bonus 3
-                    if (!playerBonus.bonusBoostInUse)
+                // if we are not using bonus 3
+                if (!playerBonus.bonusBoostInUse)
+                {
+                    // we regen the energy
+                    if (currentEnergy + (energyMax * energyRegen) <= energyMax)
                     {
-                        // we regen the energy
-                        if (currentEnergy + (energyMax * energyRegen) <= energyMax)
-                        {
-                            currentEnergy += (energyMax * energyRegen);
-                        }
-                        else
-                        {
-                            currentEnergy = energyMax;
-                        }
+                        currentEnergy += (energyMax * energyRegen);
                     }
-
-                    // we update the energy slider
-                    energySlider.transform.localScale = new Vector3((currentEnergy / energyMax), 1, 1);
-                    energyText.text = currentEnergy.ToString("#") + "/" + energyMax;
-
-                    //Debug.Log(currentEnergy + "/" + energyMax);
+                    else
+                    {
+                        currentEnergy = energyMax;
+                    }
                 }
-            }
-       else
-        {
-            if (Input.GetButton("Fire1"))
-            {
-                Debug.Log("click !");
+
+                // we update the energy slider
+                energySlider.transform.localScale = new Vector3((currentEnergy / energyMax), 1, 1);
+                energyText.text = currentEnergy.ToString("#") + "/" + energyMax;
+
+                //Debug.Log(currentEnergy + "/" + energyMax);
             }
         }
     }

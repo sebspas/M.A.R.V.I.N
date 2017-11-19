@@ -28,13 +28,13 @@ public class UIManager : MonoBehaviour {
             if (Time.timeScale == 1)
             {
                 isPaused = true;
-                Debug.Log("paused");
+                //Debug.Log("paused");
                 Time.timeScale = 0;
                 showPaused();
             }
             else if (Time.timeScale == 0)
             {
-                Debug.Log("resume");
+                //Debug.Log("resume");
                 Time.timeScale = 1;
                 hidePaused();
                 isPaused = false;
