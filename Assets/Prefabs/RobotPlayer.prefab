@@ -1837,7 +1837,7 @@ MonoBehaviour:
   chargeBonus1: {fileID: 0}
   chargeBonus2: {fileID: 0}
   chargeBonus3: {fileID: 0}
-  maxGaugeSize: 50
+  maxGaugeSize: 45
   timeMaxShield: 4
   timeMaxEnergyBoost: 3
   timeMaxAura: 2.5
