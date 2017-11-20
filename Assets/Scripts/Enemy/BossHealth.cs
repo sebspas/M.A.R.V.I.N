@@ -35,6 +35,8 @@ public class BossHealth : Health
 
     GameObject boss;
 
+    BossFight scriptZoneBoss;
+
     void Awake()
     {
         boss = GameObject.FindGameObjectWithTag("Boss");
@@ -47,6 +49,25 @@ public class BossHealth : Health
         AppearOrDesappear();
         SliderUpdate();
         UIBoss.SetActive(true);
+
+        // The zone depends on the number of weapon
+        int nbWeapon = playerShooting.GetMaxWeapon();
+        // Recupere la zone du boss pour pouvoir lancer l'effet de l'AOE
+        switch (nbWeapon)
+        {
+            case 2:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("IceGameplay").GetComponent<BossFight>();
+                break;
+            case 3:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("FireGameplay").GetComponent<BossFight>();
+                break;
+            case 4:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("ForestGameplay").GetComponent<BossFight>();
+                break;
+            case 5:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFight>();
+                break;
+        }
     }
 
 
@@ -118,8 +139,10 @@ public class BossHealth : Health
 
         AppearOrDesappear();
 
-        BossFight1 scriptBoss1 = GameObject.FindGameObjectWithTag("IceGameplay").GetComponent<BossFight1>();
-        scriptBoss1.DestroyWall();
+        scriptZoneBoss.DestroyWall();
+
+        PlayerHealth playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        playerHealth.Healed(1000);
     }
 
 

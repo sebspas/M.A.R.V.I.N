@@ -30,6 +30,8 @@ TagManager:
   - HUD
   - Bullet
   - Wall
+  - FireGameplay
+  - ForestGameplay
   layers:
   - Default
   - TransparentFX

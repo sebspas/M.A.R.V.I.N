@@ -145,4 +145,9 @@ public class PlayerShooting : MonoBehaviour {
         return maxWeapon >= 4;
     }
 
+    public int GetMaxWeapon()
+    {
+        return maxWeapon;
+    }
+
 }

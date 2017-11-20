@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossFight1 : MonoBehaviour
+public class BossFight : MonoBehaviour
 {
-    // The object in wich the script is
-    GameObject iceGameplay;
     public GameObject wall;
     public GameObject effect;
     public GameObject effectAOE;
     public GameObject spawnPoint;
-    public GameObject boss1;
+    public GameObject boss;
 
     bool begin;
     float timer;
+
 
     // Use this for initialization
     void Start()
@@ -27,8 +26,8 @@ public class BossFight1 : MonoBehaviour
         if (begin && timer < Time.time)
         {
             //print("instanciate boss");
-            GameObject boss = (GameObject)Instantiate(boss1, spawnPoint.transform.position, new Quaternion(0, 0, 0, 0));
-            boss.SetActive(true);
+            GameObject Instanceboss = (GameObject)Instantiate(boss, spawnPoint.transform.position, new Quaternion(0, 0, 0, 0));
+            Instanceboss.SetActive(true);
 
             begin = false;
             timer = 0;
@@ -38,8 +37,6 @@ public class BossFight1 : MonoBehaviour
     public void Begin()
     {
         begin = true;
-        //print("bonjour conard");
-        iceGameplay = GameObject.FindGameObjectWithTag("IceGameplay");
         wall.SetActive(true);
         effect.SetActive(true);
         timer = Time.time + 8f;

@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 114711100684434528}
   - component: {fileID: 82302036594575884}
   m_Layer: 0
-  m_Name: e_Boss1
+  m_Name: e_Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1488,8 +1488,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583448380886822}
   m_LocalRotation: {x: -0, y: 0.9385612, z: -0, w: -0.34511298}
-  m_LocalPosition: {x: 9.185516, y: -0, z: 6.4007263}
-  m_LocalScale: {x: 0.40000015, y: 0.4, z: 0.40000015}
+  m_LocalPosition: {x: -75.85574, y: 0, z: -8.410507}
+  m_LocalScale: {x: 0.40000036, y: 0.4, z: 0.40000036}
   m_Children:
   - {fileID: 4192826434332286}
   - {fileID: 4987300637777212}
@@ -2068,12 +2068,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 2
-  attackDamage: 30
+  attackDamage: 40
   AOEattackDamage: 60
   attackRange: 15
   bossProj: {fileID: 1142586305092978, guid: bf0ff23cb636be74db13e2d479da024a, type: 2}
   staff: {fileID: 1026539822407422}
-  bossBulletSpeed: 900
+  bossBulletSpeed: 300
 --- !u!114 &114687972418591164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2085,13 +2085,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2813c8f8b0731a04a9cda7d84b522b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 600
+  maxHealth: 900
   sinkSpeed: 2.5
   scoreValue: 100
   deathClip: {fileID: 8300000, guid: 694a31ad7e3c6d441937bce770697594, type: 3}
   disappearEffect: {fileID: 1108412428568460, guid: 88e70a9ae230b434087c5eba9d0742ca,
     type: 2}
-  UIBoss: {fileID: 0}
+  UIBoss: {fileID: 1171236558155076, guid: ca5e23ca8c38c414289367285ce98cd5, type: 2}
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
   xpGiven: 50

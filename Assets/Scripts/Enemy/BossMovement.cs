@@ -45,7 +45,6 @@ public class BossMovement : MonoBehaviour
         if (Physics.SphereCast(transform.position + transform.up, 1,
             direction.normalized, out hit, 50, layerMask))
         {
-            print("hit.collider.tag = " + hit.collider.tag);
             if (hit.collider.tag == "Player")
             {
                 inFront = true;
@@ -58,7 +57,6 @@ public class BossMovement : MonoBehaviour
 
         if ((bossHealth.GetCurrentHealth() > 0 && playerHealth.GetCurrentHealth() > 0) && (distToPlayer > 13f || !inFront))
         {
-            print("distToPlayer = " + distToPlayer + "   distToPlayer > 13f = " + (distToPlayer > 13f) + "  !inFront = " + !inFront);
             nav.enabled = true;
             anim.SetFloat("EnemyMove", 1.0f);
             nav.SetDestination(player.position);

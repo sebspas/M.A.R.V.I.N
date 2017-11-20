@@ -68,36 +68,37 @@ public class PlayerMining : MonoBehaviour {
     public void endOfCrystal(Transform posCrystal)
     {
         Vector3 posBoss = posCrystal.position;
+        BossFight bossScript;
 
         switch (phase)
         {
             case 1: // Ice phase
                 // Find and launch the boss script linked to the icegameplay
                 GameObject iceGameplay = GameObject.FindGameObjectWithTag("IceGameplay");
-                BossFight1 bossScript1 = iceGameplay.GetComponent<BossFight1>();
-                bossScript1.Begin();
+                bossScript = iceGameplay.GetComponent<BossFight>();
+                bossScript.Begin();
                 break;
 
             case 2: // fire phase
                 // Find and launch the boss script linked to the firegameplay
                 GameObject fireGameplay = GameObject.FindGameObjectWithTag("FireGameplay");
-                BossFight1 bossScript2 = fireGameplay.GetComponent<BossFight1>();
-                bossScript2.Begin();
+                bossScript = fireGameplay.GetComponent<BossFight>();
+                bossScript.Begin();
                 break;
 
             case 3: // Earth phase
                 // Find and launch the boss script linked to the earthgameplay
                 GameObject forestGameplay = GameObject.FindGameObjectWithTag("ForestGameplay");
-                BossFight1 bossScript3 = forestGameplay.GetComponent<BossFight1>();
-                bossScript3.Begin();
+                bossScript = forestGameplay.GetComponent<BossFight>();
+                bossScript.Begin();
                 break;
 
-            case 4: // final portal defense
-                // Find and launch the boss script linked to the finalgameplay
-                GameObject finalGameplay = GameObject.FindGameObjectWithTag("FinalGameplay");
-                BossFight1 bossScript4 = finalGameplay.GetComponent<BossFight1>();
-                bossScript4.Begin();
-                break;
+            //case 4: // final portal defense
+            //    // Find and launch the boss script linked to the finalgameplay
+            //    GameObject finalGameplay = GameObject.FindGameObjectWithTag("FinalGameplay");
+            //    BossFight4 bossScript4 = finalGameplay.GetComponent<BossFight4>();
+            //    bossScript4.Begin();
+            //    break;
 
             default:
                 break;
