@@ -524,7 +524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1611374689862500
 GameObject:
   m_ObjectHideFlags: 1
@@ -1488,7 +1488,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583448380886822}
   m_LocalRotation: {x: -0, y: 0.9385612, z: -0, w: -0.34511298}
-  m_LocalPosition: {x: -75.85574, y: 0, z: -8.410507}
+  m_LocalPosition: {x: 11.713898, y: -0.0000009536743, z: -1.6261292}
   m_LocalScale: {x: 0.40000036, y: 0.4, z: 0.40000036}
   m_Children:
   - {fileID: 4192826434332286}
@@ -1915,7 +1915,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 0.42647058, g: 0.9762677, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.42647058, b: 0.9841786, a: 1}
   m_Intensity: 4.34
   m_Range: 25.28
   m_SpotAngle: 13
@@ -1965,7 +1965,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 0.42647058, g: 0.9762677, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.42647058, b: 0.8417849, a: 1}
   m_Intensity: 4.34
   m_Range: 25.28
   m_SpotAngle: 18
@@ -2015,7 +2015,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 0.42647058, g: 0.9762677, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.42647058, b: 0.93671393, a: 1}
   m_Intensity: 4.34
   m_Range: 25.28
   m_SpotAngle: 12
