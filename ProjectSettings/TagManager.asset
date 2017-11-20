@@ -32,6 +32,7 @@ TagManager:
   - Wall
   - FireGameplay
   - ForestGameplay
+  - FinalGameplay
   layers:
   - Default
   - TransparentFX

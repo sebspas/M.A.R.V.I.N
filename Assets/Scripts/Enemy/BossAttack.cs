@@ -33,6 +33,11 @@ public class BossAttack : MonoBehaviour
     // L'effet qui sera lancé pour l'AOE
     BossFight scriptZoneBoss;
 
+    // L'effet qui sera lancé pour l'AOE zone finale
+    BossFightFinal scriptZoneBossFinal;
+    // Determine le script à utiliser
+    bool final;
+
 
     protected virtual void Awake()
     {
@@ -42,6 +47,8 @@ public class BossAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         patternCount = 0;
         venerePattern = false;
+        // To make the difference between the BossFight.cs and the BossFightFinal.cs
+        final = false;
         // The zone depends on the number of weapon
         int nbWeapon = player.GetComponent<PlayerShooting>().GetMaxWeapon();
         // Recupere la zone du boss pour pouvoir lancer l'effet de l'AOE
@@ -57,7 +64,8 @@ public class BossAttack : MonoBehaviour
                 scriptZoneBoss = GameObject.FindGameObjectWithTag("ForestGameplay").GetComponent<BossFight>();
                 break;
             case 5:
-                scriptZoneBoss = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFight>();
+                scriptZoneBossFinal = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFightFinal>();
+                final = true;
                 break;
         }
         
@@ -75,7 +83,14 @@ public class BossAttack : MonoBehaviour
 
         if (IsReadyToAttack())
         {
-            scriptZoneBoss.StopAOE();
+            if (!final)
+            {
+                scriptZoneBoss.StopAOE();
+            }
+            else
+            {
+                scriptZoneBossFinal.StopAOE();
+            }
             anim.SetBool("PlayerInRange", true);
             PatternAttack();
         }
@@ -130,7 +145,15 @@ public class BossAttack : MonoBehaviour
         anim.SetTrigger("Numun");
 
         // On lance l'effet
-        scriptZoneBoss.LaunchAOE();
+        if (!final)
+        {
+            scriptZoneBoss.LaunchAOE();
+        }
+        else
+        {
+            scriptZoneBossFinal.LaunchAOE();
+        }
+        
 
         playerHealth.TakeDamage(AOEattackDamage);
     }

@@ -5,13 +5,12 @@ using UnityEngine;
 public class BossFight : MonoBehaviour
 {
     public GameObject wall;
-    public GameObject effect;
     public GameObject effectAOE;
     public GameObject spawnPoint;
     public GameObject boss;
 
-    bool begin;
-    float timer;
+    protected bool begin;
+    protected float timer;
 
 
     // Use this for initialization
@@ -25,7 +24,6 @@ public class BossFight : MonoBehaviour
     {
         if (begin && timer < Time.time)
         {
-            //print("instanciate boss");
             GameObject Instanceboss = (GameObject)Instantiate(boss, spawnPoint.transform.position, new Quaternion(0, 0, 0, 0));
             Instanceboss.SetActive(true);
 
@@ -38,7 +36,6 @@ public class BossFight : MonoBehaviour
     {
         begin = true;
         wall.SetActive(true);
-        effect.SetActive(true);
         timer = Time.time + 8f;
     }
 
@@ -53,7 +50,6 @@ public class BossFight : MonoBehaviour
     public void DestroyWall()
     {
         wall.SetActive(false);
-        effect.SetActive(false);
         Destroy(wall, 2f);
     }
 }

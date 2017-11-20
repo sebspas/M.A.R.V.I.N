@@ -73,7 +73,7 @@ MonoBehaviour:
   damagePerShot: 40
   bulletImpact: {fileID: 1695366581247696, guid: da015688f9291c747b76991ac09957a8,
     type: 2}
-  timeBfDestroy: 4
+  timeBfDestroy: 25
 --- !u!135 &135775641550889996
 SphereCollider:
   m_ObjectHideFlags: 1

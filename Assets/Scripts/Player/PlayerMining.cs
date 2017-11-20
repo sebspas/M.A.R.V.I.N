@@ -93,13 +93,6 @@ public class PlayerMining : MonoBehaviour {
                 bossScript.Begin();
                 break;
 
-            //case 4: // final portal defense
-            //    // Find and launch the boss script linked to the finalgameplay
-            //    GameObject finalGameplay = GameObject.FindGameObjectWithTag("FinalGameplay");
-            //    BossFight4 bossScript4 = finalGameplay.GetComponent<BossFight4>();
-            //    bossScript4.Begin();
-            //    break;
-
             default:
                 break;
         }

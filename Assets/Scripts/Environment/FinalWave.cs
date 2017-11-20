@@ -20,11 +20,15 @@ public class FinalWave : Spawner
     // the player
     private PlayerShooting playerShooting;
 
+    // to trigger once only
+    private bool canBegin;
+
     // Use this for initialization
     void Start()
     {     
         // we get the playerWeapon component, to know if the player got all the weapons
-        playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();        
+        playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
+        canBegin = true;
     }
 
     private void Update()
@@ -35,13 +39,16 @@ public class FinalWave : Spawner
     void OnTriggerEnter(Collider other)
     {
         // we check if the different power
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && canBegin)
         {
             if (playerShooting.playerGotAllWeapon())
             {
                 InitFinalWave();
+                canBegin = false;
             }
         }
+        // for tests
+        walls.SetActive(true);
     }
 
     public void InitFinalWave()
@@ -71,7 +78,16 @@ public class FinalWave : Spawner
     }
 
     protected override void EndSpawn() {
+        BossFightFinal bossScript = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFightFinal>();
+        bossScript.Begin();
         // TODO
         // make the boss spawn HERE
+    }
+
+    public void DestroyWall()
+    {
+
+        // we desactivate the wall
+        walls.SetActive(true);
     }
 }
