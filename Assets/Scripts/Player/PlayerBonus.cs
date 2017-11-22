@@ -14,8 +14,8 @@ public class PlayerBonus : MonoBehaviour {
     const float timeChargeBonusBoost = 8f;
 
     // Energy costs for each bonus (starting max energy level : 20)
-    const float energyCostBonus1 = 4f;
-    const float energyCostBonus2 = 6f;
+    const float energyCostBonus1 = 10f;
+    const float energyCostBonus2 = 15f;
 
     // Highlight square
     public RectTransform bonusHighlight;

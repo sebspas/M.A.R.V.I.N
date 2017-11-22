@@ -8,9 +8,11 @@ public class BossHealth : Health
     public AudioClip deathClip;
     public GameObject disappearEffect;
 
-    public GameObject UIBoss;
-    public Image healthSlider;
-    public Text healthText;
+    // global UI Element for the boss
+    GameObject UIBoss;
+
+    // Image use to show the boss life
+    Image healthSlider;
 
     // the player shooting script (to add the exp)
     PlayerShooting playerShooting;
@@ -47,8 +49,14 @@ public class BossHealth : Health
         currentEffect = new EffectBoss(this, bossMovement);
         InitHealth();
         AppearOrDesappear();
+
+        // UI boss management
+        UIBoss = GameObject.FindGameObjectWithTag("BossUI");
+        GameObject healthSliderObject = GameObject.FindGameObjectWithTag("BossUILife");
+        if (healthSliderObject != null) healthSlider = healthSliderObject.GetComponent<Image>();
         SliderUpdate();
-        UIBoss.SetActive(true);
+        // make the HUD Appear
+        UIBoss.GetComponent<Animator>().SetTrigger("Active");
 
         // The zone depends on the number of weapon
         int nbWeapon = playerShooting.GetMaxWeapon();
@@ -115,7 +123,7 @@ public class BossHealth : Health
         anim.SetBool("BossDead", true);
         anim.SetBool("PlayerInRange", false);
 
-        UIBoss.SetActive(false);
+        UIBoss.GetComponent<Animator>().SetTrigger("Disable");
 
         // we give the amount of xp to the player max energy
         playerShooting.energyMax += xpGiven;
@@ -150,7 +158,6 @@ public class BossHealth : Health
     {
         // just be sure the slider and the text of health are ok
         healthSlider.transform.localScale = new Vector3((currentHealth / maxHealth), 1, 1);
-        healthText.text = currentHealth + "/" + maxHealth;
     }
 
     public void AppearOrDesappear()

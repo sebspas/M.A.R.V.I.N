@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerWeapon : MonoBehaviour {
-
-
     // timer to next change
     public float timeBetweenWeaponChange = 0.05f;
 
@@ -219,16 +217,16 @@ public class PlayerWeapon : MonoBehaviour {
                 }
                 break;
             case 4:
-                fire.sprite = weaponUnlockAnim;
+                plant.sprite = weaponUnlockAnim;
                 for (int i = 0; i <= 15; i++)
                 {
-                    fire.transform.localScale = new Vector3(0.1f * i, 0.1f * i, 0.1f * i);
+                    plant.transform.localScale = new Vector3(0.1f * i, 0.1f * i, 0.1f * i);
                     //wait(0.2f);
                 }
-                fire.sprite = fireWeapon;
+                plant.sprite = plantWeapon;
                 for (int i = 15; i >= 10; i--)
                 {
-                    fire.transform.localScale = new Vector3(0.1f * i, 0.1f * i, 0.1f * i);
+                    plant.transform.localScale = new Vector3(0.1f * i, 0.1f * i, 0.1f * i);
                     //wait(0.2f);
                 }
                 break;

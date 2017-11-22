@@ -86,8 +86,7 @@ public class FinalWave : Spawner
 
     public void DestroyWall()
     {
-
         // we desactivate the wall
-        walls.SetActive(true);
+        walls.SetActive(false);
     }
 }

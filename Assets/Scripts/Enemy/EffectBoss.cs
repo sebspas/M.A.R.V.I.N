@@ -133,8 +133,7 @@ public class EffectBoss
             case BulletScript.BulletType.Earth:
                 damage = bullet.damagePerShot;
                 // we heal the player
-                playerHealth.Healed(bullet.lifeSteal);
-                playerHealth.healthSlider.transform.localScale = new Vector3((playerHealth.GetCurrentHealth() / playerHealth.GetMaxHealth()), 1, 1);
+                playerHealth.Healed(bullet.lifeSteal);              
                 break;
 
             default:

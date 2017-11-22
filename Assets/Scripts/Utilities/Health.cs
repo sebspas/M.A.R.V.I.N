@@ -54,6 +54,8 @@ public class Health : MonoBehaviour {
     {
         // we add the amount of healing, and we be carefull it doesn't go over the max
         currentHealth = (this.currentHealth + amount >= maxHealth) ? maxHealth : this.currentHealth + amount;
+        // update the player life
+        HealingAnim();
     } 
 
     // function must be implemented by child
