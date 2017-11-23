@@ -11,6 +11,9 @@ public class PlayerShooting : MonoBehaviour {
     // timer before to rest his arms
     public float timeToGoBackToIdle = 0.90f;
 
+    // isIdle
+    public bool isIdle = true;
+
     // bullet shoot by MARVIN
     public GameObject[] proj = new GameObject[4];
 
@@ -90,14 +93,19 @@ public class PlayerShooting : MonoBehaviour {
                 {
                     // we put back is right arm in the normal position
                     anim.SetBool("Right Aim", false);
+
+                    // the player is not shooting anymore better regen of energy
+                    isIdle = true;
                 }
                 // if we are not using bonus 3
                 if (!playerBonus.bonusBoostInUse)
                 {
+                    float energyToregen = energyMax * energyRegen;
+                    if (isIdle) energyToregen *= 2;
                     // we regen the energy
-                    if (currentEnergy + (energyMax * energyRegen) <= energyMax)
+                    if (currentEnergy + energyToregen <= energyMax)
                     {
-                        currentEnergy += (energyMax * energyRegen);
+                        currentEnergy += energyToregen;
                     }
                     else
                     {
@@ -116,7 +124,8 @@ public class PlayerShooting : MonoBehaviour {
 
     public void Shoot()
     {
-
+        // if the player shoot the enrgy regen slow down
+        isIdle = false;
         // we reset the timer
         timer = 0f;       
 
