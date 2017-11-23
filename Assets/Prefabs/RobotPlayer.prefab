@@ -1738,14 +1738,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenBullet: 0.15
   timeToGoBackToIdle: 0.9
+  isIdle: 1
   proj:
   - {fileID: 1811228827102288, guid: 92e4914b1a155f943a2f79f24f47466f, type: 2}
   - {fileID: 1553782932227686, guid: 98c853c8ac0dba34386d57fcfecb6c37, type: 2}
   - {fileID: 1349997331834966, guid: 020bb9a12510f6640aee851cc7bd9672, type: 2}
   - {fileID: 1939240370481064, guid: 01fbc6d3cc27b4b4ea5f614fcbc72274, type: 2}
   currentWeapon: 0
-  energyMax: 20
-  currentEnergy: 20
+  energyMax: 30
+  currentEnergy: 30
   energySlider: {fileID: 0}
   energyText: {fileID: 0}
   gunRightArm: {fileID: 1099828321575250}

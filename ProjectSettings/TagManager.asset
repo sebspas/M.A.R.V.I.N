@@ -25,6 +25,15 @@ TagManager:
   - Weapon
   - BossUILife
   - FireGameplay
+  - Floor
+  - Plantwall
+  - Firewall
+  - IceWall
+  - Barrelwall
+  - Fire
+  - Climat
+  - DeathMenu
+  - TriggerEffect
   layers:
   - Default
   - TransparentFX
@@ -34,7 +43,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Floor
   - 
   - 
   - 
