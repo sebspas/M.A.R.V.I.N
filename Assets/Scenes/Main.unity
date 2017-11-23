@@ -795,21 +795,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1925137201}
-    - target: {fileID: 224468462633973580, guid: 8f857fe249e803546b0fb55d5b1aba95,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224468462633973580, guid: 8f857fe249e803546b0fb55d5b1aba95,
-        type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224468462633973580, guid: 8f857fe249e803546b0fb55d5b1aba95,
-        type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f857fe249e803546b0fb55d5b1aba95, type: 2}
   m_IsPrefabParent: 0
