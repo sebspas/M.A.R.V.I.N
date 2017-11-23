@@ -11,6 +11,9 @@ public class PlayerShooting : MonoBehaviour {
     // timer before to rest his arms
     public float timeToGoBackToIdle = 0.90f;
 
+    // isIdle
+    public bool isIdle = true;
+
     // bullet shoot by MARVIN
     public GameObject[] proj = new GameObject[4];
 
@@ -74,30 +77,37 @@ public class PlayerShooting : MonoBehaviour {
             // we update the two timer
             timer += Time.deltaTime;
             timerEnergy += Time.deltaTime;
+
+            // if we clicck and we have enough energy for the selected bullet
+            bool isFirerateOk = (timer >= timeBetweenBullet && !playerBonus.bonusBoostInUse) || (timer >= timeBetweenBullet / 2 && playerBonus.bonusBoostInUse);
+            if (Input.GetButton("Fire1") && isFirerateOk && currentEnergy >= proj[currentWeapon].GetComponent<BulletScript>().energyCost)
+            {
+                // then we shoot
+                Shoot();
+            }
+            else if (timer > timeToGoBackToIdle)
+            {
+                // we put back is right arm in the normal position
+                anim.SetBool("Right Aim", false);
+
+                // the player is not shooting anymore better regen of energy
+                isIdle = true;
+            }
+
             // we increase the energy if neeeded
             if (timerEnergy > energyRegenTime || (playerBonus.bonusBoostInUse && timerEnergy > (energyRegenTime / 2)))
             {
                 // we reset the timer
                 timerEnergy = 0;
-                // if we clicck and we have enough energy for the selected bullet
-                bool isFirerateOk = (timer > timeBetweenBullet && !playerBonus.bonusBoostInUse) || (timer > timeBetweenBullet / 2 && playerBonus.bonusBoostInUse);
-                if (Input.GetButton("Fire1") && isFirerateOk && currentEnergy > proj[currentWeapon].GetComponent<BulletScript>().energyCost)
-                {
-                    // then we shoot
-                    Shoot();
-                }
-                else if (timer > timeToGoBackToIdle)
-                {
-                    // we put back is right arm in the normal position
-                    anim.SetBool("Right Aim", false);
-                }
                 // if we are not using bonus 3
                 if (!playerBonus.bonusBoostInUse)
                 {
+                    float energyToregen = energyMax * energyRegen;
+                    if (isIdle) energyToregen *= 2;
                     // we regen the energy
-                    if (currentEnergy + (energyMax * energyRegen) <= energyMax)
+                    if (currentEnergy + energyToregen <= energyMax)
                     {
-                        currentEnergy += (energyMax * energyRegen);
+                        currentEnergy += energyToregen;
                     }
                     else
                     {
@@ -116,7 +126,8 @@ public class PlayerShooting : MonoBehaviour {
 
     public void Shoot()
     {
-
+        // if the player shoot the enrgy regen slow down
+        isIdle = false;
         // we reset the timer
         timer = 0f;       
 

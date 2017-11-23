@@ -39,6 +39,8 @@ public class BossHealth : Health
 
     BossFight scriptZoneBoss;
 
+    bool final;
+
     void Awake()
     {
         boss = GameObject.FindGameObjectWithTag("Boss");
@@ -50,6 +52,7 @@ public class BossHealth : Health
         InitHealth();
         AppearOrDesappear();
 
+        final = false;
         // UI boss management
         UIBoss = GameObject.FindGameObjectWithTag("BossUI");
         GameObject healthSliderObject = GameObject.FindGameObjectWithTag("BossUILife");
@@ -74,6 +77,7 @@ public class BossHealth : Health
                 break;
             case 5:
                 scriptZoneBoss = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFight>();
+                final = true;
                 break;
         }
     }
@@ -147,10 +151,22 @@ public class BossHealth : Health
 
         AppearOrDesappear();
 
-        scriptZoneBoss.DestroyWall();
+        if (!final)
+            scriptZoneBoss.DestroyWall();
 
         PlayerHealth playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         playerHealth.Healed(1000);
+
+        if (playerShooting.playerGotAllWeapon())
+        {
+            // if we are at the end and we kill the boss
+            // then we make the endgame screen appear
+            GameObject.FindGameObjectWithTag("HUDEndGame").GetComponent<Animator>().SetTrigger("EndGame");
+
+            // we stop the game
+            UIManager.isPaused = true;
+            Time.timeScale = 0;
+        }
     }
 
 

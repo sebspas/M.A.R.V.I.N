@@ -4,37 +4,36 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - PauseMenu
+  - Sight
   - Enemy
-  - TriggerEffect
+  - Interact
+  - ForestGameplay
+  - Boss
   - FloatingCrystal
-  - Undefined
-  - Climat
+  - CrystalUI
+  - Bullet
+  - BossLegs
+  - HUDEndGame
+  - shield
+  - IceGameplay
+  - FinalGameplay
+  - Wall
+  - HUD
+  - BossUI
   - WeaponUI
   - Weapon
+  - BossUILife
+  - FireGameplay
+  - Floor
+  - Plantwall
   - Firewall
   - IceWall
   - Barrelwall
   - Fire
-  - shield
-  - Plantwall
-  - CrystalUI
-  - Floor
-  - Interact
-  - Sight
-  - explosion
-  - Explosive
-  - IceGameplay
-  - Boss
-  - BossLegs
-  - PauseMenu
-  - HUD
-  - Bullet
-  - Wall
-  - FireGameplay
-  - ForestGameplay
-  - FinalGameplay
-  - BossUI
-  - BossUILife
+  - Climat
+  - DeathMenu
+  - TriggerEffect
   layers:
   - Default
   - TransparentFX
@@ -45,8 +44,8 @@ TagManager:
   - 
   - 
   - Floor
-  - CrystalHealthBar
-  - BossRayCast
+  - 
+  - 
   - 
   - 
   - 
