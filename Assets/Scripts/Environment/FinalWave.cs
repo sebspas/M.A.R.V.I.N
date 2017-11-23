@@ -14,6 +14,7 @@ public class FinalWave : Spawner
     public GameObject[] ennemiesDesert;
     public GameObject[] ennemiesForest;
 
+
     // The wall to activate
     public GameObject walls;
 
@@ -25,7 +26,7 @@ public class FinalWave : Spawner
 
     // Use this for initialization
     void Start()
-    {     
+    {
         // we get the playerWeapon component, to know if the player got all the weapons
         playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
         canBegin = true;
@@ -47,6 +48,8 @@ public class FinalWave : Spawner
                 canBegin = false;
             }
         }
+        // for tests
+        walls.SetActive(true);
     }
 
     public void InitFinalWave()
@@ -72,10 +75,11 @@ public class FinalWave : Spawner
         // spawnDesert
         SpawnEnnemie(ennemiesDesert[0], spawnDesert, numberOfBasicEnnemies);
         SpawnEnnemie(ennemiesDesert[1], spawnDesert, numberOfRangeEnnemies);
-        SpawnEnnemie(ennemiesDesert[2], spawnDesert, numberOfTankEnnemies);      
+        SpawnEnnemie(ennemiesDesert[2], spawnDesert, numberOfTankEnnemies);
     }
 
-    protected override void EndSpawn() {
+    protected override void EndSpawn()
+    {
         BossFightFinal bossScript = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFightFinal>();
         bossScript.Begin();
         // TODO
@@ -84,7 +88,6 @@ public class FinalWave : Spawner
 
     public void DestroyWall()
     {
-        // we desactivate the wall
-        walls.SetActive(false);
+        updateSpawner(Time.deltaTime);
     }
 }

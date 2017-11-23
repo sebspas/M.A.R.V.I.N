@@ -15,12 +15,17 @@ public class PlayerMovement : MonoBehaviour
     int floorMask; // A layer mask so that a ray can be cast just at gameobjects on the floor
     float camRayLength = 100f;
 
+    // Allow the player to move or not
+    bool canMove;
+
     private void Awake()
     {
         //setup references
         floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
 
+        // At the begining the player has to read the story
+        ForbidToMove();
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -42,6 +47,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Move(float h, float v)
     {   
+        if (!canMove)
+        {
+            return;
+        }
         if (!movementRelative)
         {
             // Movement in teh camera referentiel
@@ -107,5 +116,14 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("Forward", 0.0f);
         }
         
+    }
+
+    public void AllowToMove()
+    {
+        canMove = true;
+    }
+    public void ForbidToMove()
+    {
+        canMove = false;
     }
 }
