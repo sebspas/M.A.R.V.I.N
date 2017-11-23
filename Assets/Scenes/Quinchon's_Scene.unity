@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 872728526}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44125012, g: 0.4986936, b: 0.61027426, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -160,6 +160,21 @@ Prefab:
     - target: {fileID: 4517365704156664, guid: 695a22b4f8ba63844bf84820c2e05760, type: 2}
       propertyPath: m_LocalPosition.x
       value: -14.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 114408411768254498, guid: 695a22b4f8ba63844bf84820c2e05760,
+        type: 2}
+      propertyPath: theTextBoxManager
+      value: 
+      objectReference: {fileID: 592592973}
+    - target: {fileID: 114408411768254498, guid: 695a22b4f8ba63844bf84820c2e05760,
+        type: 2}
+      propertyPath: theText
+      value: 
+      objectReference: {fileID: 4900000, guid: 48eae0e0f12a90442aa337ae525a2ec8, type: 3}
+    - target: {fileID: 114408411768254498, guid: 695a22b4f8ba63844bf84820c2e05760,
+        type: 2}
+      propertyPath: endLine
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 695a22b4f8ba63844bf84820c2e05760, type: 2}
@@ -514,35 +529,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114375046356011988, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
-        type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 1873560443}
-    - target: {fileID: 114375046356011988, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
-        type: 2}
-      propertyPath: healthText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1191964737273604, guid: 9a9bd97524d9f164db6b7b93af75c5ee, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114657343209068960, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
-        type: 2}
-      propertyPath: theText
-      value: 
-      objectReference: {fileID: 4900000, guid: a8cff2a834a26c54fafdbb41fd54ab40, type: 3}
     - target: {fileID: 114657343209068960, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
         type: 2}
       propertyPath: theTextBoxManager
       value: 
       objectReference: {fileID: 592592973}
-    - target: {fileID: 114657343209068960, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
-        type: 2}
-      propertyPath: endLine
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a9bd97524d9f164db6b7b93af75c5ee, type: 2}
   m_IsPrefabParent: 0
@@ -585,16 +576,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 114822183347472206, guid: e3712459f20d5dc4c9298614ec992b04,
+    - target: {fileID: 114838701117899776, guid: e3712459f20d5dc4c9298614ec992b04,
         type: 2}
-      propertyPath: healthSlider
+      propertyPath: theTextBoxManager
       value: 
-      objectReference: {fileID: 1873560443}
-    - target: {fileID: 114822183347472206, guid: e3712459f20d5dc4c9298614ec992b04,
-        type: 2}
-      propertyPath: healthText
-      value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 592592973}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3712459f20d5dc4c9298614ec992b04, type: 2}
   m_IsPrefabParent: 0
@@ -1066,6 +1052,21 @@ Prefab:
     - target: {fileID: 4922818964872666, guid: bb33c0e18e695fd46bc3c8e567ecb2ac, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 12.790001
+      objectReference: {fileID: 0}
+    - target: {fileID: 114975755300444310, guid: bb33c0e18e695fd46bc3c8e567ecb2ac,
+        type: 2}
+      propertyPath: theTextBoxManager
+      value: 
+      objectReference: {fileID: 592592973}
+    - target: {fileID: 114975755300444310, guid: bb33c0e18e695fd46bc3c8e567ecb2ac,
+        type: 2}
+      propertyPath: theText
+      value: 
+      objectReference: {fileID: 4900000, guid: 88a298d0b8627fb4f9b7a861dd02834d, type: 3}
+    - target: {fileID: 114975755300444310, guid: bb33c0e18e695fd46bc3c8e567ecb2ac,
+        type: 2}
+      propertyPath: endLine
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb33c0e18e695fd46bc3c8e567ecb2ac, type: 2}
