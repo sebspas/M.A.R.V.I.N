@@ -68,9 +68,9 @@ public class PlayerWeapon : MonoBehaviour {
         }
 
         // TODO remove that ONLY FOR TEST
-        /*addWeapon();
         addWeapon();
-        addWeapon();*/
+        addWeapon();
+        addWeapon();
     }
 
     // Update is called once per frame

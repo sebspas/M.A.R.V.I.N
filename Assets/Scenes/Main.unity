@@ -522,6 +522,11 @@ Prefab:
       propertyPath: theTextBoxManager
       value: 
       objectReference: {fileID: 898871938}
+    - target: {fileID: 114675829091829590, guid: bb33c0e18e695fd46bc3c8e567ecb2ac,
+        type: 2}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb33c0e18e695fd46bc3c8e567ecb2ac, type: 2}
   m_IsPrefabParent: 0
@@ -1258,6 +1263,16 @@ Prefab:
       propertyPath: energyText
       value: 
       objectReference: {fileID: 1423585503}
+    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: currentEnergy
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
+        type: 2}
+      propertyPath: energyMax
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
   m_IsPrefabParent: 0
@@ -1272,6 +1287,24 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1655206348}
   m_Script: {fileID: 11500000, guid: 8ec45203ae7a1a54c9d02c355f983833, type: 3}
+--- !u!1 &1760667724 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1153653812842948, guid: bb33c0e18e695fd46bc3c8e567ecb2ac,
+    type: 2}
+  m_PrefabInternal: {fileID: 857354310}
+--- !u!136 &1760667725
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1760667724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 4
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 2, y: 10, z: 2}
 --- !u!1001 &1819677566
 Prefab:
   m_ObjectHideFlags: 0

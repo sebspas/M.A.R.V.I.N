@@ -35,6 +35,7 @@ TagManager:
   - FinalGameplay
   - BossUI
   - BossUILife
+  - HUDEndGame
   layers:
   - Default
   - TransparentFX
