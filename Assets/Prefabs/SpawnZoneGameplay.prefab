@@ -719,7 +719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1354607993461616
 GameObject:
   m_ObjectHideFlags: 1
@@ -881,7 +881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1465067638079042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,7 +1170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1613951949556708
 GameObject:
   m_ObjectHideFlags: 1
@@ -1465,7 +1465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1754456654812182
 GameObject:
   m_ObjectHideFlags: 1
@@ -1726,7 +1726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1876646448975078
 GameObject:
   m_ObjectHideFlags: 1
@@ -1789,7 +1789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1899891710941712
 GameObject:
   m_ObjectHideFlags: 0
@@ -4241,9 +4241,6 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: 694a31ad7e3c6d441937bce770697594, type: 3}
   disappearEffect: {fileID: 1108412428568460, guid: 88e70a9ae230b434087c5eba9d0742ca,
     type: 2}
-  UIBoss: {fileID: 0}
-  healthSlider: {fileID: 0}
-  healthText: {fileID: 0}
   xpGiven: 50
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114887588555524990
@@ -4275,21 +4272,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93adc3c32d6db794e8affb9f0f4a1aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wall:
-  - {fileID: 1874212634999076}
-  - {fileID: 1890521728436330}
-  - {fileID: 1454946679845902}
-  - {fileID: 1749236078024072}
-  - {fileID: 1609560609595016}
-  effect:
-  - {fileID: 1080949573265078}
-  - {fileID: 1197753960765646}
-  - {fileID: 1642102063101112}
-  - {fileID: 1479195103711550}
-  - {fileID: 1042032695225344}
+  wall: {fileID: 1349395185407714}
   effectAOE: {fileID: 1899891710941712}
   spawnPoint: {fileID: 1604926776412784}
   boss: {fileID: 1153653812842948}
+  f: {fileID: 114172551154001614}
 --- !u!136 &136361565865495990
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -44,8 +44,7 @@ public class AuraPower : MonoBehaviour {
 
         // we attack every enemy in range
         foreach (GameObject enemy in enemyInRange)
-        {
-            //TODO change that !!!!
+        {           
             if (enemy != null)
             {
                 // make the thunder touch the enemy
@@ -53,15 +52,14 @@ public class AuraPower : MonoBehaviour {
                 Destroy(thunderStrike, 1.2f);
 
                 // remove the damage to the enemy life
-                enemy.GetComponent<EnemyHealth>().TakeDamage(AuraDamage);
-            }
-            
+                enemy.GetComponent<Health>().Damaged(AuraDamage);
+            }            
         }
     }
 
    void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Boss")
         {
             // we add the enemy to the list of enemy in range
             if (!enemyInRange.Contains(other.gameObject))
@@ -71,7 +69,7 @@ public class AuraPower : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Boss")
         {
             // we remove the enemy from the list of enemy in range
             enemyInRange.Remove(other.gameObject);

@@ -23,7 +23,7 @@ public class BossAttack : MonoBehaviour
     public GameObject staff;
 
     // speed of the bullet
-    public int bossBulletSpeed = 280;
+    public int bossBulletSpeed = 300;
 
     // counter for pattern attacks
     int patternCount;
@@ -153,8 +153,13 @@ public class BossAttack : MonoBehaviour
         {
             scriptZoneBossFinal.LaunchAOE();
         }
-        
 
+        Invoke("AOEDamage", 1.2f);      
+    }
+
+    // inflict damage to the player for the AOE
+    void AOEDamage()
+    {
         playerHealth.TakeDamage(AOEattackDamage);
     }
 

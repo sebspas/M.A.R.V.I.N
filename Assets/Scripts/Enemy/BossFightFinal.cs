@@ -7,7 +7,6 @@ public class BossFightFinal : BossFight
     // Simple way to get this script
     public FinalWave f;
 
-
     public new void Begin()
     {
         begin = true;

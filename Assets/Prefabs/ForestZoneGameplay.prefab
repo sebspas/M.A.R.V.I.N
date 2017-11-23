@@ -12423,6 +12423,7 @@ GameObject:
   - component: {fileID: 114206617317095590}
   - component: {fileID: 114133616209616416}
   - component: {fileID: 82517409178249238}
+  - component: {fileID: 136334065843250996}
   m_Layer: 0
   m_Name: e_Boss3
   m_TagString: Boss
@@ -15737,7 +15738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1881546368628644
 GameObject:
   m_ObjectHideFlags: 1
@@ -40667,9 +40668,6 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: 694a31ad7e3c6d441937bce770697594, type: 3}
   disappearEffect: {fileID: 1108412428568460, guid: 88e70a9ae230b434087c5eba9d0742ca,
     type: 2}
-  UIBoss: {fileID: 1171236558155076, guid: ca5e23ca8c38c414289367285ce98cd5, type: 2}
-  healthSlider: {fileID: 0}
-  healthText: {fileID: 0}
   xpGiven: 50
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114153647307901844
@@ -41469,7 +41467,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1127488506886114}
-  effect: {fileID: 1139573859912216}
   effectAOE: {fileID: 1088557276871152}
   spawnPoint: {fileID: 1857063412664924}
   boss: {fileID: 1690348194939630}
@@ -43574,6 +43571,19 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!136 &136334065843250996
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1690348194939630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 4
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 2, y: 10, z: 2}
 --- !u!136 &136346981670372838
 CapsuleCollider:
   m_ObjectHideFlags: 1

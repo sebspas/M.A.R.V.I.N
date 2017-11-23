@@ -90,7 +90,7 @@ public class CrystalMining : Spawner {
             timerMining += Time.deltaTime;
 
             // The pkayer must press 'E' in order to begin mining
-            if (playerInRange && Input.GetKeyDown("e"))
+            if (playerInRange && Input.GetKeyDown("space"))
             {
                 beginMining = true;
             }
@@ -171,6 +171,7 @@ public class CrystalMining : Spawner {
         // we launch the floating crystal
         GameObject floatingCrystal = (GameObject)Instantiate(flyingCrystal, transform.position, new Quaternion(0,0,0,0));
         floatingCrystal.gameObject.name = "FloatingCrystal";
+        
     }
 
     void endOfCrystal()
