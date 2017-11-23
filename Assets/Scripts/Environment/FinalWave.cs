@@ -14,7 +14,6 @@ public class FinalWave : Spawner
     public GameObject[] ennemiesDesert;
     public GameObject[] ennemiesForest;
 
-
     // The wall to activate
     public GameObject walls;
 
