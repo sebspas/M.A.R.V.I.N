@@ -393,6 +393,11 @@ Prefab:
       propertyPath: maxHealth
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 114408411768254498, guid: 695a22b4f8ba63844bf84820c2e05760,
+        type: 2}
+      propertyPath: theTextBoxManager
+      value: 
+      objectReference: {fileID: 898871938}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 695a22b4f8ba63844bf84820c2e05760, type: 2}
   m_IsPrefabParent: 0
@@ -1054,6 +1059,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114975755300444310, guid: bb33c0e18e695fd46bc3c8e567ecb2ac,
+        type: 2}
+      propertyPath: theTextBoxManager
+      value: 
+      objectReference: {fileID: 898871938}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb33c0e18e695fd46bc3c8e567ecb2ac, type: 2}
   m_IsPrefabParent: 0
@@ -1062,6 +1072,74 @@ GameObject:
   m_PrefabParentObject: {fileID: 1880130828645854, guid: 695a22b4f8ba63844bf84820c2e05760,
     type: 2}
   m_PrefabInternal: {fileID: 441592294}
+--- !u!1001 &898871937
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4868178117702478, guid: 2ca7bae1355d6a143ad9f3dd3d07e139, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.625963
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868178117702478, guid: 2ca7bae1355d6a143ad9f3dd3d07e139, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 24.170393
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868178117702478, guid: 2ca7bae1355d6a143ad9f3dd3d07e139, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -7.5229435
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868178117702478, guid: 2ca7bae1355d6a143ad9f3dd3d07e139, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868178117702478, guid: 2ca7bae1355d6a143ad9f3dd3d07e139, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868178117702478, guid: 2ca7bae1355d6a143ad9f3dd3d07e139, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868178117702478, guid: 2ca7bae1355d6a143ad9f3dd3d07e139, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868178117702478, guid: 2ca7bae1355d6a143ad9f3dd3d07e139, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114295921762819794, guid: 2ca7bae1355d6a143ad9f3dd3d07e139,
+        type: 2}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1655206350}
+    - target: {fileID: 114295921762819794, guid: 2ca7bae1355d6a143ad9f3dd3d07e139,
+        type: 2}
+      propertyPath: isActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114295921762819794, guid: 2ca7bae1355d6a143ad9f3dd3d07e139,
+        type: 2}
+      propertyPath: theText
+      value: 
+      objectReference: {fileID: 1357294966}
+    - target: {fileID: 114295921762819794, guid: 2ca7bae1355d6a143ad9f3dd3d07e139,
+        type: 2}
+      propertyPath: TextBox
+      value: 
+      objectReference: {fileID: 1357294965}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2ca7bae1355d6a143ad9f3dd3d07e139, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &898871938 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114295921762819794, guid: 2ca7bae1355d6a143ad9f3dd3d07e139,
+    type: 2}
+  m_PrefabInternal: {fileID: 898871937}
+  m_Script: {fileID: 11500000, guid: 94d879c3b517b9e45ab03b0f520de274, type: 3}
 --- !u!1001 &1004422737
 Prefab:
   m_ObjectHideFlags: 0
@@ -1190,6 +1268,26 @@ Prefab:
     - target: {fileID: 4791318353213364, guid: 9a9bd97524d9f164db6b7b93af75c5ee, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114657343209068960, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
+        type: 2}
+      propertyPath: theTextBoxManager
+      value: 
+      objectReference: {fileID: 898871938}
+    - target: {fileID: 114657343209068960, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
+        type: 2}
+      propertyPath: theText
+      value: 
+      objectReference: {fileID: 4900000, guid: a8cff2a834a26c54fafdbb41fd54ab40, type: 3}
+    - target: {fileID: 114657343209068960, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
+        type: 2}
+      propertyPath: endLine
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114532224562515188, guid: 9a9bd97524d9f164db6b7b93af75c5ee,
+        type: 2}
+      propertyPath: maxHealth
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a9bd97524d9f164db6b7b93af75c5ee, type: 2}
@@ -1453,6 +1551,17 @@ Prefab:
     - {fileID: 95655008294955098, guid: ca5e23ca8c38c414289367285ce98cd5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ca5e23ca8c38c414289367285ce98cd5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1357294965 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1264997483760564, guid: ca5e23ca8c38c414289367285ce98cd5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1357294964}
+--- !u!114 &1357294966 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114254476182683450, guid: ca5e23ca8c38c414289367285ce98cd5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1357294964}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1406115980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1885,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4190189227242416, guid: 993ed14a14ed13b4ab9a07968091351e,
     type: 2}
   m_PrefabInternal: {fileID: 1655206348}
+--- !u!114 &1655206350 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114883833820761946, guid: 993ed14a14ed13b4ab9a07968091351e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1655206348}
+  m_Script: {fileID: 11500000, guid: 8ec45203ae7a1a54c9d02c355f983833, type: 3}
 --- !u!1 &1750135203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,6 +2256,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114838701117899776, guid: e3712459f20d5dc4c9298614ec992b04,
+        type: 2}
+      propertyPath: theTextBoxManager
+      value: 
+      objectReference: {fileID: 898871938}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3712459f20d5dc4c9298614ec992b04, type: 2}
   m_IsPrefabParent: 0
