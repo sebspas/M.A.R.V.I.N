@@ -9,13 +9,13 @@ public class PlayerBonus : MonoBehaviour {
     public float timeBetweenWeaponChange = 0.05f;
 
     // Time to reload each bonus
-    const float timeChargeBonusShield = 6f;
-    const float timeChargeBonusAura = 6f;
-    const float timeChargeBonusBoost = 8f;
+    const float timeChargeBonusShield = 9f;
+    const float timeChargeBonusAura = 15f;
+    const float timeChargeBonusBoost = 11.5f;
 
     // Energy costs for each bonus (starting max energy level : 20)
-    const float energyCostBonus1 = 10f;
-    const float energyCostBonus2 = 15f;
+    const float energyCostBonus1 = 15f;
+    const float energyCostBonus2 = 30f;
 
     // Highlight square
     public RectTransform bonusHighlight;

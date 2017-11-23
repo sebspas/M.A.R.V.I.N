@@ -14,7 +14,7 @@ public class FinalWave : Spawner
     public GameObject[] ennemiesDesert;
     public GameObject[] ennemiesForest;
 
-    // The all to activate
+    // The wall to activate
     public GameObject walls;
 
     // the player
@@ -47,8 +47,6 @@ public class FinalWave : Spawner
                 canBegin = false;
             }
         }
-        // for tests
-        walls.SetActive(true);
     }
 
     public void InitFinalWave()
