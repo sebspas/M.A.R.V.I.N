@@ -18,6 +18,9 @@ public class TextBoxManager : MonoBehaviour
     public int endAtLine;
 
     public PlayerMovement playerMovement;
+    // replace this by stop the game
+
+    public bool isActive;
 
 
 
@@ -27,7 +30,6 @@ public class TextBoxManager : MonoBehaviour
 
         if (textFile != null)
         {
-            playerMovement.ForbidToMove();
             textlines = (textFile.text.Split('\n'));
         }
 
@@ -41,6 +43,11 @@ public class TextBoxManager : MonoBehaviour
     void Update()
     {
 
+        if (!isActive)
+        {
+            return;
+        }
+
         theText.text = textlines[currentLine];
 
         if (Input.GetKeyDown(KeyCode.Return))
@@ -50,8 +57,45 @@ public class TextBoxManager : MonoBehaviour
 
         if (currentLine > endAtLine)
         {
-            TextBox.SetActive(false);
+            isActive = false;
             playerMovement.AllowToMove();
         }
+
+        if (isActive)
+        {
+            EnableTextBox();
+        }
+        else
+        {
+            DisableTextBox();            
+        }
+    }
+
+    public void EnableTextBox()
+    {
+        isActive = true;
+        TextBox.SetActive(true);
+        // To replace
+        //playerMovement.ForbidToMove();
+    }
+
+    public void DisableTextBox()
+    {
+        isActive = false;
+        TextBox.SetActive(false);
+        // To replace
+        //playerMovement.AllowToMove();
+    }
+
+    public void ReloadScript(TextAsset text,int currentL, int endL)
+    {
+        if(text != null)
+        {
+            textlines = new string[1];
+            textlines = (text.text.Split('\n'));
+        }
+        currentLine = currentL;
+        endAtLine = endL;
+        EnableTextBox();
     }
 }
