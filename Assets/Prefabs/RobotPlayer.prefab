@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd012b227302a5a42a30bc7f5d95118c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 600
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
   deathClip: {fileID: 8300000, guid: b24ae5c93276c4616856c1f0fb47e615, type: 3}

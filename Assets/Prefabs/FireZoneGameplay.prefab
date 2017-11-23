@@ -24684,7 +24684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2813c8f8b0731a04a9cda7d84b522b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 900
+  maxHealth: 600
   sinkSpeed: 2.5
   scoreValue: 100
   deathClip: {fileID: 8300000, guid: 694a31ad7e3c6d441937bce770697594, type: 3}
@@ -24884,6 +24884,10 @@ MonoBehaviour:
   effectAOE: {fileID: 1471982372664358}
   spawnPoint: {fileID: 1688476682749762}
   boss: {fileID: 1640071072301926}
+  theText: {fileID: 4900000, guid: 544c9d03f8e4bf244912a9c5815d9231, type: 3}
+  startLine: 0
+  endLine: 8
+  theTextBoxManager: {fileID: 0}
 --- !u!114 &114839192373831328
 MonoBehaviour:
   m_ObjectHideFlags: 1

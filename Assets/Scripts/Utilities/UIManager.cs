@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour {
             }
         }
         restartButton.onClick.AddListener(onRestartClick);
-        quitButton.onClick.AddListener(onQuitClick);
+        quitButton.onClick.AddListener(ExitGame);
         hidePaused();
         hideDeathMenu();
         timer = 0;
@@ -155,14 +155,14 @@ public class UIManager : MonoBehaviour {
     {
         SceneManager.LoadScene(level);
     }
-
+    
     void onRestartClick()
     {
         LoadLevel("Main");
     }
-
-    void onQuitClick()
+    
+    public void ExitGame()
     {
-
+        Application.Quit();
     }
 }

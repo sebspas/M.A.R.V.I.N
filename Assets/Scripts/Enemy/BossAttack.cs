@@ -153,8 +153,13 @@ public class BossAttack : MonoBehaviour
         {
             scriptZoneBossFinal.LaunchAOE();
         }
-        
 
+        Invoke("AOEDamage", 1.2f);      
+    }
+
+    // inflict damage to the player for the AOE
+    void AOEDamage()
+    {
         playerHealth.TakeDamage(AOEattackDamage);
     }
 

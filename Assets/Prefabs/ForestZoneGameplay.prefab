@@ -26504,7 +26504,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547140331802698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.3, y: -7, z: 5.7}
+  m_LocalPosition: {x: -14.69, y: -7, z: 5.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4988429785649830}
@@ -40662,7 +40662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2813c8f8b0731a04a9cda7d84b522b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1200
+  maxHealth: 1000
   sinkSpeed: 2.5
   scoreValue: 100
   deathClip: {fileID: 8300000, guid: 694a31ad7e3c6d441937bce770697594, type: 3}
@@ -41099,7 +41099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 200
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 0}
@@ -41407,7 +41407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 200
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 0}
@@ -41470,6 +41470,10 @@ MonoBehaviour:
   effectAOE: {fileID: 1088557276871152}
   spawnPoint: {fileID: 1857063412664924}
   boss: {fileID: 1690348194939630}
+  theText: {fileID: 4900000, guid: 48eae0e0f12a90442aa337ae525a2ec8, type: 3}
+  startLine: 0
+  endLine: 7
+  theTextBoxManager: {fileID: 0}
 --- !u!114 &114441589675297704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41935,7 +41939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 200
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 0}
@@ -42005,7 +42009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 200
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 0}
@@ -42077,7 +42081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 200
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 0}
@@ -42308,7 +42312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 200
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 0}
@@ -42501,7 +42505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 200
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 0}
