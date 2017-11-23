@@ -47,6 +47,8 @@ public class FinalWave : Spawner
                 canBegin = false;
             }
         }
+
+
     }
 
     public void InitFinalWave()
@@ -56,6 +58,7 @@ public class FinalWave : Spawner
 
         // we launched the spawn of the ennemies
         active = true;
+
     }
 
     protected override void SpawnWave()
@@ -86,5 +89,6 @@ public class FinalWave : Spawner
     public void DestroyWall()
     {
         updateSpawner(Time.deltaTime);
+        Destroy(walls, 2f);
     }
 }

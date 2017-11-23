@@ -24884,9 +24884,9 @@ MonoBehaviour:
   effectAOE: {fileID: 1471982372664358}
   spawnPoint: {fileID: 1688476682749762}
   boss: {fileID: 1640071072301926}
-  theText: {fileID: 0}
+  theText: {fileID: 4900000, guid: 544c9d03f8e4bf244912a9c5815d9231, type: 3}
   startLine: 0
-  endLine: 0
+  endLine: 8
   theTextBoxManager: {fileID: 0}
 --- !u!114 &114839192373831328
 MonoBehaviour:
