@@ -48,8 +48,6 @@ public class FinalWave : Spawner
                 canBegin = false;
             }
         }
-        // for tests
-        walls.SetActive(true);
     }
 
     public void InitFinalWave()

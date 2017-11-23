@@ -4276,6 +4276,10 @@ MonoBehaviour:
   effectAOE: {fileID: 1899891710941712}
   spawnPoint: {fileID: 1604926776412784}
   boss: {fileID: 1153653812842948}
+  theText: {fileID: 0}
+  startLine: 0
+  endLine: 0
+  theTextBoxManager: {fileID: 0}
   f: {fileID: 114172551154001614}
 --- !u!136 &136361565865495990
 CapsuleCollider:

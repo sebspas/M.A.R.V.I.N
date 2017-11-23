@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 872728526}
-  m_IndirectSpecularColor: {r: 0.44125012, g: 0.4986936, b: 0.61027426, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ Prefab:
         type: 2}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 1856944231}
+      objectReference: {fileID: 0}
     - target: {fileID: 4517365704156664, guid: 695a22b4f8ba63844bf84820c2e05760, type: 2}
       propertyPath: m_LocalPosition.x
       value: -14.69
@@ -261,31 +261,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224701834706526746, guid: ca5e23ca8c38c414289367285ce98cd5,
+    - target: {fileID: 95655008294955098, guid: ca5e23ca8c38c414289367285ce98cd5,
         type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -76.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 224701834706526746, guid: ca5e23ca8c38c414289367285ce98cd5,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 153.48999
-      objectReference: {fileID: 0}
-    - target: {fileID: 224643965860847034, guid: ca5e23ca8c38c414289367285ce98cd5,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -17.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 224643965860847034, guid: ca5e23ca8c38c414289367285ce98cd5,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: -75.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224701834706526746, guid: ca5e23ca8c38c414289367285ce98cd5,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2828b47d93cecdd4181efd5c5275b533, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca5e23ca8c38c414289367285ce98cd5, type: 2}
   m_IsPrefabParent: 0
@@ -543,7 +523,7 @@ Prefab:
         type: 2}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 1856944231}
+      objectReference: {fileID: 0}
     - target: {fileID: 1191964737273604, guid: 9a9bd97524d9f164db6b7b93af75c5ee, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -614,7 +594,7 @@ Prefab:
         type: 2}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 1856944231}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3712459f20d5dc4c9298614ec992b04, type: 2}
   m_IsPrefabParent: 0
@@ -971,7 +951,7 @@ Prefab:
         type: 2}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 1856944231}
+      objectReference: {fileID: 0}
     - target: {fileID: 1345284270820450, guid: bb33c0e18e695fd46bc3c8e567ecb2ac, type: 2}
       propertyPath: m_TagString
       value: FinalGameplay
@@ -1300,12 +1280,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1350709276467966, guid: 6ba8235cf559d984f83a6fa3300f49d8,
     type: 2}
   m_PrefabInternal: {fileID: 933855821}
---- !u!114 &1856944231 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114998005707069534, guid: ca5e23ca8c38c414289367285ce98cd5,
-    type: 2}
-  m_PrefabInternal: {fileID: 263306476}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1871301251
 Prefab:
   m_ObjectHideFlags: 0
@@ -1359,7 +1333,7 @@ Prefab:
         type: 2}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 1856944231}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0d50809f6ea0924bb30a5ea58bbb84d, type: 2}
   m_IsPrefabParent: 0

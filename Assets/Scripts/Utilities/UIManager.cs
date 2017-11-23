@@ -85,4 +85,10 @@ public class UIManager : MonoBehaviour {
     {
         SceneManager.LoadScene(level);
     }
+
+    // leave the game
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

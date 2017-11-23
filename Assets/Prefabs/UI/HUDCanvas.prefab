@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 223501787243070164}
   - component: {fileID: 114275497169937702}
   - component: {fileID: 114827993680036102}
-  - component: {fileID: 95655008294955098}
+  - component: {fileID: 95905712857656094}
   m_Layer: 5
   m_Name: BossLife
   m_TagString: BossUI
@@ -700,7 +700,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &95655008294955098
+--- !u!95 &95905712857656094
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -709,7 +709,7 @@ Animator:
   m_GameObject: {fileID: 1171236558155076}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2828b47d93cecdd4181efd5c5275b533, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9ba6d760618f26d4485a3dc4f5a4f99f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1276,9 +1276,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e3dcba0359a173e42be785f908259a51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0ebb5608a7a996439d2d0cb4371108c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1544,9 +1544,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 275ad1b20ed04dc439d37b708ab18860, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0ebb5608a7a996439d2d0cb4371108c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1598,9 +1598,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8565869642c226241ade164c0a02fee8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4efdaa23bfab9ec4d915d8c4646bd710, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1978,7 +1978,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 0}
+  m_AnchoredPosition: {x: 85, y: 0}
   m_SizeDelta: {x: 470, y: 60}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224128820355795852
@@ -2131,7 +2131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 0}
+  m_AnchoredPosition: {x: 85, y: 0}
   m_SizeDelta: {x: 1000, y: 113.33}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224231027218572830
@@ -2475,8 +2475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000009536743, y: -0.0000009536743}
-  m_SizeDelta: {x: -40, y: -40}
+  m_AnchoredPosition: {x: 0.0000009536743, y: -17.6}
+  m_SizeDelta: {x: -40, y: -75.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224673389448642956
 RectTransform:
@@ -2528,10 +2528,10 @@ RectTransform:
   m_Father: {fileID: 224446562559860600}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.8499908, y: 248.35}
-  m_SizeDelta: {x: -1134.3, y: -446.7}
+  m_AnchoredPosition: {x: 2.8499908, y: -76.25}
+  m_SizeDelta: {x: -1134.3, y: 153.48999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224724774294682732
 RectTransform:
