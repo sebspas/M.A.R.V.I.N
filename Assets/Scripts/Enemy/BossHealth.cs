@@ -164,7 +164,7 @@ public class BossHealth : Health
             GameObject.FindGameObjectWithTag("HUDEndGame").GetComponent<Animator>().SetTrigger("EndGame");
 
             // we stop the game
-            isPaused = true;
+            UIManager.isPaused = true;
             Time.timeScale = 0;
         }
     }
