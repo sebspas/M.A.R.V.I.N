@@ -14,17 +14,21 @@ public class FinalWave : Spawner
     public GameObject[] ennemiesDesert;
     public GameObject[] ennemiesForest;
 
-    // The all to activate
+    // The wall to activate
     public GameObject walls;
 
     // the player
     private PlayerShooting playerShooting;
 
+    // to trigger once only
+    private bool canBegin;
+
     // Use this for initialization
     void Start()
-    {     
+    {
         // we get the playerWeapon component, to know if the player got all the weapons
-        playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();        
+        playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
+        canBegin = true;
     }
 
     private void Update()
@@ -35,13 +39,16 @@ public class FinalWave : Spawner
     void OnTriggerEnter(Collider other)
     {
         // we check if the different power
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && canBegin)
         {
             if (playerShooting.playerGotAllWeapon())
             {
                 InitFinalWave();
+                canBegin = false;
             }
         }
+
+
     }
 
     public void InitFinalWave()
@@ -51,6 +58,7 @@ public class FinalWave : Spawner
 
         // we launched the spawn of the ennemies
         active = true;
+
     }
 
     protected override void SpawnWave()
@@ -67,11 +75,20 @@ public class FinalWave : Spawner
         // spawnDesert
         SpawnEnnemie(ennemiesDesert[0], spawnDesert, numberOfBasicEnnemies);
         SpawnEnnemie(ennemiesDesert[1], spawnDesert, numberOfRangeEnnemies);
-        SpawnEnnemie(ennemiesDesert[2], spawnDesert, numberOfTankEnnemies);      
+        SpawnEnnemie(ennemiesDesert[2], spawnDesert, numberOfTankEnnemies);
     }
 
-    protected override void EndSpawn() {
+    protected override void EndSpawn()
+    {
+        BossFightFinal bossScript = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFightFinal>();
+        bossScript.Begin();
         // TODO
         // make the boss spawn HERE
+    }
+
+    public void DestroyWall()
+    {
+        updateSpawner(Time.deltaTime);
+        Destroy(walls, 2f);
     }
 }

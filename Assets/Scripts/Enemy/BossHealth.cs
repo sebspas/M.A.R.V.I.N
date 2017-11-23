@@ -8,9 +8,11 @@ public class BossHealth : Health
     public AudioClip deathClip;
     public GameObject disappearEffect;
 
-    public GameObject UIBoss;
-    public Image healthSlider;
-    public Text healthText;
+    // global UI Element for the boss
+    GameObject UIBoss;
+
+    // Image use to show the boss life
+    Image healthSlider;
 
     // the player shooting script (to add the exp)
     PlayerShooting playerShooting;
@@ -35,6 +37,10 @@ public class BossHealth : Health
 
     GameObject boss;
 
+    BossFight scriptZoneBoss;
+
+    bool final;
+
     void Awake()
     {
         boss = GameObject.FindGameObjectWithTag("Boss");
@@ -45,8 +51,35 @@ public class BossHealth : Health
         currentEffect = new EffectBoss(this, bossMovement);
         InitHealth();
         AppearOrDesappear();
+
+        final = false;
+        // UI boss management
+        UIBoss = GameObject.FindGameObjectWithTag("BossUI");
+        GameObject healthSliderObject = GameObject.FindGameObjectWithTag("BossUILife");
+        if (healthSliderObject != null) healthSlider = healthSliderObject.GetComponent<Image>();
         SliderUpdate();
-        UIBoss.SetActive(true);
+        // make the HUD Appear
+        UIBoss.GetComponent<Animator>().SetTrigger("Active");
+
+        // The zone depends on the number of weapon
+        int nbWeapon = playerShooting.GetMaxWeapon();
+        // Recupere la zone du boss pour pouvoir lancer l'effet de l'AOE
+        switch (nbWeapon)
+        {
+            case 2:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("IceGameplay").GetComponent<BossFight>();
+                break;
+            case 3:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("FireGameplay").GetComponent<BossFight>();
+                break;
+            case 4:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("ForestGameplay").GetComponent<BossFight>();
+                break;
+            case 5:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFight>();
+                final = true;
+                break;
+        }
     }
 
 
@@ -94,7 +127,7 @@ public class BossHealth : Health
         anim.SetBool("BossDead", true);
         anim.SetBool("PlayerInRange", false);
 
-        UIBoss.SetActive(false);
+        UIBoss.GetComponent<Animator>().SetTrigger("Disable");
 
         // we give the amount of xp to the player max energy
         playerShooting.energyMax += xpGiven;
@@ -118,8 +151,22 @@ public class BossHealth : Health
 
         AppearOrDesappear();
 
-        BossFight1 scriptBoss1 = GameObject.FindGameObjectWithTag("IceGameplay").GetComponent<BossFight1>();
-        scriptBoss1.DestroyWall();
+        if (!final)
+            scriptZoneBoss.DestroyWall();
+
+        PlayerHealth playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        playerHealth.Healed(1000);
+
+        if (playerShooting.playerGotAllWeapon())
+        {
+            // if we are at the end and we kill the boss
+            // then we make the endgame screen appear
+            GameObject.FindGameObjectWithTag("HUDEndGame").GetComponent<Animator>().SetTrigger("EndGame");
+
+            // we stop the game
+            UIManager.isPaused = true;
+            Time.timeScale = 0;
+        }
     }
 
 
@@ -127,7 +174,6 @@ public class BossHealth : Health
     {
         // just be sure the slider and the text of health are ok
         healthSlider.transform.localScale = new Vector3((currentHealth / maxHealth), 1, 1);
-        healthText.text = currentHealth + "/" + maxHealth;
     }
 
     public void AppearOrDesappear()

@@ -45,7 +45,8 @@ public class EnemyBulletScript : MonoBehaviour
         }
 
         //print(other.tag);
-        if (other.tag == "Enemy" || other.tag == "FloatingCrystal" || other.tag == "TriggerEffect" || other.tag == "Sight" || other.tag == "Climat" || other.tag == "BossLegs" || other.tag == "Bullet")
+        if (other.tag == "Enemy" || other.tag == "FloatingCrystal" || other.tag == "TriggerEffect" || other.tag == "Sight" 
+            || other.tag == "Climat" || other.tag == "BossLegs" || other.tag == "Bullet" || other.tag == "Boss")
         {
             // don't destroy it when it's the player shooting (or the bullet will never go out of the player collider...)
         }

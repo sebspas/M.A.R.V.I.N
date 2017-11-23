@@ -11,7 +11,7 @@ public class EnemyDistanceAttack : EnemyAttack {
     public GameObject staff;
 
     // speed of the bullet
-    public int enemyBulletSpeed = 280;
+    public int enemyBulletSpeed = 300;
 
     // override parent method Attack()
     protected override void Attack()

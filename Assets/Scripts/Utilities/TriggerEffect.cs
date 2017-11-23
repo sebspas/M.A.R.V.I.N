@@ -24,12 +24,8 @@ public class TriggerEffect : MonoBehaviour {
     {
         if (isWaiting)
         {
-            print(Time.time);
-            print(time);
             if (time < Time.time)
             {
-                print(Time.time);
-                print(time);
                 effectToTrigger.SetActive(isActive);
                 isWaiting = false;
             }

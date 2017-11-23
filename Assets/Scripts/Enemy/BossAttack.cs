@@ -23,7 +23,7 @@ public class BossAttack : MonoBehaviour
     public GameObject staff;
 
     // speed of the bullet
-    public int bossBulletSpeed = 280;
+    public int bossBulletSpeed = 300;
 
     // counter for pattern attacks
     int patternCount;
@@ -31,7 +31,12 @@ public class BossAttack : MonoBehaviour
     bool venerePattern;
 
     // L'effet qui sera lancé pour l'AOE
-    BossFight1 scriptZoneBoss;
+    BossFight scriptZoneBoss;
+
+    // L'effet qui sera lancé pour l'AOE zone finale
+    BossFightFinal scriptZoneBossFinal;
+    // Determine le script à utiliser
+    bool final;
 
 
     protected virtual void Awake()
@@ -42,8 +47,28 @@ public class BossAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         patternCount = 0;
         venerePattern = false;
+        // To make the difference between the BossFight.cs and the BossFightFinal.cs
+        final = false;
+        // The zone depends on the number of weapon
+        int nbWeapon = player.GetComponent<PlayerShooting>().GetMaxWeapon();
         // Recupere la zone du boss pour pouvoir lancer l'effet de l'AOE
-        scriptZoneBoss = GameObject.FindGameObjectWithTag("IceGameplay").GetComponent<BossFight1>();
+        switch (nbWeapon)
+        {
+            case 2:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("IceGameplay").GetComponent<BossFight>();
+                break;
+            case 3:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("FireGameplay").GetComponent<BossFight>();
+                break;
+            case 4:
+                scriptZoneBoss = GameObject.FindGameObjectWithTag("ForestGameplay").GetComponent<BossFight>();
+                break;
+            case 5:
+                scriptZoneBossFinal = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFightFinal>();
+                final = true;
+                break;
+        }
+        
     }
 
 
@@ -51,15 +76,21 @@ public class BossAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(bossHealth.GetCurrentHealth() <= 200)
+        if(bossHealth.GetCurrentHealth() <= 400)
         {
             venerePattern = true;
         }
 
         if (IsReadyToAttack())
         {
-            scriptZoneBoss.StopAOE();
-            print("READY to attack");
+            if (!final)
+            {
+                scriptZoneBoss.StopAOE();
+            }
+            else
+            {
+                scriptZoneBossFinal.StopAOE();
+            }
             anim.SetBool("PlayerInRange", true);
             PatternAttack();
         }
@@ -82,7 +113,6 @@ public class BossAttack : MonoBehaviour
         
         if (!venerePattern)
         {
-            print("patternattack non venere");
             if (patternCount % 6 < 5)
             {
                 Attack();
@@ -94,8 +124,6 @@ public class BossAttack : MonoBehaviour
         }
         else
         {
-            print("patternattack venere");
-            print("patternCount % 3 = " + patternCount % 3);
             if (patternCount % 3 < 2)
             {
                 Attack();
@@ -111,22 +139,33 @@ public class BossAttack : MonoBehaviour
 
     void AOEAttack()
     {
-        print("AOE");
         timer = 0f;
 
         //anim.SetInteger("NumAttack", 1);
         anim.SetTrigger("Numun");
 
         // On lance l'effet
-        scriptZoneBoss.LaunchAOE();
+        if (!final)
+        {
+            scriptZoneBoss.LaunchAOE();
+        }
+        else
+        {
+            scriptZoneBossFinal.LaunchAOE();
+        }
 
+        Invoke("AOEDamage", 1.2f);      
+    }
+
+    // inflict damage to the player for the AOE
+    void AOEDamage()
+    {
         playerHealth.TakeDamage(AOEattackDamage);
     }
 
     // override parent method Attack()
     void Attack()
     {
-        print("attack");
         timer = 0f;
 
         //anim.SetInteger("NumAttack", 0);

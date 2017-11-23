@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd012b227302a5a42a30bc7f5d95118c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 600
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
   deathClip: {fileID: 8300000, guid: b24ae5c93276c4616856c1f0fb47e615, type: 3}
@@ -1738,14 +1738,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenBullet: 0.15
   timeToGoBackToIdle: 0.9
+  isIdle: 1
   proj:
   - {fileID: 1811228827102288, guid: 92e4914b1a155f943a2f79f24f47466f, type: 2}
   - {fileID: 1553782932227686, guid: 98c853c8ac0dba34386d57fcfecb6c37, type: 2}
   - {fileID: 1349997331834966, guid: 020bb9a12510f6640aee851cc7bd9672, type: 2}
   - {fileID: 1939240370481064, guid: 01fbc6d3cc27b4b4ea5f614fcbc72274, type: 2}
   currentWeapon: 0
-  energyMax: 100
-  currentEnergy: 100
+  energyMax: 30
+  currentEnergy: 30
   energySlider: {fileID: 0}
   energyText: {fileID: 0}
   gunRightArm: {fileID: 1099828321575250}
@@ -1838,8 +1839,8 @@ MonoBehaviour:
   chargeBonus2: {fileID: 0}
   chargeBonus3: {fileID: 0}
   maxGaugeSize: 45
-  timeMaxShield: 4
-  timeMaxEnergyBoost: 3
+  timeMaxShield: 3.5
+  timeMaxEnergyBoost: 3.5
   timeMaxAura: 2.5
   bonusBoostInUse: 0
   bonusShieldInUse: 0

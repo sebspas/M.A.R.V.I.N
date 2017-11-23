@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour {
     protected int wave = 1;
 
     // number max of wave
-    protected int maxWave = 10;
+    protected int maxWave = 5;
 
     // general timer to know the time between two update
     protected float timerSpawn = 0f;

@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e847cd7723797504c911efe8515b710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 60
   sinkSpeed: 2.5
   scoreValue: 15
   deathClip: {fileID: 0}
@@ -1129,7 +1129,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1065242708617612}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8
+  m_Radius: 1.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
