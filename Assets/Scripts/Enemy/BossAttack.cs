@@ -35,6 +35,10 @@ public class BossAttack : MonoBehaviour, IAttack
     protected float timer;
     EnemyFOV sight;
 
+    // For the sounds of the AOE
+    public AudioClip bossAOEclip;
+
+    AudioSource audio1;
     // counter for pattern attacks
     int patternCount = 0;
     // Si boss faible PV changement de pattern
@@ -47,6 +51,7 @@ public class BossAttack : MonoBehaviour, IAttack
         bossHealth = GetComponent<BossHealth>();
         anim = GetComponent<Animator>();
         sight = GetComponentInChildren<EnemyFOV>();
+        audio1 = GetComponent<AudioSource>();
     }
 
     protected void Update()
@@ -147,6 +152,7 @@ public class BossAttack : MonoBehaviour, IAttack
 
     public void LaunchAOE()
     {
+        audio1.PlayOneShot(bossAOEclip,1.2f);
         effectAOE.SetActive(true);
     }
 
