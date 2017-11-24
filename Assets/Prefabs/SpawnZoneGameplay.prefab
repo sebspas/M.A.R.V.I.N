@@ -312,8 +312,9 @@ GameObject:
   - component: {fileID: 195301875137999538}
   - component: {fileID: 114675829091829590}
   - component: {fileID: 114887588555524990}
-  - component: {fileID: 114284220232777354}
   - component: {fileID: 82266035285730978}
+  - component: {fileID: 136543434274258730}
+  - component: {fileID: 114313845036527270}
   m_Layer: 0
   m_Name: e_BossFinal
   m_TagString: Boss
@@ -689,6 +690,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1344539815860188
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4632275726433552}
+  - component: {fileID: 135729758394463834}
+  - component: {fileID: 114724644921359072}
+  m_Layer: 0
+  m_Name: Sight
+  m_TagString: Sight
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1345284270820450
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +715,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4692881173042108}
-  - component: {fileID: 114975755300444310}
+  - component: {fileID: 114121250669364386}
   m_Layer: 0
   m_Name: SpawnZoneGameplay
   m_TagString: FinalGameplay
@@ -2431,6 +2449,7 @@ Transform:
   m_LocalPosition: {x: 0.336, y: 0, z: 4.736}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
+  - {fileID: 4632275726433552}
   - {fileID: 4986753702640344}
   - {fileID: 4392014371171692}
   m_Father: {fileID: 4692881173042108}
@@ -2557,7 +2576,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4295223132098740}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4400608974153100
 Transform:
@@ -2934,6 +2953,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4975438365555544}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4632275726433552
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344539815860188}
+  m_LocalRotation: {x: -0, y: -0.9545607, z: -0, w: 0.2980166}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5000001, y: 0.5, z: 0.5000001}
+  m_Children: []
+  m_Father: {fileID: 4295223132098740}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4641016390484062
@@ -3626,7 +3658,7 @@ Transform:
   - {fileID: 4871578881899366}
   - {fileID: 4465437001136824}
   m_Father: {fileID: 4295223132098740}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4990548409976428
 Transform:
@@ -4187,6 +4219,25 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114121250669364386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345284270820450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5662563fa83d4724890c7ab7db4a0df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 1349395185407714}
+  spawnPoint: {fileID: 1604926776412784}
+  boss: {fileID: 1153653812842948}
+  theText: {fileID: 4900000, guid: 88a298d0b8627fb4f9b7a861dd02834d, type: 3}
+  startLine: 0
+  endLine: 3
+  theTextBoxManager: {fileID: 0}
+  final: 1
 --- !u!114 &114172551154001614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4213,7 +4264,7 @@ MonoBehaviour:
   - {fileID: 1429589336704778, guid: 9903da8221e041140bca69f96bccbb5d, type: 2}
   - {fileID: 1631265466652920, guid: a7c4fb203d291fc47b7644712f0769cb, type: 2}
   walls: {fileID: 1349395185407714}
---- !u!114 &114284220232777354
+--- !u!114 &114313845036527270
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -4221,7 +4272,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1153653812842948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf54f4f3e0c0df42be62c2363496158, type: 3}
+  m_Script: {fileID: 11500000, guid: 2112114bbaaec594f9d13802ed42fca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114675829091829590
@@ -4235,14 +4286,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa55a15b6217917409d21c49abf6f924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1500
-  sinkSpeed: 2.5
-  scoreValue: 100
+  maxHealth: 1
+  hurtClip: {fileID: 0}
   deathClip: {fileID: 8300000, guid: 694a31ad7e3c6d441937bce770697594, type: 3}
   disappearEffect: {fileID: 1108412428568460, guid: 88e70a9ae230b434087c5eba9d0742ca,
     type: 2}
   xpGiven: 50
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
+--- !u!114 &114724644921359072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344539815860188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d753378e4b4a945b0581ad6dd8e2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldOfViewAngle: 120
+  playerInSight: 1
+  disabled: 1
 --- !u!114 &114887588555524990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4258,29 +4322,22 @@ MonoBehaviour:
   attackDamage: 60
   AOEattackDamage: 70
   attackRange: 17
+  effectAOE: {fileID: 1899891710941712}
   bossProj: {fileID: 1142586305092978, guid: bf0ff23cb636be74db13e2d479da024a, type: 2}
   staff: {fileID: 1203583941952270}
   bossBulletSpeed: 200
---- !u!114 &114975755300444310
-MonoBehaviour:
+--- !u!135 &135729758394463834
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1345284270820450}
+  m_GameObject: {fileID: 1344539815860188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93adc3c32d6db794e8affb9f0f4a1aaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wall: {fileID: 1349395185407714}
-  effectAOE: {fileID: 1899891710941712}
-  spawnPoint: {fileID: 1604926776412784}
-  boss: {fileID: 1153653812842948}
-  theText: {fileID: 4900000, guid: 88a298d0b8627fb4f9b7a861dd02834d, type: 3}
-  startLine: 0
-  endLine: 3
-  theTextBoxManager: {fileID: 0}
-  f: {fileID: 114172551154001614}
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136361565865495990
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -4294,6 +4351,19 @@ CapsuleCollider:
   m_Height: 8
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 2}
+--- !u!136 &136543434274258730
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153653812842948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 4
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 2, y: 10, z: 2}
 --- !u!136 &136596405231598656
 CapsuleCollider:
   m_ObjectHideFlags: 1

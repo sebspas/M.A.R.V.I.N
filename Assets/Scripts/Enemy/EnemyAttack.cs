@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAttack : MonoBehaviour
+public class EnemyAttack : MonoBehaviour, IAttack
 {
     public float timeBetweenAttacks = 2f;
     public int attackDamage = 10;
@@ -65,17 +65,16 @@ public class EnemyAttack : MonoBehaviour
         return (timer >= timeBetweenAttacks && !enemyHealth.IsDead() && IsInAttackRange());
     }
 
-    protected bool IsInAttackRange()
+    public bool IsInAttackRange()
     {
         if (!sight.playerInSight)
         {
             return false;
         }
 
-        double distToPlayer = Mathf.Sqrt(Mathf.Pow((this.transform.position.x - player.transform.position.x),2) 
-            + Mathf.Pow((this.transform.position.z - player.transform.position.z),2));
+        float distToPlayer = Mathf.Pow((this.transform.position.x - player.transform.position.x),2) 
+            + Mathf.Pow((this.transform.position.z - player.transform.position.z),2);
 
-        //Debug.Log(distToPlayer);
-        return (distToPlayer <= attackRange);
+        return (distToPlayer <= Mathf.Pow(attackRange, 2)) && sight.IsClearSight(player);
     }
 }

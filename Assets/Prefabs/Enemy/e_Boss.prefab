@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 114711100684434528}
   - component: {fileID: 82302036594575884}
   - component: {fileID: 136770610928405930}
+  - component: {fileID: 114386601567995514}
   m_Layer: 0
   m_Name: e_Boss
   m_TagString: Boss
@@ -734,6 +735,23 @@ GameObject:
   m_Layer: 0
   m_Name: Joint_5_2
   m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1896672103282776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4387561697044568}
+  - component: {fileID: 135879911665264906}
+  - component: {fileID: 114186830195860406}
+  m_Layer: 0
+  m_Name: Sight
+  m_TagString: Sight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -982,7 +1000,7 @@ Transform:
   - {fileID: 4029085772943192}
   - {fileID: 4322124471069854}
   m_Father: {fileID: 4789856322567598}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4203240528176826
 Transform:
@@ -1093,6 +1111,19 @@ Transform:
   m_Children:
   - {fileID: 4545053067277280}
   m_Father: {fileID: 4860915534493430}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4387561697044568
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896672103282776}
+  m_LocalRotation: {x: -0, y: -0.998634, z: -0, w: -0.052252024}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.4999983, y: 2.5, z: 2.4999983}
+  m_Children: []
+  m_Father: {fileID: 4789856322567598}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4415932254105978
@@ -1492,6 +1523,7 @@ Transform:
   m_LocalPosition: {x: 14.922089, y: 0, z: 18.255707}
   m_LocalScale: {x: 0.40000036, y: 0.4, z: 0.40000036}
   m_Children:
+  - {fileID: 4387561697044568}
   - {fileID: 4192826434332286}
   - {fileID: 4987300637777212}
   m_Father: {fileID: 0}
@@ -1596,7 +1628,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4789856322567598}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23026065162923208
 MeshRenderer:
@@ -2057,6 +2089,31 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114186830195860406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896672103282776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d753378e4b4a945b0581ad6dd8e2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldOfViewAngle: 120
+  playerInSight: 1
+  disabled: 1
+--- !u!114 &114386601567995514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583448380886822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2112114bbaaec594f9d13802ed42fca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114511679954461604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2072,6 +2129,7 @@ MonoBehaviour:
   attackDamage: 40
   AOEattackDamage: 60
   attackRange: 15
+  effectAOE: {fileID: 0}
   bossProj: {fileID: 1142586305092978, guid: bf0ff23cb636be74db13e2d479da024a, type: 2}
   staff: {fileID: 1026539822407422}
   bossBulletSpeed: 300
@@ -2089,8 +2147,6 @@ MonoBehaviour:
   maxHealth: 0
   hurtClip: {fileID: 8300000, guid: fda0985ed0590b344a82ee4e5b1a6c7a, type: 3}
   deathClip: {fileID: 8300000, guid: 694a31ad7e3c6d441937bce770697594, type: 3}
-  sinkSpeed: 2.5
-  scoreValue: 10
   disappearEffect: {fileID: 1108412428568460, guid: 88e70a9ae230b434087c5eba9d0742ca,
     type: 2}
   xpGiven: 2
@@ -2106,6 +2162,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf54f4f3e0c0df42be62c2363496158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &135879911665264906
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896672103282776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136770610928405930
 CapsuleCollider:
   m_ObjectHideFlags: 1

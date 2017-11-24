@@ -99,21 +99,19 @@ public class PlayerShooting : MonoBehaviour {
             {
                 // we reset the timer
                 timerEnergy = 0;
-                // if we are not using bonus 3
-                if (!playerBonus.bonusBoostInUse)
+
+                float energyToregen = energyMax * energyRegen;
+                if (isIdle) energyToregen *= 2;
+                // we regen the energy
+                if (currentEnergy + energyToregen <= energyMax)
                 {
-                    float energyToregen = energyMax * energyRegen;
-                    if (isIdle) energyToregen *= 2;
-                    // we regen the energy
-                    if (currentEnergy + energyToregen <= energyMax)
-                    {
-                        currentEnergy += energyToregen;
-                    }
-                    else
-                    {
-                        currentEnergy = energyMax;
-                    }
+                    currentEnergy += energyToregen;
                 }
+                else
+                {
+                    currentEnergy = energyMax;
+                }
+                
 
                 // we update the energy slider
                 energySlider.transform.localScale = new Vector3((currentEnergy / energyMax), 1, 1);

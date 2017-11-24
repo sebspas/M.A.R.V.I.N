@@ -7,6 +7,12 @@ public class Health : MonoBehaviour {
     // Current Health value 
     protected float currentHealth;
 
+    // fire effect for this monster (to define in the editor)
+    public GameObject fireEffect;
+
+    // manager to apply the different effect
+    protected Effect currentEffect;
+
     // Max Health value
     public float maxHealth;
 
@@ -18,7 +24,7 @@ public class Health : MonoBehaviour {
     public AudioClip deathClip;
 
     // The audio of the monster
-    protected AudioSource audio;
+    protected AudioSource hurtSound;
 
     public void InitHealth()
     {
@@ -54,8 +60,8 @@ public class Health : MonoBehaviour {
         } else
         {
             HurtAnim();
-            audio.clip = hurtClip;
-            audio.Play();
+            hurtSound.clip = hurtClip;
+            hurtSound.Play();
         }            
     }
 

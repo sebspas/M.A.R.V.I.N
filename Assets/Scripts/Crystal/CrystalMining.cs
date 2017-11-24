@@ -28,9 +28,6 @@ public class CrystalMining : Spawner {
     public GameObject[] spawnPoints;
     public GameObject[] listSpawnableEnnemies;
 
-    // the crystal sphere collider
-    SphereCollider sc;
-
     // the amont of crystal still to mine
     public float remainingCrystal = 100f;
     private float totalToMine;
@@ -70,8 +67,6 @@ public class CrystalMining : Spawner {
         miningSpeed = playerMining.miningSpeed;
         totalToMine = remainingCrystal;
 
-        // Create the sphere collider, radius = 2, isTrigger = true (we can go through it)
-        sc = gameObject.GetComponent<SphereCollider>() as SphereCollider;
         isEmpty = false;
 
         // setup the number of ennemie

@@ -17,7 +17,7 @@ public class PlayerHealth : Health
     void Awake()
     {       
         anim = GetComponent<Animator>();
-        audio = GetComponent<AudioSource>();
+        hurtSound = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
         playerShooting = GetComponentInChildren<PlayerShooting>();
         playerBonus = GetComponentInChildren<PlayerBonus>();
@@ -61,8 +61,8 @@ public class PlayerHealth : Health
         anim.SetTrigger("Die");
 
         // play the corresponding sound to the death
-        audio.clip = deathClip;
-        audio.Play();
+        GetComponent<AudioSource>().clip = deathClip;
+        GetComponent<AudioSource>().Play();
 
         // we stop the ability to shoot or to move
         playerMovement.enabled = false;

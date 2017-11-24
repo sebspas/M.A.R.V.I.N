@@ -5,7 +5,6 @@ using UnityEngine;
 public class BossFight : MonoBehaviour
 {
     public GameObject wall;
-    public GameObject effectAOE;
     public GameObject spawnPoint;
     public GameObject boss;
 
@@ -24,6 +23,10 @@ public class BossFight : MonoBehaviour
 
     bool wait;
 
+    public bool final = false;
+
+    private GameObject InstanceBoss = null;
+
 
     // Use this for initialization
     void Start()
@@ -36,7 +39,6 @@ public class BossFight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         textIsActive = theTextBoxManager.isActive;
         if (begin && !textIsActive)
         {
@@ -47,11 +49,26 @@ public class BossFight : MonoBehaviour
 
         if (wait && timer < Time.time)
         {
-            GameObject Instanceboss = (GameObject)Instantiate(boss, spawnPoint.transform.position, new Quaternion(0, 0, 0, 0));
-            Instanceboss.SetActive(true);
+            InstanceBoss = (GameObject)Instantiate(boss, spawnPoint.transform.position, new Quaternion(0, 0, 0, 0));
+            InstanceBoss.SetActive(true);
 
             timer = 0;
             wait = false;
+        }
+
+        if (InstanceBoss != null && InstanceBoss.GetComponent<BossHealth>().IsDead())
+        {
+            // we destroy the wall
+            DestroyWall();
+
+            // if we are at the end of the game and we kill the boss
+            if (final)
+            {                
+                // then we make the endgame screen appear
+                GameObject.FindGameObjectWithTag("HUDEndGame").GetComponent<Animator>().SetTrigger("EndGame");
+                // stop the game after we got the time to see the animation of end appear
+                Invoke("GameController.StopGame", 2.5f);
+            }
         }
     }
 
@@ -62,14 +79,6 @@ public class BossFight : MonoBehaviour
         begin = true;
     }
 
-    public void LaunchAOE()
-    {
-        effectAOE.SetActive(true);
-    }
-    public void StopAOE()
-    {
-        effectAOE.SetActive(false);
-    }
     public void DestroyWall()
     {
         wall.SetActive(false);
@@ -81,4 +90,5 @@ public class BossFight : MonoBehaviour
     {
         theTextBoxManager.ReloadScript(theText, startLine, endLine);
     }
+
 }

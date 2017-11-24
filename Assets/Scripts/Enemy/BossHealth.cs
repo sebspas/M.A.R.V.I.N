@@ -3,8 +3,7 @@ using UnityEngine.UI;
 
 public class BossHealth : Health
 {
-    public float sinkSpeed = 2.5f;
-    public int scoreValue = 10;
+    // effect show when the boss disappear
     public GameObject disappearEffect;
 
     // global UI Element for the boss
@@ -19,67 +18,33 @@ public class BossHealth : Health
     // amount of xp given when we kill the monster
     public int xpGiven = 2;
 
-    // manager to apply the different effect
-    EffectBoss currentEffect;
-
     // animator to control animation
     Animator anim;
 
-    // fire effect for this monster (to define in the editor)
-    public GameObject fireEffect;
-    
     bool isSinking;
 
     // for effect and take damage
-    BossMovement bossMovement;
-
-    GameObject boss;
+    EnemyMovement bossMovement;
 
     BossFight scriptZoneBoss;
 
-    BossFightFinal scriptZoneBossFinal;
-
-    bool final;
-
     void Awake()
     {
-        boss = GameObject.FindGameObjectWithTag("Boss");
         anim = GetComponent<Animator>();
-        audio = GetComponent<AudioSource>();
+        hurtSound = GetComponent<AudioSource>();
         playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
-        bossMovement = GetComponentInParent<BossMovement>();
-        currentEffect = new EffectBoss(this, bossMovement);
+        bossMovement = GetComponentInParent<EnemyMovement>();
+        currentEffect = new Effect(this, bossMovement);
         InitHealth();
         AppearOrDesappear();
 
-        final = false;
         // UI boss management
         UIBoss = GameObject.FindGameObjectWithTag("BossUI");
         GameObject healthSliderObject = GameObject.FindGameObjectWithTag("BossUILife");
         if (healthSliderObject != null) healthSlider = healthSliderObject.GetComponent<Image>();
         SliderUpdate();
         // make the HUD Appear
-        UIBoss.GetComponent<Animator>().SetTrigger("Active");
-
-        // The zone depends on the number of weapon
-        int nbWeapon = playerShooting.GetMaxWeapon();
-        // Recupere la zone du boss pour pouvoir lancer l'effet de l'AOE
-        switch (nbWeapon)
-        {
-            case 2:
-                scriptZoneBoss = GameObject.FindGameObjectWithTag("IceGameplay").GetComponent<BossFight>();
-                break;
-            case 3:
-                scriptZoneBoss = GameObject.FindGameObjectWithTag("FireGameplay").GetComponent<BossFight>();
-                break;
-            case 4:
-                scriptZoneBoss = GameObject.FindGameObjectWithTag("ForestGameplay").GetComponent<BossFight>();
-                break;
-            case 5:
-                scriptZoneBossFinal = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFightFinal>();
-                final = true;
-                break;
-        }
+        UIBoss.GetComponent<Animator>().SetTrigger("Active");       
     }
 
 
@@ -134,46 +99,19 @@ public class BossHealth : Health
         // we also give this energy to the current amount of energy of the player
         playerShooting.currentEnergy += xpGiven;
 
-        audio.clip = deathClip;
-        audio.Play();
+        GetComponent<AudioSource>().clip = deathClip;
+        GetComponent<AudioSource>().Play();
 
         // Find and disable the Nav Mesh Agent.
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 
-        // Find the rigidbody component and make it kinematic (since we use Translate to sink the boss).
-        //GetComponent<Rigidbody>().isKinematic = true;
-
-        // Increase the score by the boss's score value.
-        //ScoreManager.score += scoreValue;
-
-        // After 2 second destory the boss.
-        Destroy(gameObject, 2f);
-
         AppearOrDesappear();
-
-        if (!final)
-        {
-            scriptZoneBoss.DestroyWall();
-        }
-        else
-        {
-            scriptZoneBossFinal.DestroyWall();
-        }
-
 
         PlayerHealth playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         playerHealth.Healed(1000);
 
-        if (playerShooting.playerGotAllWeapon())
-        {
-            // if we are at the end and we kill the boss
-            // then we make the endgame screen appear
-            GameObject.FindGameObjectWithTag("HUDEndGame").GetComponent<Animator>().SetTrigger("EndGame");
-
-            // we stop the game
-            UIManager.isPaused = true;
-            Time.timeScale = 0;
-        }
+        // After 2 second destory the boss.
+        Destroy(gameObject, 2f);     
     }
 
 

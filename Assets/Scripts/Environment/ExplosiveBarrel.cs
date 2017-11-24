@@ -14,13 +14,10 @@ public class ExplosiveBarrel : MonoBehaviour {
     // list of all the object in range
     IList<GameObject> objectInRange = new List<GameObject>();
 
-    SphereCollider range;
-
     // Use this for initialization
     void Start () {
         effect.SetActive(false);
         discardBarrel = false;
-        range = GetComponent<SphereCollider>();
     }
 	
 	// Update is called once per frame

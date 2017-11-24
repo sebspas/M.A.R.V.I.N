@@ -6884,9 +6884,9 @@ GameObject:
   - component: {fileID: 195449017727313264}
   - component: {fileID: 114692367906500460}
   - component: {fileID: 114261166046899422}
-  - component: {fileID: 114083908696590148}
   - component: {fileID: 82058874544995792}
   - component: {fileID: 136207723320357690}
+  - component: {fileID: 114985263427082976}
   m_Layer: 0
   m_Name: e_Boss2
   m_TagString: Boss
@@ -9034,6 +9034,23 @@ GameObject:
   m_Layer: 0
   m_Name: Upper_Leg_L
   m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1855989306513482
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4117843362243430}
+  - component: {fileID: 135745418124641934}
+  - component: {fileID: 114590593932735366}
+  m_Layer: 0
+  m_Name: Sight
+  m_TagString: Sight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11627,6 +11644,19 @@ Transform:
   m_Father: {fileID: 4824529671499966}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4117843362243430
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855989306513482}
+  m_LocalRotation: {x: -0, y: -0.998634, z: -0, w: -0.05225202}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.4999979, y: 2.5, z: 2.4999979}
+  m_Children: []
+  m_Father: {fileID: 4126965737316874}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4117846172058732
 Transform:
   m_ObjectHideFlags: 1
@@ -11710,6 +11740,7 @@ Transform:
   m_LocalPosition: {x: -75.85574, y: 0, z: -8.410507}
   m_LocalScale: {x: 0.40000036, y: 0.4, z: 0.40000036}
   m_Children:
+  - {fileID: 4117843362243430}
   - {fileID: 4375224219714182}
   - {fileID: 4391109223206290}
   m_Father: {fileID: 4363428400373492}
@@ -13849,7 +13880,7 @@ Transform:
   - {fileID: 4033409650702606}
   - {fileID: 4883044309988414}
   m_Father: {fileID: 4126965737316874}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4375544627451310
 Transform:
@@ -14058,7 +14089,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4126965737316874}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4392407905614626
 Transform:
@@ -24031,9 +24062,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 35
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114066787983429158
@@ -24060,17 +24092,6 @@ MonoBehaviour:
   - {fileID: 1117834558375636, guid: 1bdc012a992aab345b4aae1761e592f5, type: 2}
   - {fileID: 1175024585694564, guid: 07a072a72c313cd40b7b4cfffe1e89a1, type: 2}
   remainingCrystal: 20
---- !u!114 &114083908696590148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1640071072301926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf54f4f3e0c0df42be62c2363496158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114086093405548068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -24083,9 +24104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114089382868770900
@@ -24100,9 +24122,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   sinkSpeed: 2.5
   scoreValue: 15
-  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114094158220839896
@@ -24145,9 +24168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114118968450245600
@@ -24212,9 +24236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   sinkSpeed: 2.5
   scoreValue: 15
-  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114151313654010646
@@ -24276,9 +24301,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   sinkSpeed: 2.5
   scoreValue: 15
-  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114195392737306144
@@ -24347,9 +24373,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 40
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: f937553b54a6d32448505e136a13f76b, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: f937553b54a6d32448505e136a13f76b, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114256999018796362
@@ -24381,6 +24408,7 @@ MonoBehaviour:
   attackDamage: 40
   AOEattackDamage: 60
   attackRange: 15
+  effectAOE: {fileID: 1471982372664358}
   bossProj: {fileID: 1142586305092978, guid: bf0ff23cb636be74db13e2d479da024a, type: 2}
   staff: {fileID: 1227448726296436}
   bossBulletSpeed: 300
@@ -24407,9 +24435,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 40
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: f937553b54a6d32448505e136a13f76b, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: f937553b54a6d32448505e136a13f76b, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114280376923137464
@@ -24424,9 +24453,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   sinkSpeed: 2.5
   scoreValue: 15
-  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114292119220326752
@@ -24452,9 +24482,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114314280152506308
@@ -24484,9 +24515,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   sinkSpeed: 2.5
   scoreValue: 15
-  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114324643974918198
@@ -24552,9 +24584,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 35
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114365332355792518
@@ -24650,9 +24683,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114446872545247756
@@ -24667,9 +24701,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114447594526042702
@@ -24684,9 +24719,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 40
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: f937553b54a6d32448505e136a13f76b, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: f937553b54a6d32448505e136a13f76b, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114467855480269834
@@ -24802,9 +24838,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114545668781008526
@@ -24845,11 +24882,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   sinkSpeed: 2.5
   scoreValue: 15
-  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
+--- !u!114 &114590593932735366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855989306513482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d753378e4b4a945b0581ad6dd8e2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldOfViewAngle: 120
+  playerInSight: 1
+  disabled: 1
 --- !u!114 &114599082798066752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -24862,9 +24914,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   sinkSpeed: 2.5
   scoreValue: 15
-  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114606401277142852
@@ -24905,9 +24958,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114628349819203850
@@ -25008,9 +25062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa55a15b6217917409d21c49abf6f924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 600
-  sinkSpeed: 2.5
-  scoreValue: 100
+  maxHealth: 500
+  hurtClip: {fileID: 0}
   deathClip: {fileID: 8300000, guid: 694a31ad7e3c6d441937bce770697594, type: 3}
   disappearEffect: {fileID: 1108412428568460, guid: 88e70a9ae230b434087c5eba9d0742ca,
     type: 2}
@@ -25071,9 +25124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 40
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: f937553b54a6d32448505e136a13f76b, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: f937553b54a6d32448505e136a13f76b, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114757295285336740
@@ -25139,9 +25193,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: cf78393e280f7d74b8190236a0046865, type: 3}
   xpGiven: 5
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114832393088503706
@@ -25170,9 +25225,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   sinkSpeed: 2.5
   scoreValue: 15
-  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114836821021813858
@@ -25205,13 +25261,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1337061593752750}
-  effectAOE: {fileID: 1471982372664358}
   spawnPoint: {fileID: 1688476682749762}
   boss: {fileID: 1640071072301926}
   theText: {fileID: 4900000, guid: 544c9d03f8e4bf244912a9c5815d9231, type: 3}
   startLine: 0
   endLine: 7
   theTextBoxManager: {fileID: 0}
+  final: 0
 --- !u!114 &114839192373831328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25306,6 +25362,17 @@ MonoBehaviour:
   attackDamage: 20
   numberOfAttacks: 2
   attackRange: 3.2
+--- !u!114 &114985263427082976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1640071072301926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2112114bbaaec594f9d13802ed42fca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114989260676581490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25517,6 +25584,18 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238713479919464}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135745418124641934
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855989306513482}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
