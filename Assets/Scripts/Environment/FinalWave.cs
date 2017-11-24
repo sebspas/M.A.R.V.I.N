@@ -80,10 +80,8 @@ public class FinalWave : Spawner
 
     protected override void EndSpawn()
     {
-        BossFightFinal bossScript = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFightFinal>();
+        BossFight bossScript = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFight>();
         bossScript.Begin();
-        // TODO
-        // make the boss spawn HERE
     }
 
     public void DestroyWall()

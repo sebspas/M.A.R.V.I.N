@@ -884,7 +884,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 761449e652e8f054ea846ca9eea431db, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1010,9 +1010,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  hurtClip: {fileID: 8300000, guid: 761449e652e8f054ea846ca9eea431db, type: 3}
+  deathClip: {fileID: 8300000, guid: 0fbdfbee23ff9d84d92f34172e53453e, type: 3}
   sinkSpeed: 2.5
   scoreValue: 15
-  deathClip: {fileID: 0}
   xpGiven: 2
   fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!114 &114740236457963630

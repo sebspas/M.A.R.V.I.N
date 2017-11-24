@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class FollowUICrystal : MonoBehaviour {
 
-    private GameObject camera;
+    private GameObject mainCamera;
 
 	// Use this for initialization
 	void Start () {
-        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.rotation = camera.transform.rotation;
+        transform.rotation = mainCamera.transform.rotation;
 	}
 }

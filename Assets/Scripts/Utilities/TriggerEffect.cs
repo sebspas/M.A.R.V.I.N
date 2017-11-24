@@ -5,7 +5,6 @@ using UnityEngine;
 public class TriggerEffect : MonoBehaviour {
 
     public GameObject effectToTrigger;
-    BoxCollider boxCollider;
 
     bool isActive;
     bool isWaiting;
@@ -14,7 +13,6 @@ public class TriggerEffect : MonoBehaviour {
 
     private void Awake()
     {
-        boxCollider = GetComponent<BoxCollider>();
         isActive = false;
         isWaiting = false;
         effectToTrigger.SetActive(isActive);

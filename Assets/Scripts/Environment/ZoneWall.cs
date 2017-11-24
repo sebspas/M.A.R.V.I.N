@@ -27,9 +27,14 @@ public class ZoneWall : MonoBehaviour {
 
     public void DesactivateWall()
     {
+        // call the GameController to change the current game phase
+        GameController.NextPhase();
+
         Destroy(wall, timeToFadeWall);
         effect.SetActive(true);
         Destroy(effect, timeToFadeWall + additionalEffectTime);
         EnnemiesToActivate.SetActive(true);
     }
+
+
 }

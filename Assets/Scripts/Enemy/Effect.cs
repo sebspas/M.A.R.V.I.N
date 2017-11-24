@@ -6,7 +6,7 @@ using UnityEngine;
 public class Effect {
 
     // the enemy link to the Effect
-    EnemyHealth enemyHealth;
+    Health enemyHealth;
     EnemyMovement enemyMovement;
 
     // the player health for the life still Earth
@@ -40,7 +40,7 @@ public class Effect {
     float effectInterval = 0.0f;
 
     // we just passed the enemy as a componant
-    public Effect(EnemyHealth enemy, EnemyMovement enemyMovement)
+    public Effect(Health enemy, EnemyMovement enemyMovement)
     {
         this.enemyHealth = enemy;
         this.enemyMovement = enemyMovement;
@@ -65,7 +65,7 @@ public class Effect {
                 timer = 0;
                 //TODO apply here the animation
                 // you can apply the animation on the enemy here
-                enemyHealth.TakeDamage(effectValue);
+                enemyHealth.Damaged(effectValue);
             }
         }
 

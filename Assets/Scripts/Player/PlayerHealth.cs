@@ -9,11 +9,7 @@ public class PlayerHealth : Health
     public Image healthSlider;
     public Text healthText;
 
-    public AudioClip deathClip;
-    public AudioClip hurtClip;
-
     Animator anim;
-    AudioSource playerAudio;
     PlayerMovement playerMovement;
     PlayerShooting playerShooting;
     PlayerBonus playerBonus;
@@ -21,7 +17,7 @@ public class PlayerHealth : Health
     void Awake()
     {       
         anim = GetComponent<Animator>();
-        playerAudio = GetComponent<AudioSource>();
+        hurtSound = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
         playerShooting = GetComponentInChildren<PlayerShooting>();
         playerBonus = GetComponentInChildren<PlayerBonus>();
@@ -50,8 +46,6 @@ public class PlayerHealth : Health
     {
         anim.SetTrigger("Take Damage");
 
-        playerAudio.clip = hurtClip;
-        playerAudio.Play();
         SliderUpdate();
     }
 
@@ -67,8 +61,8 @@ public class PlayerHealth : Health
         anim.SetTrigger("Die");
 
         // play the corresponding sound to the death
-        playerAudio.clip = deathClip;
-        playerAudio.Play();
+        GetComponent<AudioSource>().clip = deathClip;
+        GetComponent<AudioSource>().Play();
 
         // we stop the ability to shoot or to move
         playerMovement.enabled = false;
