@@ -8752,7 +8752,6 @@ MonoBehaviour:
   disappearEffect: {fileID: 1108412428568460, guid: 88e70a9ae230b434087c5eba9d0742ca,
     type: 2}
   xpGiven: 50
-  fireEffect: {fileID: 100000, guid: b5e46061bb1930442be9abd3ea0184bb, type: 2}
 --- !u!195 &2136445339
 NavMeshAgent:
   m_ObjectHideFlags: 0
