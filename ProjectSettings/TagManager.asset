@@ -34,6 +34,7 @@ TagManager:
   - Climat
   - DeathMenu
   - TriggerEffect
+  - MainMenuUI
   layers:
   - Default
   - TransparentFX

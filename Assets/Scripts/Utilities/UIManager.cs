@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour {
     // general timer to know the time between two update
     float timer;
 
+    public GameObject controlsUI;
+
     public static bool isPaused;
     public static bool isGameOver;
     GameObject pauseMenu;
@@ -149,7 +151,6 @@ public class UIManager : MonoBehaviour {
 
     }
 
-
     //loads inputted level
     public void LoadLevel(string level)
     {
@@ -164,5 +165,15 @@ public class UIManager : MonoBehaviour {
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void showControls()
+    {
+        controlsUI.SetActive(true);
+    }
+
+    public void hideControls()
+    {
+        controlsUI.SetActive(false);
     }
 }
