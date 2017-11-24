@@ -4,7 +4,6 @@ public class EnemyHealth : Health
 {
     public float sinkSpeed = 2.5f;
     public int scoreValue = 10;
-    public AudioClip deathClip;
 
     // the player shooting script (to add the exp)
     PlayerShooting playerShooting;
@@ -21,7 +20,6 @@ public class EnemyHealth : Health
     // fire effect for this monster (to define in the editor)
     public GameObject fireEffect;
 
-    AudioSource enemyAudio;
     CapsuleCollider capsuleCollider;
     bool isSinking;
 
@@ -34,7 +32,7 @@ public class EnemyHealth : Health
     void Awake()
     {       
         anim = GetComponent<Animator>();
-        enemyAudio = GetComponent<AudioSource>();
+        audio = GetComponent<AudioSource>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
         enemyMovement = GetComponentInParent<EnemyMovement>();
@@ -96,8 +94,8 @@ public class EnemyHealth : Health
         // we also give this energy to the current amount of energy of the player
         playerShooting.currentEnergy += xpGiven;
 
-        //enemyAudio.clip = deathClip;
-        //enemyAudio.Play();
+        audio.clip = deathClip;
+        audio.Play();
 
         // Find and disable the Nav Mesh Agent.
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;

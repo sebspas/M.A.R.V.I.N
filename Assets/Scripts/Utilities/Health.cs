@@ -13,6 +13,13 @@ public class Health : MonoBehaviour {
     // bool to say if the entity is dead or not
     protected bool isDead = false;
 
+    // Audio clips
+    public AudioClip hurtClip;
+    public AudioClip deathClip;
+
+    // The audio of the monster
+    protected AudioSource audio;
+
     public void InitHealth()
     {
         // we set the currentHealth to the maxhealth possible
@@ -47,6 +54,8 @@ public class Health : MonoBehaviour {
         } else
         {
             HurtAnim();
+            audio.clip = hurtClip;
+            audio.Play();
         }            
     }
 

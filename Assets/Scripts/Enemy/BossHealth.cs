@@ -5,7 +5,6 @@ public class BossHealth : Health
 {
     public float sinkSpeed = 2.5f;
     public int scoreValue = 10;
-    public AudioClip deathClip;
     public GameObject disappearEffect;
 
     // global UI Element for the boss
@@ -28,8 +27,7 @@ public class BossHealth : Health
 
     // fire effect for this monster (to define in the editor)
     public GameObject fireEffect;
-
-    AudioSource bossAudio;
+    
     bool isSinking;
 
     // for effect and take damage
@@ -39,13 +37,15 @@ public class BossHealth : Health
 
     BossFight scriptZoneBoss;
 
+    BossFightFinal scriptZoneBossFinal;
+
     bool final;
 
     void Awake()
     {
         boss = GameObject.FindGameObjectWithTag("Boss");
         anim = GetComponent<Animator>();
-        bossAudio = GetComponent<AudioSource>();
+        audio = GetComponent<AudioSource>();
         playerShooting = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
         bossMovement = GetComponentInParent<BossMovement>();
         currentEffect = new EffectBoss(this, bossMovement);
@@ -76,7 +76,7 @@ public class BossHealth : Health
                 scriptZoneBoss = GameObject.FindGameObjectWithTag("ForestGameplay").GetComponent<BossFight>();
                 break;
             case 5:
-                scriptZoneBoss = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFight>();
+                scriptZoneBossFinal = GameObject.FindGameObjectWithTag("FinalGameplay").GetComponent<BossFightFinal>();
                 final = true;
                 break;
         }
@@ -134,8 +134,8 @@ public class BossHealth : Health
         // we also give this energy to the current amount of energy of the player
         playerShooting.currentEnergy += xpGiven;
 
-        bossAudio.clip = deathClip;
-        bossAudio.Play();
+        audio.clip = deathClip;
+        audio.Play();
 
         // Find and disable the Nav Mesh Agent.
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
@@ -152,7 +152,14 @@ public class BossHealth : Health
         AppearOrDesappear();
 
         if (!final)
+        {
             scriptZoneBoss.DestroyWall();
+        }
+        else
+        {
+            scriptZoneBossFinal.DestroyWall();
+        }
+
 
         PlayerHealth playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         playerHealth.Healed(1000);
