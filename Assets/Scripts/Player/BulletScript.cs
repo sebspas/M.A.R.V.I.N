@@ -103,13 +103,17 @@ public class BulletScript : MonoBehaviour {
         {
             // don't destroy if it impacts the trigger collider of an explosive barrel
         }
+        else if (other.tag == "Explosive" && other.isTrigger)
+        {
+            // don't destroy if it impacts the trigger collider of an explosive barrel
+        }
         else if (other.tag == "Climat")
         {
             // Don't destroy the bullet if it's in a climat's box collider
         }
-        else if (other.tag == "Enemy" && other.isTrigger)
+        else if ((other.tag == "IceWall" || other.tag == "Firewall" || other.tag == "Plantwall") && other.isTrigger)
         {
-            // don't destroy if it impacts the trigger collider of an enemy (EnemyFOV)
+            // don't destroy if it impacts the trigger collider a destroyed wall
         }
         else
         {
