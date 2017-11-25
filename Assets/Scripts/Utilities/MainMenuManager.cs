@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// For the music, give credit to :
+// "Blob Monsters Return" (Music)
+// by Eric Matyas
+// www.soundimage.org
+
 public class MainMenuManager : MonoBehaviour {
 
     public GameObject controlsUI;
+    public GameObject loadingScreen;
 
     // general timer to know the time between two update
     float timer;
@@ -14,7 +20,7 @@ public class MainMenuManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        //Time.timeScale = 1;
+        loadingScreen.SetActive(false);
         mainMenu = GameObject.FindGameObjectWithTag("MainMenuUI");
     }
 
@@ -26,6 +32,11 @@ public class MainMenuManager : MonoBehaviour {
     //loads main level
     public void LoadLevel()
     {
+        loadingScreen.SetActive(true);
+        /*
+        Animator animatorScreen = loadingScreen.GetComponent<Animator>();
+        animatorScreen.SetTrigger("playAnim");
+        */
         SceneManager.LoadScene("Main");
     }
 
