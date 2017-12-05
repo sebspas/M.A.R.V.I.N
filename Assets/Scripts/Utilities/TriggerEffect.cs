@@ -20,7 +20,7 @@ public class TriggerEffect : MonoBehaviour {
 
     private void Update()
     {
-        if (isWaiting)
+        if (isWaiting && !isActive)
         {
             if (time < Time.time)
             {
@@ -34,14 +34,22 @@ public class TriggerEffect : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        isActive = true;
-        effectToTrigger.SetActive(isActive);
+        if (other.tag == "Player")
+        {
+            print("isActive = " + isActive);
+            isActive = true;
+            effectToTrigger.SetActive(isActive);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        isActive = false;
-        //effectToTrigger.SetActive(isActive);
-        isWaiting = true;
-        time = Time.time + 5f;
+        if (other.tag == "Player")
+        {
+            isActive = false;
+            //effectToTrigger.SetActive(isActive);
+            isWaiting = true;
+            time = Time.time + 5f;
+            print("exit" + isActive);
+        }
     }
 }
