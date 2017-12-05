@@ -516,7 +516,6 @@ GameObject:
   - component: {fileID: 195096674433271742}
   - component: {fileID: 114687972418591164}
   - component: {fileID: 114511679954461604}
-  - component: {fileID: 114711100684434528}
   - component: {fileID: 82302036594575884}
   - component: {fileID: 136770610928405930}
   - component: {fileID: 114386601567995514}
@@ -2152,17 +2151,6 @@ MonoBehaviour:
   disappearEffect: {fileID: 1108412428568460, guid: 88e70a9ae230b434087c5eba9d0742ca,
     type: 2}
   xpGiven: 2
---- !u!114 &114711100684434528
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1583448380886822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf54f4f3e0c0df42be62c2363496158, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135879911665264906
 SphereCollider:
   m_ObjectHideFlags: 1
