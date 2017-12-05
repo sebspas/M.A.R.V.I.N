@@ -10,6 +10,10 @@ public class ExplosiveBarrel : MonoBehaviour {
     public float timeToDestroyBarril = 1f;
     public float additionalEffectTime = 3f;
 
+    // to avoid trying to make a barrel explode multiple times
+    // (causes infinite loops)
+    bool hasExploded;
+    // is the barrel ready to be destroyed
     bool discardBarrel;
     // list of all the object in range
     IList<GameObject> objectInRange = new List<GameObject>();
@@ -18,6 +22,7 @@ public class ExplosiveBarrel : MonoBehaviour {
     void Start () {
         effect.SetActive(false);
         discardBarrel = false;
+        hasExploded = false;
     }
 	
 	// Update is called once per frame
@@ -30,11 +35,15 @@ public class ExplosiveBarrel : MonoBehaviour {
 
     public void Explode()
     {
-        effect.SetActive(true);
-        barrel.SetActive(false);
-        Destroy(effect, timeToDestroyBarril + additionalEffectTime);
+        if (!hasExploded)
+        {
+            hasExploded = true;
+            effect.SetActive(true);
+            barrel.SetActive(false);
+            Destroy(effect, timeToDestroyBarril + additionalEffectTime);
 
-        DamageAllInRange();
+            DamageAllInRange();
+        }
     }
 
     void DamageAllInRange()
@@ -71,7 +80,7 @@ public class ExplosiveBarrel : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         // we add the moving object to the list of objects in range
-        if (!objectInRange.Contains(other.gameObject))
+        if (other.gameObject != this.gameObject && !objectInRange.Contains(other.gameObject))
         {
             objectInRange.Add(other.gameObject);
             //print(other.gameObject.tag + " in barrel range");
