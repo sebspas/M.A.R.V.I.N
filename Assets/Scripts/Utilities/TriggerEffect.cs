@@ -36,7 +36,6 @@ public class TriggerEffect : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            print("isActive = " + isActive);
             isActive = true;
             effectToTrigger.SetActive(isActive);
         }
@@ -46,10 +45,8 @@ public class TriggerEffect : MonoBehaviour {
         if (other.tag == "Player")
         {
             isActive = false;
-            //effectToTrigger.SetActive(isActive);
             isWaiting = true;
             time = Time.time + 5f;
-            print("exit" + isActive);
         }
     }
 }
