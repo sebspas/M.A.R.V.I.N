@@ -45,6 +45,9 @@ public class CrystalMining : Spawner {
     // public UI group to activate when we start mining 
     GameObject uiCrystal;
 
+    // UI for the text to press Space
+    GameObject uiTextSpace;
+
     // Use this for initialization
     void Start () {
         playerInRange = false;
@@ -52,8 +55,12 @@ public class CrystalMining : Spawner {
         player = GameObject.FindGameObjectWithTag("Player");
         playerMining = player.GetComponent<PlayerMining>();
 
+        uiTextSpace = gameObject.transform.GetChild(1).gameObject;
+
         uiCrystal = gameObject.transform.GetChild(0).gameObject;
         uiCrystal.SetActive(false);
+
+        
         
         for (int i=0; i<uiCrystal.transform.childCount; i++)
         {
@@ -151,6 +158,7 @@ public class CrystalMining : Spawner {
     void Mine ()
     {
         uiCrystal.SetActive(true);
+        uiTextSpace.SetActive(false);
 
         if (timerMining > miningSpeed)
         {

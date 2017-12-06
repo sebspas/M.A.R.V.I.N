@@ -181,7 +181,7 @@ public class PlayerBonus : MonoBehaviour {
         timer = 0;
         if (bonus < 3 && bonus >= 0) bonusID = bonus;
 
-        switch (bonusID)
+        /*switch (bonusID)
         {
             case 0: // bonus 1
                 bonusHighlight.anchorMin = new Vector2(0.5f, 1f);
@@ -202,7 +202,7 @@ public class PlayerBonus : MonoBehaviour {
 
             default: // Error
                 break;
-        }
+        }*/
     }
     
     public void UpdateBonusGauges()
