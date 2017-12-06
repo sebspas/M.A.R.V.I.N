@@ -2226,6 +2226,10 @@ Prefab:
       propertyPath: EnnemiesToActivate
       value: 
       objectReference: {fileID: 437704097}
+    - target: {fileID: 1932199467789046, guid: 782ecba005b313e42ba33ac10e498079, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 782ecba005b313e42ba33ac10e498079, type: 2}
   m_IsPrefabParent: 0
