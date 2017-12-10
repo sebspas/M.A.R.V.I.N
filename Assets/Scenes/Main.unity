@@ -6774,16 +6774,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114072487637605324, guid: 993ed14a14ed13b4ab9a07968091351e,
+    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
-      propertyPath: healthSlider
+      propertyPath: energySlider
       value: 
-      objectReference: {fileID: 539563168}
-    - target: {fileID: 114072487637605324, guid: 993ed14a14ed13b4ab9a07968091351e,
+      objectReference: {fileID: 539563167}
+    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
-      propertyPath: healthText
+      propertyPath: energyText
       value: 
-      objectReference: {fileID: 1156036674}
+      objectReference: {fileID: 1423585503}
     - target: {fileID: 114934600025428208, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
       propertyPath: chargeBonus1
@@ -6799,16 +6799,16 @@ Prefab:
       propertyPath: chargeBonus3
       value: 
       objectReference: {fileID: 539563166}
-    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
+    - target: {fileID: 114072487637605324, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
-      propertyPath: energySlider
+      propertyPath: healthSlider
       value: 
-      objectReference: {fileID: 539563167}
-    - target: {fileID: 114134772355612730, guid: 993ed14a14ed13b4ab9a07968091351e,
+      objectReference: {fileID: 539563168}
+    - target: {fileID: 114072487637605324, guid: 993ed14a14ed13b4ab9a07968091351e,
         type: 2}
-      propertyPath: energyText
+      propertyPath: healthText
       value: 
-      objectReference: {fileID: 1423585503}
+      objectReference: {fileID: 1156036674}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 993ed14a14ed13b4ab9a07968091351e, type: 2}
   m_IsPrefabParent: 0
@@ -7383,12 +7383,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114190738461690336, guid: 05d729cbe2febf340a3001faf9be12e0,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1886494380}
-    - target: {fileID: 114631082344535314, guid: 05d729cbe2febf340a3001faf9be12e0,
+    - target: {fileID: 114987225900572596, guid: 05d729cbe2febf340a3001faf9be12e0,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -7398,7 +7393,12 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1886494380}
-    - target: {fileID: 114987225900572596, guid: 05d729cbe2febf340a3001faf9be12e0,
+    - target: {fileID: 114631082344535314, guid: 05d729cbe2febf340a3001faf9be12e0,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1886494380}
+    - target: {fileID: 114190738461690336, guid: 05d729cbe2febf340a3001faf9be12e0,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

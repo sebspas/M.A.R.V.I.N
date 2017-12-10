@@ -22,7 +22,14 @@ public class TextBoxManager : MonoBehaviour
 
     public bool isActive;
 
+    // delay to display a character by character
+    public float delayText = 0.008f;
 
+    private string textToType = "";
+    private int currPos = 0;
+
+    // used to only pass once in the EnableFunction
+    private bool alreadyActivated = false;
 
     // Use this for initialization
     void Start()
@@ -37,6 +44,11 @@ public class TextBoxManager : MonoBehaviour
         {
             endAtLine = textlines.Length - 1;
         }
+
+        // we start the function to type the text
+        StartCoroutine("WriteTextWithEffect");
+
+        EnableTextBox();
     }
 
     // Update is called once per frame
@@ -48,11 +60,18 @@ public class TextBoxManager : MonoBehaviour
             return;
         }
 
-        theText.text = textlines[currentLine];
-
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            currentLine += 1;
+            if (currentLine++ < endAtLine)
+            {
+                // we reset the pos
+                currPos = 0;
+                // we empty the text box
+                theText.text = "";
+                // we set the text to type
+                textToType = textlines[currentLine];
+
+            }            
         }
 
         if (currentLine > endAtLine)
@@ -71,10 +90,36 @@ public class TextBoxManager : MonoBehaviour
         }
     }
 
+    private IEnumerator WriteTextWithEffect()
+    {   
+        while (true)
+        {            
+            if (currPos < textToType.Length)
+            {
+                theText.text += textToType[currPos];
+                currPos++;
+            }
+               
+            yield return new WaitForSeconds(delayText);
+        }
+    }
+
     public void EnableTextBox()
     {
         isActive = true;
         TextBox.SetActive(true);
+      
+        if (!alreadyActivated)
+        {
+            alreadyActivated = true;
+            // we reset the pos
+            currPos = 0;
+            // we empty the text box
+            theText.text = "";
+            // we set the text to type
+            textToType = textlines[currentLine];
+        }
+       
         // To replace
         //playerMovement.ForbidToMove();
     }
@@ -83,11 +128,15 @@ public class TextBoxManager : MonoBehaviour
     {
         isActive = false;
         TextBox.SetActive(false);
+        // we empty the text box
+        theText.text = "";
+
+        alreadyActivated = false;
         // To replace
         //playerMovement.AllowToMove();
     }
 
-    public void ReloadScript(TextAsset text,int currentL, int endL)
+    public void ReloadScript(TextAsset text, int currentL, int endL)
     {
         if(text != null)
         {
