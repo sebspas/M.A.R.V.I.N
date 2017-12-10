@@ -129,6 +129,10 @@ public class UIManager : MonoBehaviour {
     //hides objects with ShowOnPause tag
     public void hidePaused()
     {
+        if (controlsUI.active)
+        {
+            hideControls();
+        }
         pauseMenu.SetActive(false);
         hud.SetActive(true);
     }
