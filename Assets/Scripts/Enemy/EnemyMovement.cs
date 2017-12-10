@@ -11,22 +11,31 @@ public class EnemyMovement : MonoBehaviour
     Animator anim;
     IAttack attack;
 
+    EnemyPatrol enemyPatrol;
+
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<Health>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        nav.speed = 6;
         sight = GetComponentInChildren<EnemyFOV>();
         anim = GetComponent<Animator>();
         attack = GetComponent<IAttack>();
+
+        enemyPatrol = GetComponent<EnemyPatrol>();
     }
 
     void Update()
     {
         if (sight.playerInSight)
         {
+            if (enemyPatrol != null && enemyPatrol.isInPatrol == true)
+            {
+                // we stop the patrol
+                enemyPatrol.isInPatrol = false;
+            }
+
             if (enemyHealth.GetCurrentHealth() > 0 && playerHealth.GetCurrentHealth() > 0)
             {
                 // lookt at the player
@@ -44,7 +53,11 @@ public class EnemyMovement : MonoBehaviour
                     anim.SetFloat("EnemyMove", 0.0f);
                 }
             }            
-        } else
+        } else if (enemyPatrol != null && enemyPatrol.isInPatrol == true)
+        {
+            anim.SetFloat("EnemyMove", 1.0f);
+        }
+        else
         {
             anim.SetFloat("EnemyMove", 0.0f);
         }
