@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class TeleportWell : MonoBehaviour {
 
-    GameObject player;
     public GameObject textUI;
     public GameObject teleporter;
-    Vector3 teleportPos;
-    bool playerCanInteract;
+    public GameObject teleportFX;
+
+    GameObject player;
+    private Vector3 teleportPos;
+    private bool playerCanInteract;
+    private AudioSource teleportSound;
 
 
-	// Use this for initialization
-	void Start () {
-        //textUI.SetActive(false);
+    // Use this for initialization
+    void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         teleportPos = teleporter.transform.position;
+        teleportSound = GetComponent<AudioSource>();
         playerCanInteract = false;
     }
 	
@@ -24,9 +27,19 @@ public class TeleportWell : MonoBehaviour {
 
         if (playerCanInteract && Input.GetKey(KeyCode.Space))
         {
-            player.transform.position = teleportPos;
+            Teleport();
         }
 
+    }
+
+    private void Teleport()
+    {
+        teleportSound.Play();
+        player.transform.position = teleportPos;
+        // in all other case destroy it
+        GameObject effect = (GameObject)Instantiate(teleportFX, teleportPos, Quaternion.identity);
+        // destroy the anim after 1 sec
+        Destroy(effect, 3.5f);
     }
 
     // the player must have finish the forest zone boss
