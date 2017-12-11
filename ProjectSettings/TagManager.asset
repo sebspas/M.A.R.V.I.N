@@ -35,6 +35,8 @@ TagManager:
   - DeathMenu
   - TriggerEffect
   - MainMenuUI
+  - Explosive
+  - Well
   layers:
   - Default
   - TransparentFX

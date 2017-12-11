@@ -99,9 +99,9 @@ public class BulletScript : MonoBehaviour {
         {
             // don't destroy it when it's the player shooting (or the bullet will never go out of the player collider...)
         }
-        else if (other.tag == "Explosive" && other.isTrigger)
+        else if (other.tag == "Well" && other.isTrigger)
         {
-            // don't destroy if it impacts the trigger collider of an explosive barrel
+            // don't destroy if it impacts the trigger collider of a well
         }
         else if (other.tag == "Explosive" && other.isTrigger)
         {
