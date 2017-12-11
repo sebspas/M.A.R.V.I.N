@@ -20,6 +20,7 @@ public class MainMenuManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        Time.timeScale = 1;
         loadingScreen.SetActive(false);
         mainMenu = GameObject.FindGameObjectWithTag("MainMenuUI");
     }
