@@ -63,13 +63,17 @@ public class BossFight : MonoBehaviour
 
             // if we are at the end of the game and we kill the boss
             if (final)
-            {                
+            {
                 // then we make the endgame screen appear
                 GameObject.FindGameObjectWithTag("HUDEndGame").GetComponent<Animator>().SetTrigger("EndGame");
                 // stop the game after we got the time to see the animation of end appear
-                Invoke("GameController.StopGame", 2.5f);
+                Invoke("GameController.StopGame", 2.0f);
+
+                Destroy(this, 3.0f);
             }
         }
+
+
     }
 
     public void Begin()
