@@ -11,10 +11,13 @@ public class ZoneWall : MonoBehaviour {
     BoxCollider invisibleWall;
     public GameObject EnnemiesToActivate;
 
+    AudioSource wallSound;
+
 	// Use this for initialization
 	void Start () {
         effect.SetActive(false);
         invisibleWall = GetComponent<BoxCollider>();
+        wallSound = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -29,6 +32,8 @@ public class ZoneWall : MonoBehaviour {
     {
         // call the GameController to change the current game phase
         GameController.NextPhase();
+
+        wallSound.Play();
 
         Destroy(wall, timeToFadeWall);
         effect.SetActive(true);

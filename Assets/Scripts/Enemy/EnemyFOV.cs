@@ -85,7 +85,8 @@ public class EnemyFOV : MonoBehaviour {
             // we also warn all the closest allies
             foreach (GameObject e in closestEnemies)
             {
-                e.gameObject.GetComponentInChildren<EnemyFOV>().PlayerDetected(false);
+                if (e != null)
+                    e.gameObject.GetComponentInChildren<EnemyFOV>().PlayerDetected(false);
             }
         }
 
