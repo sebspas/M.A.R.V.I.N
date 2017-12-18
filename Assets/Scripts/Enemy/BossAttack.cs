@@ -4,7 +4,7 @@ using System.Collections;
 public class BossAttack : MonoBehaviour, IAttack
 {
     // time between two boss attack
-    public float timeBetweenAttacks = 1f;
+    public float timeBetweenAttacks = 0.5f;
 
     // normal bpss attack damage
     public int attackDamage = 40;
@@ -87,7 +87,7 @@ public class BossAttack : MonoBehaviour, IAttack
         
         if (!venerePattern)
         {
-            if (patternCount % 6 < 5)
+            if (patternCount % 12 < 11)
             {
                 Attack();
             }
@@ -98,7 +98,7 @@ public class BossAttack : MonoBehaviour, IAttack
         }
         else
         {
-            if (patternCount % 3 < 2)
+            if (patternCount % 7 < 6)
             {
                 Attack();
             }

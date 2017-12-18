@@ -1721,7 +1721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireEffect: {fileID: 0}
-  maxHealth: 500
+  maxHealth: 800
   hurtClip: {fileID: 8300000, guid: 0426027984d734e7fba2fe886ef21380, type: 3}
   deathClip: {fileID: 8300000, guid: b24ae5c93276c4616856c1f0fb47e615, type: 3}
   healthSlider: {fileID: 0}
