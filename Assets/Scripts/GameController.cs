@@ -44,7 +44,12 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public static void StopGame()
+    public void CallStop()
+    {
+        Invoke("StopGame", 2.5f);
+    }
+
+    public void StopGame()
     {
         // we stop the game
         UIManager.isPaused = true;

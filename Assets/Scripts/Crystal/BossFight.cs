@@ -67,13 +67,11 @@ public class BossFight : MonoBehaviour
                 // then we make the endgame screen appear
                 GameObject.FindGameObjectWithTag("HUDEndGame").GetComponent<Animator>().SetTrigger("EndGame");
                 // stop the game after we got the time to see the animation of end appear
-                Invoke("GameController.StopGame", 2.0f);
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().CallStop();
 
                 Destroy(this, 3.0f);
             }
         }
-
-
     }
 
     public void Begin()

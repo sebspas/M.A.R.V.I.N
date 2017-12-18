@@ -195,6 +195,10 @@ Prefab:
       propertyPath: m_Volume
       value: 0.073
       objectReference: {fileID: 0}
+    - target: {fileID: 1929574190106614, guid: 0686fd94d993bb042a6d82761dd59080, type: 2}
+      propertyPath: m_TagString
+      value: GameController
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0686fd94d993bb042a6d82761dd59080, type: 2}
   m_IsPrefabParent: 0
@@ -919,14 +923,15 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1886494380}
     - target: {fileID: 114650412771998280, guid: 8f857fe249e803546b0fb55d5b1aba95,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1834569308100866, guid: 8f857fe249e803546b0fb55d5b1aba95, type: 2}
-      propertyPath: m_IsActive
+      objectReference: {fileID: 1886494380}
+    - target: {fileID: 95998763902928062, guid: 8f857fe249e803546b0fb55d5b1aba95,
+        type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
